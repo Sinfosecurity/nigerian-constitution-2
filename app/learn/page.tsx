@@ -171,7 +171,7 @@ export default function LearnPage() {
               Explore Explanations
             </Link>
             <Link
-              href="#quizzes"
+              href="/learn/quizzes"
               className="inline-flex h-10 items-center justify-center rounded-md border border-green-200 bg-white px-8 text-sm font-medium text-green-600 shadow-sm transition-colors hover:bg-green-50 dark:bg-gray-950 dark:border-green-800 dark:text-green-400 dark:hover:bg-green-900/30"
             >
               Take a Quiz
@@ -247,7 +247,7 @@ export default function LearnPage() {
         </div>
       </section>
 
-      <section
+      {/* <section
         id="quizzes"
         className="w-full py-12 md:py-24 lg:py-32 bg-green-50 dark:bg-gray-950"
       >
@@ -317,7 +317,7 @@ export default function LearnPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </PageLayout>
   );
 }
