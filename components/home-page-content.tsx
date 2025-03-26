@@ -39,7 +39,7 @@ export function HomePageContent() {
               <p className="text-gray-500 dark:text-gray-400 mb-4">
                 {t("home.explore.card1.description")}
               </p>
-              <Button asChild>
+              <Button asChild className="bg-green-600 hover:bg-green-700">
                 <Link href="/constitution">
                   {t("home.explore.card1.button")}{" "}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -54,7 +54,7 @@ export function HomePageContent() {
               <p className="text-gray-500 dark:text-gray-400 mb-4">
                 {t("home.explore.card2.description")}
               </p>
-              <Button asChild>
+              <Button asChild className="bg-green-600 hover:bg-green-700">
                 <Link href="/constitution">
                   {t("home.explore.card2.button")}{" "}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -69,7 +69,7 @@ export function HomePageContent() {
               <p className="text-gray-500 dark:text-gray-400 mb-4">
                 {t("home.explore.card3.description")}
               </p>
-              <Button asChild>
+              <Button asChild className="bg-green-600 hover:bg-green-700">
                 <Link href="/learn">
                   {t("home.explore.card3.button")}{" "}
                   <ArrowRight className="ml-2 h-4 w-4" />
