@@ -234,12 +234,12 @@ export function HeroSection() {
   const { currentLanguage } = useLanguage();
   const { t } = useTranslation(currentLanguage.code);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      router.push(`/constitution?search=${encodeURIComponent(searchQuery)}`);
-    }
-  };
+  // const handleSearch = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (searchQuery.trim()) {
+  //     router.push(`/constitution?search=${encodeURIComponent(searchQuery)}`);
+  //   }
+  // };
 
   const features = [
     {
@@ -309,7 +309,7 @@ export function HeroSection() {
             <p className="max-w-[600px] text-gray-600 dark:text-gray-300 text-xl">
               {t("hero.subtitle")}
             </p>
-
+            {/* 
             <form onSubmit={handleSearch} className="flex max-w-md gap-2">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
@@ -327,7 +327,7 @@ export function HeroSection() {
               >
                 {t("hero.searchButton")}
               </Button>
-            </form>
+            </form> */}
 
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
               <Button
@@ -383,7 +383,7 @@ export function HeroSection() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm" />
             <Image
-              src="/placeholder.svg?height=500&width=500&text=Nigerian+Constitution"
+              src="/constitution-01.jpg"
               alt={t("hero.imageAlt")}
               width={500}
               height={500}
