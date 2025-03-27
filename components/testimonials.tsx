@@ -135,21 +135,21 @@ export function Testimonials() {
       content: t("testimonials.1.content"),
       author: t("testimonials.1.author"),
       title: t("testimonials.1.title"),
-      avatar: "/placeholder.svg?height=80&width=80",
+      avatar: "/avatar-1.jpg",
     },
     {
       id: 2,
       content: t("testimonials.2.content"),
       author: t("testimonials.2.author"),
       title: t("testimonials.2.title"),
-      avatar: "/placeholder.svg?height=80&width=80",
+      avatar: "/avatar-3.jpg",
     },
     {
       id: 3,
       content: t("testimonials.3.content"),
       author: t("testimonials.3.author"),
       title: t("testimonials.3.title"),
-      avatar: "/placeholder.svg?height=80&width=80",
+      avatar: "/avatar-2.jpg",
     },
   ];
 
