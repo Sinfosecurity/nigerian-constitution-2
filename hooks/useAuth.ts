@@ -2,6 +2,7 @@ import { useState } from "react";
 import { User } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/services/supabase";
+import { toast } from "sonner";
 
 interface AuthState {
   user: User | null;
@@ -40,7 +41,8 @@ export const useAuth = () => {
       }));
 
       // Redirect to dashboard or profile completion
-      router.push("/");
+      await router.push("/");
+      toast.success("Registration successfull!");
 
       return data.user;
     } catch (err: any) {
@@ -71,7 +73,8 @@ export const useAuth = () => {
       }));
 
       // Redirect to dashboard
-      router.push("/dashboard");
+      await router.push("/");
+      toast.success("Login successful");
 
       return data.user;
     } catch (err: any) {
@@ -99,7 +102,8 @@ export const useAuth = () => {
       });
 
       // Redirect to login page
-      router.push("/login");
+      await router.push("/login");
+      toast.success("Logout successful!");
     } catch (err: any) {
       setState((prev) => ({
         ...prev,
