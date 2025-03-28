@@ -100,7 +100,6 @@ export function HomePageContent() {
               {t("home.community.subtitle")}
             </p>
           </div>
-
           <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
             <Button
               size="lg"
@@ -123,6 +122,7 @@ export function HomePageContent() {
               </Link>
             </Button>
           </div>
+          0
         </div>
       </section>
     </>

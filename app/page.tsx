@@ -1,8 +1,8 @@
-import { PageLayout } from "@/components/page-layout"
-import { SEO } from "@/components/seo"
+import { PageLayout } from "@/components/page-layout";
+import { SEO } from "@/components/seo";
 
 // Client component wrapper to use translations
-import { HomePageContent } from "@/components/home-page-content"
+import { HomePageContent } from "@/components/home-page-content";
 
 export default function HomePage() {
   return (
@@ -10,6 +10,5 @@ export default function HomePage() {
       <SEO />
       <HomePageContent />
     </PageLayout>
-  )
+  );
 }
-

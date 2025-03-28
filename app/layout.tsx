@@ -78,6 +78,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { LanguageProvider } from "@/contexts/language-context";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { AuthProvider } from "@/contexts/auth-context";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -88,6 +89,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const queryClient = new QueryClient();
   const pathname = usePathname();
   const isAuthPage = authPages.includes(pathname);
 
@@ -100,23 +102,25 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <LanguageProvider>
-            <AuthProvider>
-              <ErrorBoundary>
-                {isAuthPage ? (
-                  children
-                ) : (
-                  <div className="relative flex min-h-screen flex-col">
-                    <SiteHeader />
-                    <main className="flex-1">{children}</main>
-                    <SiteFooter />
-                  </div>
-                )}
-              </ErrorBoundary>
-            </AuthProvider>
-          </LanguageProvider>
-        </ThemeProvider>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <LanguageProvider>
+              <AuthProvider>
+                <ErrorBoundary>
+                  {isAuthPage ? (
+                    children
+                  ) : (
+                    <div className="relative flex min-h-screen flex-col">
+                      <SiteHeader />
+                      <main className="flex-1">{children}</main>
+                      <SiteFooter />
+                    </div>
+                  )}
+                </ErrorBoundary>
+              </AuthProvider>
+            </LanguageProvider>
+          </ThemeProvider>
+        </QueryClientProvider>
         {/* Google Analytics */}
         <Script
           strategy="afterInteractive"
