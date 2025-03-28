@@ -93,7 +93,7 @@ export function HomePageContent() {
       <section className="py-16 md:py-24">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-green-800 dark:text-green-200">
               {t("home.community.title")}
             </h2>
             <p className="mt-4 text-gray-500 dark:text-gray-400 max-w-[700px]">
@@ -102,13 +102,22 @@ export function HomePageContent() {
           </div>
 
           <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
-            <Button size="lg" asChild>
+            <Button
+              size="lg"
+              className="bg-green-600 hover:bg-green-700 text-white dark:bg-green-700 dark:hover:bg-green-600"
+              asChild
+            >
               <Link href="/community">
                 {t("home.community.button1")}{" "}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-green-200 text-green-600 hover:bg-green-50 dark:border-green-800 dark:text-green-400 dark:hover:bg-green-900/30"
+              asChild
+            >
               <Link href="/community/ask-expert">
                 {t("home.community.button2")}
               </Link>

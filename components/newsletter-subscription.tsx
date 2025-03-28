@@ -169,8 +169,8 @@ export function NewsletterSubscription() {
               disabled={status === "loading"}
             >
               {status === "loading"
-                ? t("newsletter.submitting")
-                : t("newsletter.submit")}
+                ? "submitting"
+                : "submit"}
             </button>
           </form>
         )}
