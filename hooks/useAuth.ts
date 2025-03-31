@@ -311,7 +311,7 @@ export function useAuth() {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
       queryClient.setQueryData(["auth-user"], null);
       router.push("/login");
       toast.success("Successfully signed out!");
