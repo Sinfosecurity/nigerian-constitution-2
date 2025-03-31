@@ -75,7 +75,7 @@ export function ConstitutionNav() {
               </Link> */}
 
               <Link
-                href="/constitution/table-of-contents"
+                href="/constitution/table-of-content"
                 passHref
                 legacyBehavior
               >

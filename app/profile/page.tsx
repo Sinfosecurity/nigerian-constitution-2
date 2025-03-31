@@ -181,7 +181,8 @@ export default function ProfilePage() {
                     Account Created
                   </label>
                   <p className="mt-1 text-lg">
-                    {userData?.user_metadata?.name}
+                    {userData?.created_at &&
+                      new Date(userData.created_at).toLocaleString()}
                   </p>
                 </div>
                 <div>
