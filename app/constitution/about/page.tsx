@@ -422,7 +422,7 @@ export default function AboutConstitutionPage() {
             </div>
           </TabsContent>
           <TabsContent value="structure">
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-2xl text-green-700 font-bold mb-4">
               Structure of the Constitution
             </h2>
             <Card>
@@ -436,7 +436,9 @@ export default function AboutConstitutionPage() {
                       sections. It also includes 7 schedules that provide
                       additional details on various constitutional provisions.
                     </p>
-                    <h3 className="text-xl font-semibold mb-3">Key Chapters</h3>
+                    <h3 className="text-xl text-green-700 font-semibold mb-3">
+                      Key Chapters
+                    </h3>
                     <ul className="list-disc pl-5 space-y-2">
                       <li>
                         {" "}
@@ -468,7 +470,9 @@ export default function AboutConstitutionPage() {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-3">Key Features</h3>
+                    <h3 className="text-xl text-green-700 font-semibold mb-3">
+                      Key Features
+                    </h3>
                     <ul className="list-disc pl-5 space-y-2">
                       <li>
                         <strong>Federal System:</strong> Establishes Nigeria as
@@ -513,7 +517,7 @@ export default function AboutConstitutionPage() {
             </Card>
           </TabsContent>
           <TabsContent value="amendments">
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-2xl text-green-700 font-bold mb-4">
               Constitutional Amendments
             </h2>
             <Card>
@@ -529,7 +533,7 @@ export default function AboutConstitutionPage() {
                   </p>
 
                   <div>
-                    <h3 className="text-xl font-semibold mb-3">
+                    <h3 className="text-xl text-green-700 font-semibold mb-3">
                       First, Second, and Third Amendments (2010)
                     </h3>
                     <p>
@@ -542,7 +546,7 @@ export default function AboutConstitutionPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold mb-3">
+                    <h3 className="text-xl text-green-700 font-semibold mb-3">
                       Fourth Amendment (2017)
                     </h3>
                     <p>
@@ -555,7 +559,7 @@ export default function AboutConstitutionPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold mb-3">
+                    <h3 className="text-xl text-green-700 font-semibold mb-3">
                       Fifth Amendment (2023)
                     </h3>
                     <p>
@@ -568,7 +572,7 @@ export default function AboutConstitutionPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold mb-3">
+                    <h3 className="text-xl text-green-700 font-semibold mb-3">
                       Ongoing Amendment Efforts
                     </h3>
                     <p>
@@ -584,14 +588,14 @@ export default function AboutConstitutionPage() {
             </Card>
           </TabsContent>
           <TabsContent value="significance">
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-2xl text-green-700 font-bold mb-4">
               Significance of the Constitution
             </h2>
             <Card>
               <CardContent className="p-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h3 className="text-xl font-semibold mb-3">
+                    <h3 className="text-xl text-green-700 font-semibold mb-3">
                       Legal Significance
                     </h3>
                     <p className="mb-4">
@@ -601,7 +605,7 @@ export default function AboutConstitutionPage() {
                       inconsistent with the Constitution is void to the extent
                       of the inconsistency.
                     </p>
-                    <h3 className="text-xl font-semibold mb-3">
+                    <h3 className="text-xl text-green-700 font-semibold mb-3">
                       Political Significance
                     </h3>
                     <p className="mb-4">
@@ -611,7 +615,7 @@ export default function AboutConstitutionPage() {
                       participation. It provides the foundation for Nigeria's
                       democratic system.
                     </p>
-                    <h3 className="text-xl font-semibold mb-3">
+                    <h3 className="text-xl text-green-700 font-semibold mb-3">
                       Social Significance
                     </h3>
                     <p>
@@ -622,12 +626,12 @@ export default function AboutConstitutionPage() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-3">
+                    <h3 className="text-xl text-green-700 font-semibold mb-3">
                       Landmark Constitutional Cases
                     </h3>
-                    <ul className="list-disc pl-5 space-y-2">
+                    <ul className="list-disc pl-5 space-y-2 marker:text-green-700">
                       <li>
-                        <strong>
+                        <strong className="text-green-700">
                           Attorney-General of the Federation v. Attorney-General
                           of Abia State & Ors (2001)
                         </strong>
@@ -638,7 +642,9 @@ export default function AboutConstitutionPage() {
                         </p>
                       </li>
                       <li>
-                        <strong>Inakoju v. Adeleke (2007)</strong>
+                        <strong className="text-green-700">
+                          Inakoju v. Adeleke (2007)
+                        </strong>
                         <p className="text-sm text-muted-foreground">
                           This case established important principles regarding
                           impeachment proceedings and due process in Nigeria's
@@ -646,7 +652,9 @@ export default function AboutConstitutionPage() {
                         </p>
                       </li>
                       <li>
-                        <strong>Abacha v. Fawehinmi (2000)</strong>
+                        <strong className="text-green-700">
+                          Abacha v. Fawehinmi (2000)
+                        </strong>
                         <p className="text-sm text-muted-foreground">
                           This case addressed the status of international human
                           rights treaties in Nigerian law and their relationship
@@ -654,7 +662,9 @@ export default function AboutConstitutionPage() {
                         </p>
                       </li>
                       <li>
-                        <strong>Mojekwu v. Mojekwu (1997)</strong>
+                        <strong className="text-green-700">
+                          Mojekwu v. Mojekwu (1997)
+                        </strong>
                         <p className="text-sm text-muted-foreground">
                           This case addressed the conflict between customary law
                           and constitutional provisions on non-discrimination,
