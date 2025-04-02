@@ -6,6 +6,7 @@ import { PageLayout } from "@/components/page-layout";
 import { createPost } from "@/app/actions/post";
 import { useRouter } from "next/navigation";
 import { FormData } from "@/app/types/post";
+import { useAuth } from "@/hooks/useAuth";
 
 interface DiscussionTopic {
   id: number;
@@ -33,6 +34,9 @@ export default function DiscussionPage({ posts }: Posts) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
   const discussionList = posts;
+  const { user } = useAuth();
+  const fullname = user?.user_metadata?.name;
+  const email = user?.user_metadata?.email;
 
   // Sample data for demonstration
   // const discussionTopics: DiscussionTopic[] = [
@@ -116,9 +120,9 @@ export default function DiscussionPage({ posts }: Posts) {
                 <Link href={`/community/discussion/${topic.id}`}>
                   <div className="p-6">
                     <div className="mb-2">
-                      {/* <span className="text-sm font-medium text-green-700 dark:text-green-300">
-                        {topic.author}
-                      </span> */}
+                      <span className="text-sm font-medium text-green-700 dark:text-green-300">
+                        {fullname}
+                      </span>
                       <span className="text-xs text-gray-500 ml-2">
                         • {topic.created_at}
                       </span>
@@ -149,12 +153,6 @@ export default function DiscussionPage({ posts }: Posts) {
                 </Link>
               </div>
             ))}
-          </div>
-
-          <div className="flex justify-center mt-8">
-            <button className="inline-flex items-center justify-center rounded-md border border-green-200 bg-white px-4 py-2 text-sm font-medium text-green-600 shadow-sm transition-colors hover:bg-green-50 dark:bg-gray-950 dark:border-green-800 dark:text-green-400 dark:hover:bg-green-900/30">
-              Load More Discussions
-            </button>
           </div>
         </div>
       </section>
