@@ -24,7 +24,7 @@ import DiscussionDetails from "@/components/DiscussionDetails";
 export default async function DiscussionPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: number }>;
 }) {
   const { id } = await params;
   const discussion = await getDiscussionsById(id);

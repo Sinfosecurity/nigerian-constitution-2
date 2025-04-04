@@ -1,7 +1,7 @@
 import { supabase } from "./supabase";
 
 interface Post {
-  id: string;
+  id: number;
   title: string;
   content: string;
   created_at: string;
@@ -22,7 +22,7 @@ export async function getDiscussions(): Promise<Post[] | null> {
   return data;
 }
 
-export async function getDiscussionsById(id: string): Promise<Post> {
+export async function getDiscussionsById(id: number): Promise<Post> {
   const { data, error } = await supabase
     .from("posts")
     .select("*")

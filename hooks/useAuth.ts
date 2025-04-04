@@ -1,5 +1,4 @@
 // import { useEffect } from "react";
-
 // import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 // import { useRouter } from "next/navigation";
 // import type { User } from "@supabase/supabase-js";
@@ -7,6 +6,24 @@
 // import { supabase } from "@/services/supabase";
 
 // const STORAGE_KEY = "auth_session";
+
+// // Define interfaces for our data types
+// interface Comment {
+//   id: string;
+//   post_id: number;
+//   user_id: string;
+//   content: string;
+//   created_at: string;
+//   updated_at: string;
+//   user?: {
+//     id: string;
+//     email: string;
+//     user_metadata: {
+//       name: string;
+//       avatar_url?: string;
+//     };
+//   };
+// }
 
 // export function useAuth() {
 //   const router = useRouter();
@@ -134,6 +151,159 @@
 //     };
 //   }, [queryClient]);
 
+//   // COMMENTS FUNCTIONS
+
+//   // Fetch comments for a post
+//   const getComments = async (postId: Number) => {
+//     const { data, error } = await supabase
+//       .from("comments")
+//       .select("*")
+//       .eq("post_id", postId)
+//       .order("created_at", { ascending: true });
+
+//     if (error) {
+//       toast.error("Failed to load comments");
+//       throw error;
+//     }
+
+//     return data as Comment[];
+//   };
+
+//   // Add a comment to a post
+//   const addComment = async (postId: number, content: string) => {
+//     if (!user) throw new Error("You must be logged in to comment");
+
+//     const { data, error } = await supabase
+//       .from("comments")
+//       .insert({
+//         post_id: postId,
+//         user_id: user.id,
+//         content,
+//       })
+//       .select(
+//         `
+//         *,
+//         user:user_id (
+//           id,
+//           email,
+//           user_metadata
+//         )
+//       `
+//       )
+//       .single();
+
+//     if (error) {
+//       toast.error("Failed to add comment");
+//       throw error;
+//     }
+
+//     // Invalidate comments query to refresh the list
+//     queryClient.invalidateQueries({ queryKey: ["comments", postId] });
+//     toast.success("Comment added successfully");
+//     return data as Comment;
+//   };
+
+//   // Update a comment
+//   const updateComment = async (
+//     commentId: string,
+//     postId: number,
+//     content: string
+//   ) => {
+//     if (!user) throw new Error("You must be logged in to update a comment");
+
+//     const { data, error } = await supabase
+//       .from("comments")
+//       .update({
+//         content,
+//         updated_at: new Date().toISOString(),
+//       })
+//       .eq("id", commentId)
+//       .eq("user_id", user.id) // Ensure user can only update their own comments
+//       .select(
+//         `
+//         *,
+//         user:user_id (
+//           id,
+//           email,
+//           user_metadata
+//         )
+//       `
+//       )
+//       .single();
+
+//     if (error) {
+//       toast.error("Failed to update comment");
+//       throw error;
+//     }
+
+//     // Invalidate comments query to refresh the list
+//     queryClient.invalidateQueries({ queryKey: ["comments", postId] });
+//     toast.success("Comment updated successfully");
+//     return data as Comment;
+//   };
+
+//   // Delete a comment
+//   const deleteComment = async (commentId: string, postId: number) => {
+//     if (!user) throw new Error("You must be logged in to delete a comment");
+
+//     const { error } = await supabase
+//       .from("comments")
+//       .delete()
+//       .eq("id", commentId)
+//       .eq("user_id", user.id); // Ensure user can only delete their own comments
+
+//     if (error) {
+//       toast.error("Failed to delete comment");
+//       throw error;
+//     }
+
+//     // Invalidate comments query to refresh the list
+//     queryClient.invalidateQueries({ queryKey: ["comments", postId] });
+//     toast.success("Comment deleted successfully");
+//   };
+
+//   // Create React Query hooks for comments
+//   const usePostComments = (postId: number) => {
+//     return useQuery({
+//       queryKey: ["comments", postId],
+//       queryFn: () => getComments(postId),
+//       enabled: !!postId,
+//     });
+//   };
+
+//   const useAddComment = () => {
+//     return useMutation({
+//       mutationFn: ({ postId, content }: { postId: number; content: string }) =>
+//         addComment(postId, content),
+//     });
+//   };
+
+//   const useUpdateComment = () => {
+//     return useMutation({
+//       mutationFn: ({
+//         commentId,
+//         postId,
+//         content,
+//       }: {
+//         commentId: string;
+//         postId: number;
+//         content: string;
+//       }) => updateComment(commentId, postId, content),
+//     });
+//   };
+
+//   const useDeleteComment = () => {
+//     return useMutation({
+//       mutationFn: ({
+//         commentId,
+//         postId,
+//       }: {
+//         commentId: string;
+//         postId: number;
+//       }) => deleteComment(commentId, postId),
+//     });
+//   };
+
 //   return {
 //     user,
 //     loading:
@@ -144,35 +314,38 @@
 //     signIn,
 //     signInWithGoogle,
 //     signOut,
+//     // Comments functionality
+//     usePostComments,
+//     useAddComment,
+//     useUpdateComment,
+//     useDeleteComment,
 //   };
 // }
+
+"use client";
 
 import { useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import type { User } from "@supabase/supabase-js";
 import { toast } from "sonner";
 import { supabase } from "@/services/supabase";
 
-const STORAGE_KEY = "auth_session";
-
-// Define interfaces for our data types
-interface Comment {
-  id: string;
-  post_id: number;
-  user_id: string;
+// Types for our comments system
+export interface Comment {
+  id: number; // int8 type in Supabase
+  post_id: number; // int8 type in Supabase, matching posts table
+  user_id: string; // uuid type for auth.users
   content: string;
   created_at: string;
   updated_at: string;
   user?: {
-    id: string;
-    email: string;
-    user_metadata: {
-      name: string;
-      avatar_url?: string;
-    };
+    name?: string;
+    avatar_url?: string;
+    email?: string;
   };
 }
+
+const STORAGE_KEY = "auth_session";
 
 export function useAuth() {
   const router = useRouter();
@@ -300,156 +473,145 @@ export function useAuth() {
     };
   }, [queryClient]);
 
-  // COMMENTS FUNCTIONS
+  // COMMENTS FUNCTIONALITY
 
   // Fetch comments for a post
-  const getComments = async (postId: Number) => {
-    const { data, error } = await supabase
-      .from("comments")
-      .select("*")
-      .eq("post_id", postId)
-      .order("created_at", { ascending: true });
-
-    if (error) {
-      toast.error("Failed to load comments");
-      throw error;
-    }
-
-    return data as Comment[];
-  };
-
-  // Add a comment to a post
-  const addComment = async (postId: number, content: string) => {
-    if (!user) throw new Error("You must be logged in to comment");
-
-    const { data, error } = await supabase
-      .from("comments")
-      .insert({
-        post_id: postId,
-        user_id: user.id,
-        content,
-      })
-      .select(
-        `
-        *,
-        user:user_id (
-          id,
-          email,
-          user_metadata
-        )
-      `
-      )
-      .single();
-
-    if (error) {
-      toast.error("Failed to add comment");
-      throw error;
-    }
-
-    // Invalidate comments query to refresh the list
-    queryClient.invalidateQueries({ queryKey: ["comments", postId] });
-    toast.success("Comment added successfully");
-    return data as Comment;
-  };
-
-  // Update a comment
-  const updateComment = async (
-    commentId: string,
-    postId: number,
-    content: string
-  ) => {
-    if (!user) throw new Error("You must be logged in to update a comment");
-
-    const { data, error } = await supabase
-      .from("comments")
-      .update({
-        content,
-        updated_at: new Date().toISOString(),
-      })
-      .eq("id", commentId)
-      .eq("user_id", user.id) // Ensure user can only update their own comments
-      .select(
-        `
-        *,
-        user:user_id (
-          id,
-          email,
-          user_metadata
-        )
-      `
-      )
-      .single();
-
-    if (error) {
-      toast.error("Failed to update comment");
-      throw error;
-    }
-
-    // Invalidate comments query to refresh the list
-    queryClient.invalidateQueries({ queryKey: ["comments", postId] });
-    toast.success("Comment updated successfully");
-    return data as Comment;
-  };
-
-  // Delete a comment
-  const deleteComment = async (commentId: string, postId: number) => {
-    if (!user) throw new Error("You must be logged in to delete a comment");
-
-    const { error } = await supabase
-      .from("comments")
-      .delete()
-      .eq("id", commentId)
-      .eq("user_id", user.id); // Ensure user can only delete their own comments
-
-    if (error) {
-      toast.error("Failed to delete comment");
-      throw error;
-    }
-
-    // Invalidate comments query to refresh the list
-    queryClient.invalidateQueries({ queryKey: ["comments", postId] });
-    toast.success("Comment deleted successfully");
-  };
-
-  // Create React Query hooks for comments
-  const usePostComments = (postId: number) => {
+  const useComments = (postId: number) => {
     return useQuery({
       queryKey: ["comments", postId],
-      queryFn: () => getComments(postId),
+      queryFn: async () => {
+        const { data, error } = await supabase
+          .from("comments")
+          .select("*")
+          .eq("post_id", postId)
+          .order("created_at", { ascending: true });
+
+        if (error) throw error;
+
+        // Transform the data to include user metadata
+        return data.map((comment) => ({
+          ...comment,
+          user: {
+            email: comment.user?.email,
+            name: comment.user?.raw_user_meta_data?.name,
+            avatar_url: comment.user?.raw_user_meta_data?.avatar_url,
+          },
+        }));
+      },
       enabled: !!postId,
     });
   };
 
+  // Add a comment
   const useAddComment = () => {
-    return useMutation({
-      mutationFn: ({ postId, content }: { postId: number; content: string }) =>
-        addComment(postId, content),
-    });
-  };
+    const queryClient = useQueryClient();
 
-  const useUpdateComment = () => {
     return useMutation({
-      mutationFn: ({
-        commentId,
+      mutationFn: async ({
         postId,
         content,
       }: {
-        commentId: string;
         postId: number;
         content: string;
-      }) => updateComment(commentId, postId, content),
+      }) => {
+        if (!user) throw new Error("You must be logged in to comment");
+
+        const { data, error } = await supabase
+          .from("comments")
+          .insert([
+            {
+              post_id: postId,
+              user_id: user.id,
+              content,
+            },
+          ])
+          .select();
+
+        if (error) throw error;
+        return data[0];
+      },
+      onSuccess: (_, variables) => {
+        queryClient.invalidateQueries({
+          queryKey: ["comments", variables.postId],
+        });
+        toast.success("Comment added successfully!");
+      },
+      onError: (error: Error) => {
+        toast.error(`Failed to add comment: ${error.message}`);
+      },
     });
   };
 
-  const useDeleteComment = () => {
+  // Edit a comment
+  const useEditComment = () => {
+    const queryClient = useQueryClient();
+
     return useMutation({
-      mutationFn: ({
+      mutationFn: async ({
+        commentId,
+        content,
+        postId,
+      }: {
+        commentId: number;
+        content: string;
+        postId: number;
+      }) => {
+        if (!user) throw new Error("You must be logged in to edit a comment");
+
+        const { data, error } = await supabase
+          .from("comments")
+          .update({ content, updated_at: new Date().toISOString() })
+          .eq("id", commentId)
+          .eq("user_id", user.id) // Ensure the user owns this comment
+          .select();
+
+        if (error) throw error;
+        return data[0];
+      },
+      onSuccess: (_, variables) => {
+        queryClient.invalidateQueries({
+          queryKey: ["comments", variables.postId],
+        });
+        toast.success("Comment updated successfully!");
+      },
+      onError: (error: Error) => {
+        toast.error(`Failed to update comment: ${error.message}`);
+      },
+    });
+  };
+
+  // Delete a comment
+  const useDeleteComment = () => {
+    const queryClient = useQueryClient();
+
+    return useMutation({
+      mutationFn: async ({
         commentId,
         postId,
       }: {
-        commentId: string;
+        commentId: number;
         postId: number;
-      }) => deleteComment(commentId, postId),
+      }) => {
+        if (!user) throw new Error("You must be logged in to delete a comment");
+
+        const { error } = await supabase
+          .from("comments")
+          .delete()
+          .eq("id", commentId)
+          .eq("user_id", user.id); // Ensure the user owns this comment
+
+        if (error) throw error;
+        return { success: true };
+      },
+      onSuccess: (_, variables) => {
+        queryClient.invalidateQueries({
+          queryKey: ["comments", variables.postId],
+        });
+        toast.success("Comment deleted successfully!");
+      },
+      onError: (error: Error) => {
+        toast.error(`Failed to delete comment: ${error.message}`);
+      },
     });
   };
 
@@ -464,9 +626,9 @@ export function useAuth() {
     signInWithGoogle,
     signOut,
     // Comments functionality
-    usePostComments,
+    useComments,
     useAddComment,
-    useUpdateComment,
+    useEditComment,
     useDeleteComment,
   };
 }
