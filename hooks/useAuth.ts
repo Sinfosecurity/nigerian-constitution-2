@@ -1,251 +1,12 @@
-// // // import { useState } from "react";
-// // // import { User } from "@supabase/supabase-js";
-// // // import { useRouter } from "next/navigation";
-// // // import { supabase } from "@/services/supabase";
-// // // import { toast } from "sonner";
-
-// // // interface AuthState {
-// // //   user: User | null;
-// // //   loading: boolean;
-// // //   error: string | null;
-// // // }
-
-// // // export const useAuth = () => {
-// // //   const router = useRouter();
-// // //   const [state, setState] = useState<AuthState>({
-// // //     user: null,
-// // //     loading: false,
-// // //     error: null,
-// // //   });
-
-// // //   const signUp = async (email: string, password: string, name?: string) => {
-// // //     setState((prev) => ({ ...prev, loading: true, error: null }));
-
-// // //     try {
-// // //       const { data, error } = await supabase.auth.signUp({
-// // //         email,
-// // //         password,
-// // //         options: {
-// // //           data: {
-// // //             name: name || email.split("@")[0],
-// // //           },
-// // //         },
-// // //       });
-
-// // //       if (error) throw error;
-
-// // //       setState((prev) => ({
-// // //         ...prev,
-// // //         user: data.user,
-// // //         loading: false,
-// // //       }));
-
-// // //       // Redirect to dashboard or profile completion
-// // //       await router.push("/");
-// // //       toast.success("Registration successfull!");
-
-// // //       return data.user;
-// // //     } catch (err: any) {
-// // //       setState((prev) => ({
-// // //         ...prev,
-// // //         error: err.message || "Sign up failed",
-// // //         loading: false,
-// // //       }));
-// // //       throw err;
-// // //     }
-// // //   };
-
-// // //   const signIn = async (email: string, password: string) => {
-// // //     setState((prev) => ({ ...prev, loading: true, error: null }));
-
-// // //     try {
-// // //       const { data, error } = await supabase.auth.signInWithPassword({
-// // //         email,
-// // //         password,
-// // //       });
-
-// // //       if (error) throw error;
-
-// // //       setState((prev) => ({
-// // //         ...prev,
-// // //         user: data.user,
-// // //         loading: false,
-// // //       }));
-
-// // //       // Redirect to dashboard
-// // //       await router.push("/");
-// // //       toast.success("Login successful");
-
-// // //       return data.user;
-// // //     } catch (err: any) {
-// // //       setState((prev) => ({
-// // //         ...prev,
-// // //         error: err.message || "Sign in failed",
-// // //         loading: false,
-// // //       }));
-// // //       throw err;
-// // //     }
-// // //   };
-
-// // //   const signOut = async () => {
-// // //     setState((prev) => ({ ...prev, loading: true, error: null }));
-
-// // //     try {
-// // //       const { error } = await supabase.auth.signOut();
-
-// // //       if (error) throw error;
-
-// // //       setState({
-// // //         user: null,
-// // //         loading: false,
-// // //         error: null,
-// // //       });
-
-// // //       // Redirect to login page
-// // //       await router.push("/login");
-// // //       toast.success("Logout successful!");
-// // //     } catch (err: any) {
-// // //       setState((prev) => ({
-// // //         ...prev,
-// // //         error: err.message || "Sign out failed",
-// // //         loading: false,
-// // //       }));
-// // //     }
-// // //   };
-
-// // //   // Additional method to get current user
-// // //   const getCurrentUser = async () => {
-// // //     const {
-// // //       data: { user },
-// // //     } = await supabase.auth.getUser();
-// // //     return user;
-// // //   };
-
-// // //   return {
-// // //     ...state,
-// // //     signUp,
-// // //     signIn,
-// // //     signOut,
-// // //     getCurrentUser,
-// // //   };
-// // // };
-
-// // import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-// // // import { supabase } from "@/lib/supabase";
-// // import { useRouter } from "next/navigation";
-// // import type { User } from "@supabase/supabase-js";
-// // import { supabase } from "@/services/supabase";
-
-// // export function useAuth() {
-// //   const router = useRouter();
-// //   const queryClient = useQueryClient();
-
-// //   const { data: user, isLoading: loading } = useQuery({
-// //     queryKey: ["auth-user"],
-// //     queryFn: async () => {
-// //       const {
-// //         data: { user },
-// //       } = await supabase.auth.getUser();
-// //       return user;
-// //     },
-// //   });
-
-// //   // const { mutate: signIn, isPending: signInLoading } = useMutation({
-// //   //   mutationFn: async ({
-// //   //     email,
-// //   //     password,
-// //   //   }: {
-// //   //     email: string;
-// //   //     password: string;
-// //   //   }) => {
-// //   //     const { data, error } = await supabase.auth.signInWithPassword({
-// //   //       email,
-// //   //       password,
-// //   //     });
-// //   //     if (error) throw error;
-// //   //     return data.user;
-// //   //   },
-// //   //   onSuccess: (user) => {
-// //   //     queryClient.setQueryData(["auth-user"], user);
-// //   //     // Router push is handled in the login page component
-// //   //   },
-// //   // });
-
-// //   const { mutate: signIn, isPending: signInLoading } = useMutation({
-// //     mutationFn: async ({
-// //       email,
-// //       password,
-// //     }: {
-// //       email: string;
-// //       password: string;
-// //     }) => {
-// //       const { data, error } = await supabase.auth.signInWithPassword({
-// //         email,
-// //         password,
-// //       });
-// //       if (error) throw error;
-// //       return data.user;
-// //     },
-// //     onSuccess: (user) => {
-// //       queryClient.setQueryData(["auth-user"], user);
-// //       router.push("/");
-// //       router.refresh();
-// //     },
-// //   });
-
-// //   const { mutate: signUp, isPending: signUpLoading } = useMutation({
-// //     mutationFn: async ({
-// //       email,
-// //       password,
-// //       name,
-// //     }: {
-// //       email: string;
-// //       password: string;
-// //       name?: string;
-// //     }) => {
-// //       const { data, error } = await supabase.auth.signUp({
-// //         email,
-// //         password,
-// //         options: {
-// //           data: { name },
-// //         },
-// //       });
-// //       if (error) throw error;
-// //       return data.user;
-// //     },
-// //     onSuccess: () => {
-// //       router.push("/login");
-// //     },
-// //   });
-
-// //   const { mutate: signOut, isPending: signOutLoading } = useMutation({
-// //     mutationFn: async () => {
-// //       const { error } = await supabase.auth.signOut();
-// //       if (error) throw error;
-// //     },
-// //     onSuccess: () => {
-// //       queryClient.setQueryData(["auth-user"], null);
-// //       router.push("/login");
-// //       router.refresh();
-// //     },
-// //   });
-
-// //   return {
-// //     user,
-// //     loading: loading,
-// //     signInLoading,
-// //     signOutLoading,
-// //     signIn,
-// //     signUp,
-// //     signOut,
-// //   };
-// // }
+// import { useEffect } from "react";
 
 // import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 // import { useRouter } from "next/navigation";
 // import type { User } from "@supabase/supabase-js";
 // import { toast } from "sonner";
 // import { supabase } from "@/services/supabase";
+
+// const STORAGE_KEY = "auth_session";
 
 // export function useAuth() {
 //   const router = useRouter();
@@ -255,9 +16,34 @@
 //   const { data: user, isLoading: userLoading } = useQuery({
 //     queryKey: ["auth-user"],
 //     queryFn: async () => {
+//       // First try to get from localStorage
+//       const storedSession = localStorage.getItem(STORAGE_KEY);
+//       if (storedSession) {
+//         const parsedSession = JSON.parse(storedSession);
+//         if (parsedSession?.user) {
+//           return parsedSession.user;
+//         }
+//       }
+
+//       // If no stored session, check with Supabase
 //       const {
 //         data: { user },
+//         error,
 //       } = await supabase.auth.getUser();
+
+//       if (error) {
+//         localStorage.removeItem(STORAGE_KEY);
+//         return null;
+//       }
+
+//       if (user) {
+//         // Store the session
+//         const {
+//           data: { session },
+//         } = await supabase.auth.getSession();
+//         localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
+//       }
+
 //       return user;
 //     },
 //   });
@@ -276,10 +62,14 @@
 //         password,
 //       });
 //       if (error) throw error;
+
+//       // Store session in localStorage
+//       localStorage.setItem(STORAGE_KEY, JSON.stringify(data.session));
 //       return data.user;
 //     },
 //     onSuccess: (user) => {
 //       queryClient.setQueryData(["auth-user"], user);
+//       router.push("/");
 //       toast.success("Successfully signed in!");
 //     },
 //     onError: (error: Error) => {
@@ -298,6 +88,8 @@
 //           },
 //         });
 //         if (error) throw error;
+
+//         // Session will be handled in the OAuth callback
 //         return data;
 //       },
 //       onError: (error: Error) => {
@@ -310,8 +102,10 @@
 //     mutationFn: async () => {
 //       const { error } = await supabase.auth.signOut();
 //       if (error) throw error;
+//       // Clear stored session
+//       localStorage.removeItem(STORAGE_KEY);
 //     },
-//     onSuccess: (data) => {
+//     onSuccess: () => {
 //       queryClient.setQueryData(["auth-user"], null);
 //       router.push("/login");
 //       toast.success("Successfully signed out!");
@@ -320,6 +114,25 @@
 //       toast.error(error.message);
 //     },
 //   });
+
+//   // Session change listener
+//   useEffect(() => {
+//     const {
+//       data: { subscription },
+//     } = supabase.auth.onAuthStateChange((event, session) => {
+//       if (session) {
+//         localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
+//         queryClient.setQueryData(["auth-user"], session.user);
+//       } else {
+//         localStorage.removeItem(STORAGE_KEY);
+//         queryClient.setQueryData(["auth-user"], null);
+//       }
+//     });
+
+//     return () => {
+//       subscription.unsubscribe();
+//     };
+//   }, [queryClient]);
 
 //   return {
 //     user,
@@ -335,7 +148,6 @@
 // }
 
 import { useEffect } from "react";
-
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import type { User } from "@supabase/supabase-js";
@@ -343,6 +155,24 @@ import { toast } from "sonner";
 import { supabase } from "@/services/supabase";
 
 const STORAGE_KEY = "auth_session";
+
+// Define interfaces for our data types
+interface Comment {
+  id: string;
+  post_id: number;
+  user_id: string;
+  content: string;
+  created_at: string;
+  updated_at: string;
+  user?: {
+    id: string;
+    email: string;
+    user_metadata: {
+      name: string;
+      avatar_url?: string;
+    };
+  };
+}
 
 export function useAuth() {
   const router = useRouter();
@@ -470,6 +300,159 @@ export function useAuth() {
     };
   }, [queryClient]);
 
+  // COMMENTS FUNCTIONS
+
+  // Fetch comments for a post
+  const getComments = async (postId: Number) => {
+    const { data, error } = await supabase
+      .from("comments")
+      .select("*")
+      .eq("post_id", postId)
+      .order("created_at", { ascending: true });
+
+    if (error) {
+      toast.error("Failed to load comments");
+      throw error;
+    }
+
+    return data as Comment[];
+  };
+
+  // Add a comment to a post
+  const addComment = async (postId: number, content: string) => {
+    if (!user) throw new Error("You must be logged in to comment");
+
+    const { data, error } = await supabase
+      .from("comments")
+      .insert({
+        post_id: postId,
+        user_id: user.id,
+        content,
+      })
+      .select(
+        `
+        *,
+        user:user_id (
+          id,
+          email,
+          user_metadata
+        )
+      `
+      )
+      .single();
+
+    if (error) {
+      toast.error("Failed to add comment");
+      throw error;
+    }
+
+    // Invalidate comments query to refresh the list
+    queryClient.invalidateQueries({ queryKey: ["comments", postId] });
+    toast.success("Comment added successfully");
+    return data as Comment;
+  };
+
+  // Update a comment
+  const updateComment = async (
+    commentId: string,
+    postId: number,
+    content: string
+  ) => {
+    if (!user) throw new Error("You must be logged in to update a comment");
+
+    const { data, error } = await supabase
+      .from("comments")
+      .update({
+        content,
+        updated_at: new Date().toISOString(),
+      })
+      .eq("id", commentId)
+      .eq("user_id", user.id) // Ensure user can only update their own comments
+      .select(
+        `
+        *,
+        user:user_id (
+          id,
+          email,
+          user_metadata
+        )
+      `
+      )
+      .single();
+
+    if (error) {
+      toast.error("Failed to update comment");
+      throw error;
+    }
+
+    // Invalidate comments query to refresh the list
+    queryClient.invalidateQueries({ queryKey: ["comments", postId] });
+    toast.success("Comment updated successfully");
+    return data as Comment;
+  };
+
+  // Delete a comment
+  const deleteComment = async (commentId: string, postId: number) => {
+    if (!user) throw new Error("You must be logged in to delete a comment");
+
+    const { error } = await supabase
+      .from("comments")
+      .delete()
+      .eq("id", commentId)
+      .eq("user_id", user.id); // Ensure user can only delete their own comments
+
+    if (error) {
+      toast.error("Failed to delete comment");
+      throw error;
+    }
+
+    // Invalidate comments query to refresh the list
+    queryClient.invalidateQueries({ queryKey: ["comments", postId] });
+    toast.success("Comment deleted successfully");
+  };
+
+  // Create React Query hooks for comments
+  const usePostComments = (postId: number) => {
+    return useQuery({
+      queryKey: ["comments", postId],
+      queryFn: () => getComments(postId),
+      enabled: !!postId,
+    });
+  };
+
+  const useAddComment = () => {
+    return useMutation({
+      mutationFn: ({ postId, content }: { postId: number; content: string }) =>
+        addComment(postId, content),
+    });
+  };
+
+  const useUpdateComment = () => {
+    return useMutation({
+      mutationFn: ({
+        commentId,
+        postId,
+        content,
+      }: {
+        commentId: string;
+        postId: number;
+        content: string;
+      }) => updateComment(commentId, postId, content),
+    });
+  };
+
+  const useDeleteComment = () => {
+    return useMutation({
+      mutationFn: ({
+        commentId,
+        postId,
+      }: {
+        commentId: string;
+        postId: number;
+      }) => deleteComment(commentId, postId),
+    });
+  };
+
   return {
     user,
     loading:
@@ -480,5 +463,10 @@ export function useAuth() {
     signIn,
     signInWithGoogle,
     signOut,
+    // Comments functionality
+    usePostComments,
+    useAddComment,
+    useUpdateComment,
+    useDeleteComment,
   };
 }
