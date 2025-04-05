@@ -1,30 +1,50 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Menu, BookOpen, FileText, Search, BookMarked, Download, Info, User, LogOut } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import {
+  Menu,
+  BookOpen,
+  FileText,
+  Search,
+  BookMarked,
+  Download,
+  Info,
+  User,
+  LogOut,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 // Add imports for language context and translation hook
-import { useLanguage } from "@/contexts/language-context"
-import { useTranslation } from "@/hooks/use-translation"
-import { useAuth } from "@/contexts/auth-context"
+import { useLanguage } from "@/contexts/language-context";
+import { useTranslation } from "@/hooks/use-translation";
+import { useAuth } from "@/hooks/useAuth";
 
 export function MobileNav() {
-  const [open, setOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
-  const { user, logout } = useAuth()
+  const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { user, signOut } = useAuth();
 
   // Add these lines to use translations
-  const { currentLanguage } = useLanguage()
-  const { t } = useTranslation(currentLanguage.code)
+  const { currentLanguage } = useLanguage();
+  const { t } = useTranslation(currentLanguage.code);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -36,10 +56,12 @@ export function MobileNav() {
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px] sm:w-[400px]">
         <div className="flex flex-col gap-6 py-6">
-          {mounted && user?.isLoggedIn && (
+          {user && (
             <div className="flex items-center gap-2 px-4">
               <Avatar className="h-10 w-10">
-                <AvatarFallback>{user.name.charAt(0).toUpperCase()}</AvatarFallback>
+                <AvatarFallback>
+                  {user.name.charAt(0).toUpperCase()}
+                </AvatarFallback>
               </Avatar>
               <div>
                 <p className="font-medium">{user.name}</p>
@@ -50,19 +72,11 @@ export function MobileNav() {
 
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="constitution">
-              <AccordionTrigger className="text-lg font-medium">{t("nav.constitution")}</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-medium">
+                {t("nav.constitution")}
+              </AccordionTrigger>
               <AccordionContent>
                 <div className="flex flex-col space-y-2 pl-4">
-                  <SheetClose asChild>
-                    <Link
-                      href="/constitution"
-                      className="flex items-center py-2 text-sm hover:text-primary transition-colors"
-                      onClick={() => setOpen(false)}
-                    >
-                      <BookOpen className="mr-2 h-4 w-4" />
-                      {t("nav.interactiveReader")}
-                    </Link>
-                  </SheetClose>
                   <SheetClose asChild>
                     <Link
                       href="/constitution/table-of-contents"
@@ -73,16 +87,7 @@ export function MobileNav() {
                       {t("nav.tableOfContents")}
                     </Link>
                   </SheetClose>
-                  <SheetClose asChild>
-                    <Link
-                      href="/constitution/search"
-                      className="flex items-center py-2 text-sm hover:text-primary transition-colors"
-                      onClick={() => setOpen(false)}
-                    >
-                      <Search className="mr-2 h-4 w-4" />
-                      {t("nav.search")}
-                    </Link>
-                  </SheetClose>
+
                   <SheetClose asChild>
                     <Link
                       href="/constitution/full"
@@ -146,7 +151,7 @@ export function MobileNav() {
             </Link>
           </SheetClose>
 
-          {mounted && user?.isLoggedIn ? (
+          {user ? (
             <div className="flex flex-col gap-2 mt-4">
               <SheetClose asChild>
                 <Link
@@ -161,9 +166,9 @@ export function MobileNav() {
               <Button
                 variant="destructive"
                 onClick={() => {
-                  logout()
-                  setOpen(false)
-                  window.location.href = "/"
+                  signOut();
+                  setOpen(false);
+                  window.location.href = "/";
                 }}
                 className="flex items-center justify-center"
               >
@@ -188,6 +193,5 @@ export function MobileNav() {
         </div>
       </SheetContent>
     </Sheet>
-  )
+  );
 }
-
