@@ -213,6 +213,59 @@ const translations: Record<
     "learn.citizenship.description": "Chapter III of the Constitution",
     "learn.citizenship.content":
       "Learn about who qualifies as a Nigerian citizen, how citizenship can be acquired, and the rights and privileges that come with Nigerian citizenship.",
+
+    //community content
+    "community.title": "Join the Constitutional Conversation",
+    "community.subtitle":
+      "Connect with fellow citizens, legal experts, and scholars to discuss, debate, and learn about the Nigerian Constitution.",
+    "community.joinDiscussion": "Join Discussion",
+    "community.askExpert": "Ask a Legal Expert",
+    "community.recentDiscussions": "Recent Discussions",
+    "community.newDiscussion": "New Discussion",
+
+    // about content
+
+    "about.title": "About the Nigerian Constitution",
+    "about.subtitle":
+      "Learn about the history, significance, and evolution of Nigeria's supreme law",
+    "about.tabs.history": "History",
+    "about.tabs.structure": "Structure",
+    "about.tabs.amendments": "Amendments",
+    "about.tabs.significance": "Significance",
+    // Timeline translations
+    "about.timeline.1922": "Clifford Constitution introduced",
+    "about.timeline.1946": "Richards Constitution",
+    "about.timeline.1951": "Macpherson Constitution",
+    "about.timeline.1954": "Lyttleton Constitution",
+    "about.timeline.1960": "Independence Constitution",
+    "about.timeline.1963": "Republican Constitution",
+    "about.timeline.1979": "Second Republic Constitution",
+    "about.timeline.1989": "Third Republic Constitution",
+    "about.timeline.1999": "Current Constitution adopted",
+    "about.timeline.2010": "First, Second, and Third Amendments",
+    "about.timeline.2017": "Fourth Amendment",
+    "about.timeline.2023": "Fifth Amendment",
+    // Chapters translations
+    "about.chapters.1": "General Provisions",
+    "about.chapters.2":
+      "Fundamental Objectives and Directive Principles of State Policy",
+    "about.chapters.3": "Citizenship",
+    "about.chapters.4": "Fundamental Rights",
+    "about.chapters.5": "The Legislature",
+    "about.chapters.6": "The Executive",
+    "about.chapters.7": "The Judicature",
+    "about.chapters.8":
+      "Federal Capital Territory, Abuja and General Supplementary Provisions",
+    // Features translations
+    "about.features.federal.title": "Federal System",
+    "about.features.federal.description":
+      "Establishes Nigeria as a federation with powers shared between the federal, state, and local governments.",
+    // ... add other feature translations similarly
+    // Cases translations
+    "about.cases.resource.title":
+      "Attorney-General of the Federation v. Attorney-General of Abia State & Ors",
+    "about.cases.resource.description":
+      "This case addressed the issue of offshore resources and states' territorial waters.",
   },
   ha: {
     // Hausa translations
@@ -395,6 +448,22 @@ const translations: Record<
     "learn.citizenship.description": "Sashe na Uku na Kundin Tsarin Mulki",
     "learn.citizenship.content":
       "Koyi game da wanda zai iya zama ɗan Najeriya, yadda za a sami 'yan ƙasa, da hakkokin da 'yan ƙasa ke da su.",
+
+    //community content
+
+    "community.title": "Shiga Tattaunawa akan Kundin Tsarin Mulki",
+    "community.subtitle":
+      "Haɗa kai da 'yan ƙasa, masana dokoki, da masana ilimi don tattauna, muhawara, da koyon game da Kundin Tsarin Mulkin Najeriya.",
+    "community.joinDiscussion": "Shiga Tattaunawa",
+    "community.askExpert": "Tambayi Masani",
+    "community.recentDiscussions": "Sabbin Tattaunawa",
+    "community.newDiscussion": "Sabon Tattaunawa",
+
+    //about content
+
+    "about.title": "Game da Kundin Tsarin Mulkin Najeriya",
+    "about.subtitle":
+      "Koyi game da tarihi, muhimmanci, da cigaban dokoki mafi girma na Najeriya",
   },
   yo: {
     // Yoruba translations
@@ -572,6 +641,22 @@ const translations: Record<
     "learn.citizenship.description": "Orí Kẹta Ìwé Òfin",
     "learn.citizenship.content":
       "Kọ́ nípa ta ni ó lè jẹ́ ọmọ ìbílẹ̀ Nàìjíríà, bí a ṣe lè di ọmọ ìbílẹ̀, àti àwọn ẹ̀tọ́ àti àǹfààní tó wà fún ọmọ ìbílẹ̀ Nàìjíríà.",
+
+    //community content
+
+    "community.title": "Darapọ̀ mọ́ Ìjírọ̀rọ̀ lórí Ìwé Òfin",
+    "community.subtitle":
+      "Báńṣe pàdé pẹ̀lú àwọn ènìyàn ilẹ̀ wa, àwọn amòfin, àti àwọn onímọ̀ láti sọ̀rọ̀, jíròrò, àti kọ́ nípa Ìwé Òfin Nàìjíríà.",
+    "community.joinDiscussion": "Darapọ̀ mọ́ Ìjírọ̀rọ̀",
+    "community.askExpert": "Bí Amòfin",
+    "community.recentDiscussions": "Àwọn Ìjírọ̀rọ̀ Tuntun",
+    "community.newDiscussion": "Ìjírọ̀rọ̀ Tuntun",
+
+    //about content
+
+    "about.title": "Nípa Ìwé Òfin Nàìjíríà",
+    "about.subtitle":
+      "Kọ́ nípa ìtàn, pàtàkì, àti ìdàgbàsókè òfin tó ga jù lọ ní Nàìjíríà",
   },
   ig: {
     // Igbo translations
@@ -747,7 +832,23 @@ const translations: Record<
     "learn.citizenship.description": "Isi Nke Atọ nke Iwu Ọchịchị",
     "learn.citizenship.content":
       "Mụta onye nwere ike ịbụ onye Naịjirịa, ka e si enweta ya, na ikike na ohere dịịrị ndị Naịjirịa.",
+
+    //community content
+
+    "community.title": "Soro na Mkparịta ụka Iwu Ọchịchị",
+    "community.subtitle":
+      "Jikọọ ndị ọzọ, ndị ọkàiwu, na ndị ọkà mmụta ka ị na-akparịta ụka, na-amụta gbasara Iwu Ọchịchị Naịjirịa.",
+    "community.joinDiscussion": "Soro na Mkparịta ụka",
+    "community.askExpert": "Jụọ Ọkàiwu",
+    "community.recentDiscussions": "Mkparịta ụka Ọhụrụ",
+    "community.newDiscussion": "Mkparịta ụka Ọhụrụ",
   },
+
+  //about content
+
+  "about.title": "Maka Iwu Ọchịchị Naịjirịa",
+  "about.subtitle":
+    "Mụta maka akụkọ, mkpa, na ọganihu iwu kacha mkpa na Naịjirịa",
 };
 
 // Get translation for a key in the specified language

@@ -112,6 +112,24 @@ export function useAuth() {
       },
     });
 
+  // Password Reset
+  const { mutate: resetPassword, isPending: resetPasswordLoading } =
+    useMutation({
+      mutationFn: async (email: string) => {
+        const { error } = await supabase.auth.resetPasswordForEmail(email, {
+          redirectTo: `${window.location.origin}/reset-password`,
+        });
+        if (error) throw error;
+        return { success: true };
+      },
+      onSuccess: () => {
+        toast.success("Password reset link sent to your email!");
+      },
+      onError: (error: Error) => {
+        toast.error(error.message);
+      },
+    });
+
   // Sign Out
   const { mutate: signOut, isPending: signOutLoading } = useMutation({
     mutationFn: async () => {
@@ -158,7 +176,15 @@ export function useAuth() {
       queryFn: async () => {
         const { data, error } = await supabase
           .from("comments")
-          .select("*")
+          .select(
+            `
+            *,
+            user:user_id (
+              email,
+              raw_user_meta_data
+            )
+          `
+          )
           .eq("post_id", postId)
           .order("created_at", { ascending: true });
 
@@ -294,13 +320,19 @@ export function useAuth() {
   return {
     user,
     loading:
-      userLoading || signInLoading || googleSignInLoading || signOutLoading,
+      userLoading ||
+      signInLoading ||
+      googleSignInLoading ||
+      signOutLoading ||
+      resetPasswordLoading,
     signInLoading,
     googleSignInLoading,
     signOutLoading,
+    resetPasswordLoading,
     signIn,
     signInWithGoogle,
     signOut,
+    resetPassword,
     // Comments functionality
     useComments,
     useAddComment,
