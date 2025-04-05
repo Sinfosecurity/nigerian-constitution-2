@@ -1,13 +1,17 @@
-type TranslationKey = string
-type LanguageCode = string
-type TranslationValue = string
+type TranslationKey = string;
+type LanguageCode = string;
+type TranslationValue = string;
 
 // Translation dictionary
-const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue>> = {
+const translations: Record<
+  LanguageCode,
+  Record<TranslationKey, TranslationValue>
+> = {
   en: {
     // English translations (default)
     "app.title": "Nigerian Constitution Hub",
-    "app.description": "Explore the Constitution of the Federal Republic of Nigeria",
+    "app.description":
+      "Explore the Constitution of the Federal Republic of Nigeria",
 
     // Navigation
     "nav.home": "Home",
@@ -33,12 +37,17 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
     "nav.infographics": "Infographics",
     "nav.aboutUs": "About Us",
     "nav.contact": "Contact",
-    "nav.interactiveReaderDesc": "Read and explore the constitution with our interactive reader",
-    "nav.tableOfContentsDesc": "Browse the complete table of contents of the Nigerian Constitution",
-    "nav.searchDesc": "Search for specific terms, sections, or topics in the constitution",
+    "nav.interactiveReaderDesc":
+      "Read and explore the constitution with our interactive reader",
+    "nav.tableOfContentsDesc":
+      "Browse the complete table of contents of the Nigerian Constitution",
+    "nav.searchDesc":
+      "Search for specific terms, sections, or topics in the constitution",
     "nav.fullTextDesc": "View the complete text of the Nigerian Constitution",
-    "nav.downloadDesc": "Download the constitution in various formats (PDF, EPUB, etc.)",
-    "nav.aboutDesc": "Learn about the history and significance of the Nigerian Constitution",
+    "nav.downloadDesc":
+      "Download the constitution in various formats (PDF, EPUB, etc.)",
+    "nav.aboutDesc":
+      "Learn about the history and significance of the Nigerian Constitution",
 
     // Table of Contents
     "toc.byChapters": "By Chapters",
@@ -82,13 +91,16 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
     "hero.feature2.description":
       "Understand your fundamental rights and how they are protected under the Constitution.",
     "hero.feature3.title": "Legal Insights",
-    "hero.feature3.description": "Get expert insights on constitutional provisions and landmark court cases.",
+    "hero.feature3.description":
+      "Get expert insights on constitutional provisions and landmark court cases.",
     "hero.feature4.title": "Community Discussions",
-    "hero.feature4.description": "Join discussions with fellow citizens and legal experts on constitutional matters.",
+    "hero.feature4.description":
+      "Join discussions with fellow citizens and legal experts on constitutional matters.",
 
     // Home page
     "home.explore.title": "Explore the Constitution",
-    "home.explore.subtitle": "Navigate through the Nigerian Constitution with our interactive tools and resources.",
+    "home.explore.subtitle":
+      "Navigate through the Nigerian Constitution with our interactive tools and resources.",
     "home.explore.card1.title": "Interactive Reader",
     "home.explore.card1.description":
       "Read and navigate through the Constitution with our interactive reader featuring simplified explanations.",
@@ -147,7 +159,8 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
     "newsletter.successMessage": "Thank you for subscribing to our newsletter!",
     "newsletter.errorMessage": "An error occurred. Please try again later.",
     "newsletter.invalidEmail": "Please enter a valid email address",
-    "newsletter.privacyNotice": "By subscribing, you agree to our Privacy Policy and Terms of Service.",
+    "newsletter.privacyNotice":
+      "By subscribing, you agree to our Privacy Policy and Terms of Service.",
 
     "search.placeholder": "Search the constitution...",
     "search.button": "Search",
@@ -157,9 +170,12 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
     "search.foundFor": "found for",
     "search.viewFullSection": "View full section",
     "search.noResults": "No results found for",
-    "search.tryDifferent": "Try using different keywords or check your spelling",
-    "search.enterTerm": "Enter a search term to find relevant sections in the constitution",
-    "search.canSearch": "You can search for keywords, topics, or specific rights",
+    "search.tryDifferent":
+      "Try using different keywords or check your spelling",
+    "search.enterTerm":
+      "Enter a search term to find relevant sections in the constitution",
+    "search.canSearch":
+      "You can search for keywords, topics, or specific rights",
     "constitution.fetchError": "Failed to load constitution",
     "constitution.noTextError": "No constitution text received from API",
     "constitution.parseError": "Failed to parse constitution text",
@@ -167,15 +183,42 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
     "constitution.unknownError": "An unknown error occurred",
 
     "chatbot.title": "Constitution Assistant",
-    "chatbot.welcome": "Hello! I'm your Constitution AI assistant. Ask me anything about the Nigerian Constitution.",
+    "chatbot.welcome":
+      "Hello! I'm your Constitution AI assistant. Ask me anything about the Nigerian Constitution.",
     "chatbot.thinking": "Thinking...",
-    "chatbot.error": "Sorry, I couldn't process your request. Please try again.",
+    "chatbot.error":
+      "Sorry, I couldn't process your request. Please try again.",
     "chatbot.inputPlaceholder": "Ask about the constitution...",
+
+    //learn content
+
+    "learn.title": "Learn the Nigerian Constitution",
+    "learn.subtitle":
+      "Explore our interactive learning resources designed to help you understand the Nigerian Constitution in simple, accessible language.",
+    "learn.quizButton": "Take a Quiz",
+    "learn.chatButton": "Chat with AI",
+    "learn.explanations.title": "Simplified Explanations",
+    "learn.explanations.subtitle":
+      "Understanding complex legal concepts made easy with plain language explanations.",
+    "learn.readMore": "Read Explanation",
+    "learn.fundamentalRights.title": "Fundamental Rights",
+    "learn.fundamentalRights.description": "Chapter IV of the Constitution",
+    "learn.fundamentalRights.content":
+      "Learn about the rights guaranteed to every Nigerian citizen, including the right to life, dignity, personal liberty, fair hearing, privacy, freedom of thought, expression, and more.",
+    "learn.federalSystem.title": "Federal System of Government",
+    "learn.federalSystem.description": "Chapters V, VI, and VII",
+    "learn.federalSystem.content":
+      "Understand how power is shared between the federal, state, and local governments in Nigeria, including the roles of the legislature, executive, and judiciary at each level.",
+    "learn.citizenship.title": "Citizenship Rights",
+    "learn.citizenship.description": "Chapter III of the Constitution",
+    "learn.citizenship.content":
+      "Learn about who qualifies as a Nigerian citizen, how citizenship can be acquired, and the rights and privileges that come with Nigerian citizenship.",
   },
   ha: {
     // Hausa translations
     "app.title": "Kundin Tsarin Mulkin Najeriya",
-    "app.description": "Bincika Kundin Tsarin Mulkin Taraiyar Jamhuriyar Najeriya",
+    "app.description":
+      "Bincika Kundin Tsarin Mulkin Taraiyar Jamhuriyar Najeriya",
 
     // Navigation
     "nav.home": "Gida",
@@ -201,12 +244,17 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
     "nav.infographics": "Hoto-hoto",
     "nav.aboutUs": "Game da Mu",
     "nav.contact": "Tuntuɓa",
-    "nav.interactiveReaderDesc": "Karanta kuma bincika kundin tsarin mulki tare da mai karatun mu mai hulda",
-    "nav.tableOfContentsDesc": "Duba cikakken jerin abubuwan cikin Kundin Tsarin Mulkin Najeriya",
-    "nav.searchDesc": "Bincika kalmomin musamman, sashe-sashe, ko batutuwa a cikin kundin tsarin mulki",
+    "nav.interactiveReaderDesc":
+      "Karanta kuma bincika kundin tsarin mulki tare da mai karatun mu mai hulda",
+    "nav.tableOfContentsDesc":
+      "Duba cikakken jerin abubuwan cikin Kundin Tsarin Mulkin Najeriya",
+    "nav.searchDesc":
+      "Bincika kalmomin musamman, sashe-sashe, ko batutuwa a cikin kundin tsarin mulki",
     "nav.fullTextDesc": "Duba cikakken rubutun Kundin Tsarin Mulkin Najeriya",
-    "nav.downloadDesc": "Sauke kundin tsarin mulki a cikin sigogin daban-daban (PDF, EPUB, da sauransu)",
-    "nav.aboutDesc": "Koyi game da tarihin da muhimmancin Kundin Tsarin Mulkin Najeriya",
+    "nav.downloadDesc":
+      "Sauke kundin tsarin mulki a cikin sigogin daban-daban (PDF, EPUB, da sauransu)",
+    "nav.aboutDesc":
+      "Koyi game da tarihin da muhimmancin Kundin Tsarin Mulkin Najeriya",
 
     // Table of Contents
     "toc.byChapters": "Ta Sashe-sashe",
@@ -239,14 +287,16 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
     "hero.learnButton": "Fara Koyo",
     "hero.userCount": "'yan kasa suna amfani da dandamalinmu",
     "hero.imageAlt": "Kundin Tsarin Mulkin Najeriya",
-    "hero.featuresTitle": "Me Ya Sa Za Ka Yi Amfani Da Kundin Tsarin Mulkin Najeriya?",
+    "hero.featuresTitle":
+      "Me Ya Sa Za Ka Yi Amfani Da Kundin Tsarin Mulkin Najeriya?",
 
     // Features
     "hero.feature1.title": "Kundin Tsarin Mulki Mai Hulda",
     "hero.feature1.description":
       "Bincika Kundin Tsarin Mulkin Najeriya tare da mai karatunmu mai hulda wanda ke da bayani mai sauƙi.",
     "hero.feature2.title": "San Hakkinku",
-    "hero.feature2.description": "Fahimci hakkinku na asali da yadda ake kare su a ƙarƙashin Kundin Tsarin Mulki.",
+    "hero.feature2.description":
+      "Fahimci hakkinku na asali da yadda ake kare su a ƙarƙashin Kundin Tsarin Mulki.",
     "hero.feature3.title": "Basira na Doka",
     "hero.feature3.description":
       "Sami basirorin masana game da tanadin kundin tsarin mulki da muhimman shari'o'in kotu.",
@@ -267,7 +317,8 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
       "Tambayi tambayoyi game da Kundin Tsarin Mulki kuma sami amsa nan take daga mataimakinmu mai ƙarfin AI.",
     "home.explore.card2.button": "Yi Tambayoyi",
     "home.explore.card3.title": "Albarkatu na Koyo",
-    "home.explore.card3.description": "Samun kayayyakin ilimi, gwaje-gwaje, da nazarin lamari don ƙara fahimtarka.",
+    "home.explore.card3.description":
+      "Samun kayayyakin ilimi, gwaje-gwaje, da nazarin lamari don ƙara fahimtarka.",
     "home.explore.card3.button": "Fara Koyo",
 
     "home.community.title": "Shiga Al'ummarmu",
@@ -313,9 +364,37 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
     "newsletter.subscribe": "Yi Rajista",
     "newsletter.subscribing": "Ana Rajista...",
     "newsletter.successMessage": "Mun gode da rajista ga jaridarmu!",
-    "newsletter.errorMessage": "An sami kuskure. Da fatan za a sake gwadawa daga baya.",
-    "newsletter.invalidEmail": "Da fatan a shigar da adireshin imel mai inganci",
-    "newsletter.privacyNotice": "Ta hanyar rajista, kun yarda da Manufar Sirri da Sharuɗɗan Aiki.",
+    "newsletter.errorMessage":
+      "An sami kuskure. Da fatan za a sake gwadawa daga baya.",
+    "newsletter.invalidEmail":
+      "Da fatan a shigar da adireshin imel mai inganci",
+    "newsletter.privacyNotice":
+      "Ta hanyar rajista, kun yarda da Manufar Sirri da Sharuɗɗan Aiki.",
+
+    //learn content
+
+    "learn.title": "Koyi Kundin Tsarin Mulkin Najeriya",
+    "learn.subtitle":
+      "Bincika kayayyakin koyarwar mu don taimaka maka fahimtar Kundin Tsarin Mulkin Najeriya a hanyar da ta fi saukin fahimta.",
+    "learn.quizButton": "Yi Gwaji",
+    "learn.chatButton": "Yi Magana da AI",
+    "learn.explanations.title": "Bayani Mai Saukin Fahimta",
+    "learn.explanations.subtitle":
+      "Fahimtar dokokin da suka fi ƙarfi a hanyar da ta fi saukin fahimta.",
+    "learn.readMore": "Karanta Bayani",
+    "learn.fundamentalRights.title": "Hakkokin Asali",
+    "learn.fundamentalRights.description":
+      "Sashe na Hudu na Kundin Tsarin Mulki",
+    "learn.fundamentalRights.content":
+      "Koyi game da hakkokin da aka tanada wa kowane ɗan Najeriya, kamar hakkin rayuwa, mutunci, 'yancin kai, shari'a mai gaskiya, sirri, 'yancin tunani, magana, da sauransu.",
+    "learn.federalSystem.title": "Tsarin Mulkin Tarayya",
+    "learn.federalSystem.description": "Sashe na Biyar, Shida, da Bakwai",
+    "learn.federalSystem.content":
+      "Fahimci yadda aka raba iko tsakanin gwamnatin tarayya, jiha, da kananan hukumomi a Najeriya, tare da nauyin majalisar dokoki, shugabanci, da shari'a.",
+    "learn.citizenship.title": "Hakkokin 'Yan Ƙasa",
+    "learn.citizenship.description": "Sashe na Uku na Kundin Tsarin Mulki",
+    "learn.citizenship.content":
+      "Koyi game da wanda zai iya zama ɗan Najeriya, yadda za a sami 'yan ƙasa, da hakkokin da 'yan ƙasa ke da su.",
   },
   yo: {
     // Yoruba translations
@@ -346,11 +425,15 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
     "nav.infographics": "Àwòrán Àlàyé",
     "nav.aboutUs": "Nípa Wa",
     "nav.contact": "Kàn Sí Wa",
-    "nav.interactiveReaderDesc": "Ka kí o sì ṣe àyẹ̀wò ìwé òfin pẹ̀lú olùkà ìbáṣepọ̀ wa",
-    "nav.tableOfContentsDesc": "Ṣe àyẹ̀wò tábìlì àkóónú kíkún ti Ìwé Òfin Nàìjíríà",
-    "nav.searchDesc": "Wá àwọn ọ̀rọ̀ pàtó, àwọn apá, tàbí àwọn kókó nínú ìwé òfin",
+    "nav.interactiveReaderDesc":
+      "Ka kí o sì ṣe àyẹ̀wò ìwé òfin pẹ̀lú olùkà ìbáṣepọ̀ wa",
+    "nav.tableOfContentsDesc":
+      "Ṣe àyẹ̀wò tábìlì àkóónú kíkún ti Ìwé Òfin Nàìjíríà",
+    "nav.searchDesc":
+      "Wá àwọn ọ̀rọ̀ pàtó, àwọn apá, tàbí àwọn kókó nínú ìwé òfin",
     "nav.fullTextDesc": "Wo ọ̀rọ̀ kíkún ti Ìwé Òfin Nàìjíríà",
-    "nav.downloadDesc": "Gbà ìwé òfin sílẹ̀ ní àwọn ọ̀nà oríṣiríṣi (PDF, EPUB, abbl)",
+    "nav.downloadDesc":
+      "Gbà ìwé òfin sílẹ̀ ní àwọn ọ̀nà oríṣiríṣi (PDF, EPUB, abbl)",
     "nav.aboutDesc": "Kọ́ nípa ìtàn àti pàtàkì Ìwé Òfin Nàìjíríà",
 
     // Table of Contents
@@ -388,18 +471,22 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
 
     // Features
     "hero.feature1.title": "Ìwé Òfin Ìbáṣepọ̀",
-    "hero.feature1.description": "Ṣe àyẹ̀wò Ìwé Òfin Nàìjíríà pẹ̀lú olùkà ìbáṣepọ̀ wa tó ní àlàyé tó rọrùn.",
+    "hero.feature1.description":
+      "Ṣe àyẹ̀wò Ìwé Òfin Nàìjíríà pẹ̀lú olùkà ìbáṣepọ̀ wa tó ní àlàyé tó rọrùn.",
     "hero.feature2.title": "Mọ Àwọn Ẹ̀tọ́ Rẹ",
-    "hero.feature2.description": "Mọ àwọn ẹ̀tọ́ pàtàkì rẹ àti bí wọ́n ṣe ń dáàbò bò wọ́n lábẹ́ Ìwé Òfin.",
+    "hero.feature2.description":
+      "Mọ àwọn ẹ̀tọ́ pàtàkì rẹ àti bí wọ́n ṣe ń dáàbò bò wọ́n lábẹ́ Ìwé Òfin.",
     "hero.feature3.title": "Ìmọ̀ Òfin",
-    "hero.feature3.description": "Gba ìmọ̀ lọ́wọ́ àwọn òǹkọ́wé lórí àwọn ìpèsè ìwé òfin àti àwọn ìdájọ́ pàtàkì.",
+    "hero.feature3.description":
+      "Gba ìmọ̀ lọ́wọ́ àwọn òǹkọ́wé lórí àwọn ìpèsè ìwé òfin àti àwọn ìdájọ́ pàtàkì.",
     "hero.feature4.title": "Ìjíròrò Àwùjọ",
     "hero.feature4.description":
       "Darapọ̀ mọ́ àwọn ìjíròrò pẹ̀lú àwọn ọmọ orílẹ̀-èdè àti àwọn òǹkọ́wé òfin lórí àwọn ọ̀rọ̀ ìwé òfin.",
 
     // Home page
     "home.explore.title": "Ṣe Àyẹ̀wò Ìwé Òfin",
-    "home.explore.subtitle": "Ṣe ìrìn àjò láàrin Ìwé Òfin Nàìjíríà pẹ̀lú àwọn irinṣẹ́ ìbáṣepọ̀ àti àwọn ìwé ìrànlọ́wọ́ wa.",
+    "home.explore.subtitle":
+      "Ṣe ìrìn àjò láàrin Ìwé Òfin Nàìjíríà pẹ̀lú àwọn irinṣẹ́ ìbáṣepọ̀ àti àwọn ìwé ìrànlọ́wọ́ wa.",
     "home.explore.card1.title": "Olùkà Ìbáṣepọ̀",
     "home.explore.card1.description":
       "Ka kí o sì ṣe ìrìn àjò láàrin Ìwé Òfin pẹ̀lú olùkà ìbáṣepọ̀ wa tó ní àlàyé tó rọrùn.",
@@ -456,9 +543,35 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
     "newsletter.subscribe": "Forúkọsílẹ̀",
     "newsletter.subscribing": "Ń forúkọsílẹ̀...",
     "newsletter.successMessage": "O ṣeun fún fíforúkọsílẹ̀ fún ìwé ìròyìn wa!",
-    "newsletter.errorMessage": "Àṣìṣe kan ṣẹlẹ̀. Jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan síi lẹ́yìn.",
+    "newsletter.errorMessage":
+      "Àṣìṣe kan ṣẹlẹ̀. Jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan síi lẹ́yìn.",
     "newsletter.invalidEmail": "Jọ̀wọ́ tẹ àdírẹ́ẹ̀sì ímeèlì tó tọ́ sí i",
-    "newsletter.privacyNotice": "Nípa fíforúkọsílẹ̀, o gbà pẹ̀lú Ìlànà Àṣírí àti Àwọn Òfin Iṣẹ́ wa.",
+    "newsletter.privacyNotice":
+      "Nípa fíforúkọsílẹ̀, o gbà pẹ̀lú Ìlànà Àṣírí àti Àwọn Òfin Iṣẹ́ wa.",
+
+    //learn content
+
+    "learn.title": "Kọ́ Ìwé Òfin Nàìjíríà",
+    "learn.subtitle":
+      "Ṣàwárí àwọn ohun èlò ẹ̀kọ́ tó wúlò láti ràn ọ́ lọ́wọ́ láti mọ Ìwé Òfin Nàìjíríà ní ọ̀nà tó rọrùn.",
+    "learn.quizButton": "Ṣe Ìdánwò",
+    "learn.chatButton": "Bá AI Sọ̀rọ̀",
+    "learn.explanations.title": "Àlàyé Tó Rọrùn",
+    "learn.explanations.subtitle":
+      "Níní òye àwọn ìmọ̀ òfin tó ṣòro ní ọ̀nà tó rọrùn.",
+    "learn.readMore": "Ka Àlàyé",
+    "learn.fundamentalRights.title": "Àwọn Ẹ̀tọ́ Pàtàkì",
+    "learn.fundamentalRights.description": "Orí Kẹrin Ìwé Òfin",
+    "learn.fundamentalRights.content":
+      "Kọ́ nípa àwọn ẹ̀tọ́ tí gbogbo ọmọ Nàìjíríà ní, bíi ẹ̀tọ́ sí ìgbé ayé, ọlá ènìyàn, òmìnira, ìdájọ́ tó tọ́, àṣírí, òmìnira èrò, ọ̀rọ̀, àti bẹ́ẹ̀ bẹ́ẹ̀ lọ.",
+    "learn.federalSystem.title": "Ètò Ìjọba Àpapọ̀",
+    "learn.federalSystem.description": "Orí Karùn-ún, Kẹfà, àti Keje",
+    "learn.federalSystem.content":
+      "Mọ bí a ṣe pín agbára láàárín ìjọba àpapọ̀, ìpínlẹ̀, àti ìjọba ìbílẹ̀ ní Nàìjíríà, pẹ̀lú àwọn iṣẹ́ aṣòfin, olùdarí, àti onídàjọ́.",
+    "learn.citizenship.title": "Ẹ̀tọ́ Ọmọ Ìbílẹ̀",
+    "learn.citizenship.description": "Orí Kẹta Ìwé Òfin",
+    "learn.citizenship.content":
+      "Kọ́ nípa ta ni ó lè jẹ́ ọmọ ìbílẹ̀ Nàìjíríà, bí a ṣe lè di ọmọ ìbílẹ̀, àti àwọn ẹ̀tọ́ àti àǹfààní tó wà fún ọmọ ìbílẹ̀ Nàìjíríà.",
   },
   ig: {
     // Igbo translations
@@ -489,12 +602,16 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
     "nav.infographics": "Infographics",
     "nav.aboutUs": "Maka Anyị",
     "nav.contact": "Kpọtụrụ Anyị",
-    "nav.interactiveReaderDesc": "Gụọ ma nyochaa iwu ọchịchị site na ọgụgụ mmekọrịta anyị",
+    "nav.interactiveReaderDesc":
+      "Gụọ ma nyochaa iwu ọchịchị site na ọgụgụ mmekọrịta anyị",
     "nav.tableOfContentsDesc": "Lelee tebụl ọdịnaya nke Iwu Ọchịchị Naịjirịa",
-    "nav.searchDesc": "Chọọ okwu pụrụ iche, ngalaba, ma ọ bụ isiokwu n'ime iwu ọchịchị",
+    "nav.searchDesc":
+      "Chọọ okwu pụrụ iche, ngalaba, ma ọ bụ isiokwu n'ime iwu ọchịchị",
     "nav.fullTextDesc": "Lelee ederede zuru ezu nke Iwu Ọchịchị Naịjirịa",
-    "nav.downloadDesc": "Budata iwu ọchịchị n'ụdị dị iche iche (PDF, EPUB, wdg)",
-    "nav.aboutDesc": "Mụta banyere akụkọ ihe mere eme na mkpa Iwu Ọchịchị Naịjirịa",
+    "nav.downloadDesc":
+      "Budata iwu ọchịchị n'ụdị dị iche iche (PDF, EPUB, wdg)",
+    "nav.aboutDesc":
+      "Mụta banyere akụkọ ihe mere eme na mkpa Iwu Ọchịchị Naịjirịa",
 
     // Table of Contents
     "toc.byChapters": "Site na Isi",
@@ -531,26 +648,33 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
 
     // Features
     "hero.feature1.title": "Iwu Ọchịchị Mmekọrịta",
-    "hero.feature1.description": "Nyochaa Iwu Ọchịchị Naịjirịa site na ọgụgụ mmekọrịta anyị nke nwere nkọwa dị mfe.",
+    "hero.feature1.description":
+      "Nyochaa Iwu Ọchịchị Naịjirịa site na ọgụgụ mmekọrịta anyị nke nwere nkọwa dị mfe.",
     "hero.feature2.title": "Mara Ikike Gị",
-    "hero.feature2.description": "Ghọta ikike gị bụ isi na otú e si echebe ha n'okpuru Iwu Ọchịchị.",
+    "hero.feature2.description":
+      "Ghọta ikike gị bụ isi na otú e si echebe ha n'okpuru Iwu Ọchịchị.",
     "hero.feature3.title": "Nghọta Iwu",
-    "hero.feature3.description": "Nweta nghọta ndị ọkachamara banyere iwu ọchịchị na ikpe ụlọ ikpe dị mkpa.",
+    "hero.feature3.description":
+      "Nweta nghọta ndị ọkachamara banyere iwu ọchịchị na ikpe ụlọ ikpe dị mkpa.",
     "hero.feature4.title": "Mkparịta Ụka Obodo",
-    "hero.feature4.description": "Sonye na mkparịta ụka ndị mmadụ na ndị ọkachamara iwu banyere okwu iwu ọchịchị.",
+    "hero.feature4.description":
+      "Sonye na mkparịta ụka ndị mmadụ na ndị ọkachamara iwu banyere okwu iwu ọchịchị.",
 
     // Home page
     "home.explore.title": "Nyochaa Iwu Ọchịchị",
-    "home.explore.subtitle": "Gaa n'Iwu Ọchịchị Naịjirịa site na ngwá ọrụ mmekọrịta na akụ anyị.",
+    "home.explore.subtitle":
+      "Gaa n'Iwu Ọchịchị Naịjirịa site na ngwá ọrụ mmekọrịta na akụ anyị.",
     "home.explore.card1.title": "Ọgụgụ Mmekọrịta",
-    "home.explore.card1.description": "Gụọ ma gaa n'Iwu Ọchịchị site na ọgụgụ mmekọrịta anyị nke nwere nkọwa dị mfe.",
+    "home.explore.card1.description":
+      "Gụọ ma gaa n'Iwu Ọchịchị site na ọgụgụ mmekọrịta anyị nke nwere nkọwa dị mfe.",
     "home.explore.card1.button": "Malite Ịgụ",
     "home.explore.card2.title": "Onye Nnyemaka AI",
     "home.explore.card2.description":
       "Jụọ ajụjụ banyere Iwu Ọchịchị ma nweta azịza ozugbo site n'aka onye nnyemaka anyị nke AI.",
     "home.explore.card2.button": "Jụọ Ajụjụ",
     "home.explore.card3.title": "Akụ Mmụta",
-    "home.explore.card3.description": "Nweta ihe mmụta, ajụjụ, na ọmụmaatụ iji mee ka nghọta gị mie emi.",
+    "home.explore.card3.description":
+      "Nweta ihe mmụta, ajụjụ, na ọmụmaatụ iji mee ka nghọta gị mie emi.",
     "home.explore.card3.button": "Malite Ịmụta",
 
     "home.community.title": "Banye n'Obodo Anyị",
@@ -567,7 +691,8 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
 
     // Testimonials
     "testimonials.title": "Ihe Ndị Mmadụ Na-ekwu",
-    "testimonials.subtitle": "Nụrụ site n'aka ndị mmadụ, ndị ọkachamara iwu, na ndị nkuzi na-eji Iwu Ọchịchị Naịjirịa.",
+    "testimonials.subtitle":
+      "Nụrụ site n'aka ndị mmadụ, ndị ọkachamara iwu, na ndị nkuzi na-eji Iwu Ọchịchị Naịjirịa.",
     "testimonials.prevButton": "Akaebe gara aga",
     "testimonials.nextButton": "Akaebe na-esote",
     "testimonials.goToTestimonial": "Gaa na akaebe {{number}}",
@@ -594,36 +719,69 @@ const translations: Record<LanguageCode, Record<TranslationKey, TranslationValue
     "newsletter.placeholder": "Tinye email gị",
     "newsletter.subscribe": "Debanye Aha",
     "newsletter.subscribing": "Na-edebanye aha...",
-    "newsletter.successMessage": "Daalụ maka ịdebanye aha n'akwụkwọ akụkọ anyị!",
+    "newsletter.successMessage":
+      "Daalụ maka ịdebanye aha n'akwụkwọ akụkọ anyị!",
     "newsletter.errorMessage": "Nsogbu mere. Biko gbalịa ọzọ ma e mesịa.",
     "newsletter.invalidEmail": "Biko tinye adreesị email dị mma",
-    "newsletter.privacyNotice": "Site na ịdebanye aha, ị kwenyere na Iwu Nzuzo na Usoro Ọrụ anyị.",
+    "newsletter.privacyNotice":
+      "Site na ịdebanye aha, ị kwenyere na Iwu Nzuzo na Usoro Ọrụ anyị.",
+
+    //Learn content
+    "learn.title": "Mụta Iwu Ọchịchị Naịjirịa",
+    "learn.subtitle":
+      "Nyochaa ihe mmụta anyị mere maka inyere gị aka ịghọta Iwu Ọchịchị Naịjirịa n'uzọ dị mfe.",
+    "learn.quizButton": "Nwaa Onwe Gị",
+    "learn.chatButton": "Kparịta Ụka na AI",
+    "learn.explanations.title": "Nkọwa Dị Mfe",
+    "learn.explanations.subtitle": "Ịghọta iwu siri ike n'uzọ dị mfe.",
+    "learn.readMore": "Gụọ Nkọwa",
+    "learn.fundamentalRights.title": "Ikike Ndị Dị Mkpa",
+    "learn.fundamentalRights.description": "Isi Nke Anọ nke Iwu Ọchịchị",
+    "learn.fundamentalRights.content":
+      "Mụta maka ikike niile e nyere onye Naịjirịa ọ bụla, gụnyere ikike inwe ndụ, ugwu, nnwere onwe, ikpe ziri ezi, nzuzo, nnwere uche, okwu, na ndị ọzọ.",
+    "learn.federalSystem.title": "Usoro Ọchịchị Etiti",
+    "learn.federalSystem.description": "Isi Nke Ise, Isii, na Asaa",
+    "learn.federalSystem.content":
+      "Ghọta ka e si kewaa ike n'etiti ọchịchị etiti, steeti, na ọchịchị obodo na Naịjirịa, gụnyere ọrụ ndị ome iwu, ndị isi ọchịchị, na ndị ikpe.",
+    "learn.citizenship.title": "Ikike Ọnye Ala",
+    "learn.citizenship.description": "Isi Nke Atọ nke Iwu Ọchịchị",
+    "learn.citizenship.content":
+      "Mụta onye nwere ike ịbụ onye Naịjirịa, ka e si enweta ya, na ikike na ohere dịịrị ndị Naịjirịa.",
   },
-}
+};
 
 // Get translation for a key in the specified language
-export function getTranslation(key: TranslationKey, language: LanguageCode = "en"): string {
+export function getTranslation(
+  key: TranslationKey,
+  language: LanguageCode = "en"
+): string {
   // If the language doesn't exist, fall back to English
   if (!translations[language]) {
-    language = "en"
+    language = "en";
   }
 
   // If the key doesn't exist in the specified language, fall back to English
-  return translations[language][key] || translations["en"][key] || key
+  return translations[language][key] || translations["en"][key] || key;
 }
 
 // Check if a translation exists for a key in the specified language
-export function hasTranslation(key: TranslationKey, language: LanguageCode = "en"): boolean {
-  return Boolean(translations[language]?.[key])
+export function hasTranslation(
+  key: TranslationKey,
+  language: LanguageCode = "en"
+): boolean {
+  return Boolean(translations[language]?.[key]);
 }
 
 // Get all available languages
-export function getAvailableLanguages(): Array<{ code: string; name: string; flag: string }> {
+export function getAvailableLanguages(): Array<{
+  code: string;
+  name: string;
+  flag: string;
+}> {
   return [
     { code: "en", name: "English", flag: "🇬🇧" },
     { code: "ha", name: "Hausa", flag: "🇳🇬" },
     { code: "yo", name: "Yoruba", flag: "🇳🇬" },
     { code: "ig", name: "Igbo", flag: "🇳🇬" },
-  ]
+  ];
 }
-

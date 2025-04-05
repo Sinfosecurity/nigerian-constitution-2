@@ -3,7 +3,7 @@
 import { HeroSection } from "@/components/hero-section";
 import { Statistics } from "@/components/statistics";
 import { Testimonials } from "@/components/testimonials";
-import { NewsletterSubscription } from "@/components/newsletter-subscription";
+// import { NewsletterSubscription } from "@/components/newsletter-subscription";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -82,13 +82,13 @@ export function HomePageContent() {
 
       <Testimonials />
 
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+      {/* <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-3xl">
             <NewsletterSubscription />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 md:py-24">
         <div className="container px-4 md:px-6">
@@ -122,7 +122,6 @@ export function HomePageContent() {
               </Link>
             </Button>
           </div>
-          0
         </div>
       </section>
     </>
