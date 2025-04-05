@@ -60,12 +60,14 @@ export function MobileNav() {
             <div className="flex items-center gap-2 px-4">
               <Avatar className="h-10 w-10">
                 <AvatarFallback>
-                  {user.name.charAt(0).toUpperCase()}
+                  {user?.user_metadata?.name.charAt(0).toUpperCase()}
                 </AvatarFallback>
               </Avatar>
               <div>
-                <p className="font-medium">{user.name}</p>
-                <p className="text-sm text-muted-foreground">{user.email}</p>
+                <p className="font-medium">{user?.user_metadata?.name}</p>
+                <p className="text-sm text-muted-foreground">
+                  {user?.user_metadata?.email}
+                </p>
               </div>
             </div>
           )}
