@@ -119,9 +119,9 @@ export function ConstitutionReader() {
             <InteractiveConstitutionReader chapters={chapters} searchQuery={searchQuery} />
           )}
         </div>
-        <div className="lg:w-1/4">
+        {/* <div className="lg:w-1/4">
           <Chatbot />
-        </div>
+        </div> */}
       </div>
     </>
   )

@@ -225,11 +225,14 @@ export default function DiscussionDetails({
           ) : (
             <div className="space-y-6">
               {comments.map((comment: Comment) => (
-                <Card key={comment.id} className="border-l-4 border-l-primary">
+                <Card
+                  key={comment.id}
+                  className="border-l-4 border-l-green-700"
+                >
                   <CardHeader className="pb-2">
                     <div className="flex justify-between items-start">
                       <div className="flex items-center gap-2">
-                        <Avatar className="h-8 w-8">
+                        {/* <Avatar className="h-8 w-8">
                           <AvatarImage
                             src={user?.user_metadata?.avatar_url}
                             alt={user?.user_metadata?.name}
@@ -237,15 +240,15 @@ export default function DiscussionDetails({
                           <AvatarFallback>
                             {comment.user?.name?.substring(0, 2) || "U"}
                           </AvatarFallback>
-                        </Avatar>
+                        </Avatar> */}
                         <div>
                           <div className="font-medium">
                             {comment.user?.name || comment.user?.email}
                           </div>
                           <div className="text-xs text-muted-foreground">
-                            {formatDate(comment.created_at)}
-                            {comment.updated_at !== comment.created_at &&
-                              " (edited)"}
+                            {comment.created_at &&
+                              new Date(comment.created_at).toLocaleString()}
+                            {comment.updated_at !== comment.created_at}
                           </div>
                         </div>
                       </div>
