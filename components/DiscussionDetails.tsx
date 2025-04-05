@@ -227,7 +227,7 @@ export default function DiscussionDetails({
               {comments.map((comment: Comment) => (
                 <Card
                   key={comment.id}
-                  className="border-l-4 border-l-green-700"
+                  className="border-l-4 border-l-green-600"
                 >
                   <CardHeader className="pb-2">
                     <div className="flex justify-between items-start">

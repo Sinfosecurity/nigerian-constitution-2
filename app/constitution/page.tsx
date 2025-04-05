@@ -1,31 +1,69 @@
 "use client";
 
-import { Suspense } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Loader2 } from "lucide-react";
-import { PageLayout } from "@/components/page-layout";
-import { ConstitutionReader } from "@/components/constitution-reader";
+import { useEffect, useState } from "react";
+import * as Accordion from "@radix-ui/react-accordion";
+import { ChevronDownIcon } from "lucide-react";
+// import { ChevronDownIcon } from "@radix-ui/react-icons";
+
+interface ConstitutionSection {
+  chapter: string;
+  section: string;
+  content: string[];
+}
 
 export default function ConstitutionPage() {
-  return (
-    <PageLayout>
-      <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">
-          The Constitution of the Federal Republic of Nigeria
-        </h1>
+  const [constitution, setConstitution] = useState<ConstitutionSection[]>([]);
+  const [loading, setLoading] = useState(true);
 
-        <Suspense
-          fallback={
-            <Card>
-              <CardContent className="flex items-center justify-center p-8">
-                <Loader2 className="h-8 w-8 animate-spin text-primary mr-2" />
-              </CardContent>
-            </Card>
-          }
-        >
-          <ConstitutionReader />
-        </Suspense>
-      </div>
-    </PageLayout>
+  useEffect(() => {
+    async function fetchConstitution() {
+      try {
+        const response = await fetch("/api/constitution");
+        const data = await response.json();
+        setConstitution(data);
+      } catch (error) {
+        console.error("Error fetching constitution:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchConstitution();
+  }, []);
+
+  if (loading) return <p className="text-green-700">Loading...</p>;
+
+  return (
+    <div className="bg-white min-h-screen p-4">
+      <h1 className="text-2xl font-bold mb-4 text-green-700">
+        Nigerian Constitution
+      </h1>
+
+      <Accordion.Root type="multiple" className="w-full space-y-4">
+        {constitution.map((item, index) => (
+          <Accordion.Item
+            key={index}
+            value={`item-${index}`}
+            className="border border-green-700 rounded"
+          >
+            <Accordion.Header>
+              <Accordion.Trigger className="w-full flex justify-between items-center p-4 text-left text-green-700 font-semibold text-lg hover:bg-green-100 transition">
+                Chapter {item.chapter}, Section {item.section}
+                <ChevronDownIcon className="h-5 w-5" />
+              </Accordion.Trigger>
+            </Accordion.Header>
+
+            <Accordion.Content className="p-4 text-green-700">
+              <ul className="list-disc pl-6">
+                {item.content.map((point, i) => (
+                  <li key={i} className="mb-1">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </Accordion.Content>
+          </Accordion.Item>
+        ))}
+      </Accordion.Root>
+    </div>
   );
 }

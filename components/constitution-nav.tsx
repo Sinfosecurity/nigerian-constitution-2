@@ -42,7 +42,7 @@ export function ConstitutionNav() {
           <NavigationMenuTrigger
             className={cn(
               "text-sm font-medium",
-              pathname.startsWith("/constitution") && "text-primary"
+              pathname.startsWith("/constitution") && "text-green-00"
             )}
             onMouseOver={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
@@ -55,25 +55,6 @@ export function ConstitutionNav() {
             onMouseLeave={() => setIsOpen(false)}
           >
             <div className="grid gap-3 p-4 md:grid-cols-2">
-              {/* <Link href="/constitution" passHref legacyBehavior>
-                <NavigationMenuLink
-                  className={cn(
-                    "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-green-600-foreground focus:bg-accent focus:text-accent-foreground",
-                    isActive("/constitution")
-                      ? "text-green-600 dark:text-green-400"
-                      : "text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400"
-                  )}
-                >
-                  <div className="flex items-center gap-2 text-sm font-medium leading-none">
-                    <BookOpen className="h-4 w-4" />
-                    <span>{t("nav.interactiveReader")}</span>
-                  </div>
-                  <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                    {t("nav.interactiveReaderDesc")}
-                  </p>
-                </NavigationMenuLink>
-              </Link> */}
-
               <Link
                 href="/constitution/table-of-content"
                 passHref
@@ -96,26 +77,6 @@ export function ConstitutionNav() {
                   </p>
                 </NavigationMenuLink>
               </Link>
-
-              {/* <Link href="/constitution/search" passHref legacyBehavior>
-                <NavigationMenuLink
-                  className={cn(
-                    "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-green-600-foreground focus:bg-accent focus:text-accent-foreground",
-                    isActive("/constitution/search")
-                      ? "text-green-600 dark:text-green-400"
-                      : "text-gray-600 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400"
-                  )}
-                >
-                  <div className="flex items-center gap-2 text-sm font-medium leading-none">
-                    <Search className="h-4 w-4" />
-                    <span>{t("nav.search")}</span>
-                  </div>
-                  <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                    {t("nav.searchDesc")}
-                  </p>
-                </NavigationMenuLink>
-              </Link> */}
-
               <Link href="/constitution/full" passHref legacyBehavior>
                 <NavigationMenuLink
                   className={cn(

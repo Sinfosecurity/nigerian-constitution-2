@@ -211,7 +211,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
             <BookOpen className="h-6 w-6 text-green-600" />
-            <span className="text-xl font-bold text-green-800 dark:text-green-200">
+            <span className="hidden sm:block text-xl font-bold text-green-800 dark:text-green-200">
               {t("app.title")}
             </span>
           </Link>
