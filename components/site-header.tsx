@@ -253,7 +253,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
-          <ModeToggle />
+          {/* <ModeToggle /> */}
 
           {!user ? (
             <div className="hidden md:flex gap-2">
