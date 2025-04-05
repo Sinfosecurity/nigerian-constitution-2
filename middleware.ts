@@ -36,6 +36,6 @@ export async function middleware(req: NextRequest) {
 
 // Configure which routes to run middleware on
 export const config = {
-  // matcher: [],
-  matcher: ["/learn/:path*", "/community/:path*"],
+  matcher: [],
+  // matcher: ["/learn/:path*", "/community/:path*"],
 };
