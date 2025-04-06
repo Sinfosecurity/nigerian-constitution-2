@@ -11,6 +11,7 @@
   "dependencies": {
     "@ai-sdk/openai": "latest",
     "@emotion/is-prop-valid": "latest",
+    "@google/generative-ai": "^0.24.0",
     "@hookform/resolvers": "latest",
     "@radix-ui/react-accordion": "latest",
     "@radix-ui/react-alert-dialog": "^1.1.4",

@@ -1,96 +1,62 @@
-// import { openai } from "@ai-sdk/openai"
-// import { streamText } from "ai"
-
-// // Allow responses up to 30 seconds
-// export const maxDuration = 30
-
-// export async function POST(req: Request) {
-//   try {
-//     const { messages } = await req.json()
-
-//     if (!messages || !Array.isArray(messages)) {
-//       return new Response(JSON.stringify({ error: "Invalid request: messages array is required" }), {
-//         status: 400,
-//         headers: { "Content-Type": "application/json" },
-//       })
-//     }
-
-//     // Create a system prompt that instructs the AI about the Nigerian Constitution
-//     const systemMessage = {
-//       role: "system",
-//       content: `You are a helpful AI assistant specializing in the Nigerian Constitution.
-//       Your role is to provide accurate information about the Nigerian Constitution,
-//       its chapters, sections, amendments, and interpretations.
-//       You have knowledge of all 8 chapters and their sections.
-//       Be concise, accurate, and helpful. If you're unsure about something,
-//       acknowledge that and suggest where the user might find more information.
-//       Always cite specific sections and chapters when answering questions about the constitution.`,
-//     }
-
-//     // Add the system message to the beginning of the messages array if it's not already there
-//     const messagesWithSystem = messages[0]?.role === "system" ? messages : [systemMessage, ...messages]
-
-//     // Use streamText for streaming response
-//     const result = streamText({
-//       model: openai("gpt-4o"),
-//       messages: messagesWithSystem,
-//       temperature: 0.7,
-//       maxTokens: 1000,
-//     })
-
-//     return result.toDataStreamResponse()
-//   } catch (error) {
-//     console.error("Error in chat API:", error)
-//     return new Response(
-//       JSON.stringify({
-//         error: "An error occurred while processing your request",
-//         message: "Please try again later. Our AI assistant is temporarily unavailable.",
-//       }),
-//       {
-//         status: 500,
-//         headers: { "Content-Type": "application/json" },
-//       },
-//     )
-//   }
-// }
-
-// // Add a health check endpoint
-// export async function HEAD() {
-//   return new Response(null, {
-//     status: 200,
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   })
-// }
-
-import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
+import { type NextRequest, NextResponse } from "next/server";
+import {
+  GoogleGenerativeAI,
+  HarmCategory,
+  HarmBlockThreshold,
+} from "@google/generative-ai";
 import { supabase } from "@/services/supabase";
+// import { useAuth } from "@/hooks/useAuth";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+// Initialize the Google Generative AI with your API key
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
 export async function POST(req: NextRequest) {
+  // const { user } = useAuth();
+  // const { user_id } = user;
+
   const { message } = await req.json();
 
   try {
-    const chatCompletion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        {
-          role: "user",
-          content: `You are a helpful AI assistant specializing in the Nigerian Constitution.
-       Your role is to provide accurate information about the Nigerian Constitution,
-       its chapters, sections, amendments, and interpretations.
-       You have knowledge of all 8 chapters and their sections.
-       Be concise, accurate, and helpful. If you're unsure about something,
-       acknowledge that and suggest where the user might find more information.
-     Always cite specific sections and chapters when answering questions about the constitution.: ${message}`,
-        },
-      ],
+    // Initialize the model
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+    // Configure safety settings - this is optional but good practice
+    const safetySettings = [
+      {
+        category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+      },
+      {
+        category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+      },
+    ];
+
+    // Create a chat session
+    const chat = model.startChat({
+      history: [],
+      generationConfig: {
+        maxOutputTokens: 1000,
+      },
+      safetySettings,
     });
 
-    const reply = chatCompletion.choices[0].message.content;
+    // Create the context for the Nigerian Constitution assistant
+    const contextMessage = `You are a helpful AI assistant specializing in the Nigerian Constitution.
+      Your role is to provide accurate information about the Nigerian Constitution,
+      its chapters, sections, amendments, and interpretations.
+      You have knowledge of all 8 chapters and their sections.
+      Be concise, accurate, and helpful. If you're unsure about something,
+      acknowledge that and suggest where the user might find more information.
+      Always cite specific sections and chapters when answering questions about the constitution.`;
+
+    // First, send the context to set the assistant's role
+    await chat.sendMessage(contextMessage);
+
+    // Then send the user's message
+    const result = await chat.sendMessage(message);
+    const response = result.response;
+    const reply = response.text();
 
     // Optional: Save to Supabase
     await supabase
@@ -100,6 +66,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ reply });
   } catch (err) {
     console.error("AI error:", err);
-    return NextResponse.json({ reply: "An error occurred" }, { status: 500 });
+    return NextResponse.json(
+      {
+        reply: "An error occurred with the AI service. Please try again later.",
+        error: err instanceof Error ? err.message : String(err),
+      },
+      { status: 500 }
+    );
   }
 }
