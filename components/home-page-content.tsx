@@ -55,7 +55,7 @@ export function HomePageContent() {
                 {t("home.explore.card2.description")}
               </p>
               <Button asChild className="bg-green-600 hover:bg-green-700">
-                <Link href="/constitution">
+                <Link href="/chat">
                   {t("home.explore.card2.button")}{" "}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
