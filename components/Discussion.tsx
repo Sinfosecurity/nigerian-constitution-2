@@ -56,7 +56,7 @@ export default function DiscussionPage({ posts }: Posts) {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 items-center justify-center sm:flex-row">
+          {/* <div className="flex flex-col gap-4 items-center justify-center sm:flex-row">
             <Link
               href="/community/forum"
               className="inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600"
@@ -70,7 +70,7 @@ export default function DiscussionPage({ posts }: Posts) {
             >
               {t("community.askExpert")}
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
 
