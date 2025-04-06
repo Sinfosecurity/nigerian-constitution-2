@@ -161,7 +161,7 @@ export default function DiscussionDetails({
             </div>
           </CardContent>
           <CardFooter className="border-t pt-6 flex justify-between">
-            <div className="flex items-center gap-4">
+            {/* <div className="flex items-center gap-4">
               <Button
                 variant="ghost"
                 size="sm"
@@ -170,7 +170,7 @@ export default function DiscussionDetails({
                 <ThumbsUp className="h-4 w-4" />
                 Like
               </Button>
-            </div>
+            </div> */}
           </CardFooter>
         </Card>
 

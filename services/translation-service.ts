@@ -266,6 +266,14 @@ const translations: Record<
       "Attorney-General of the Federation v. Attorney-General of Abia State & Ors",
     "about.cases.resource.description":
       "This case addressed the issue of offshore resources and states' territorial waters.",
+
+    // Modal translations
+    "community.modal.title": "Create New Discussion",
+    "community.modal.topicLabel": "Topic",
+    "community.modal.bodyLabel": "Content",
+    "community.modal.cancelButton": "Cancel",
+    "community.modal.submitButton": "Create Discussion",
+    "community.modal.submitting": "Creating...",
   },
   ha: {
     // Hausa translations
@@ -464,6 +472,13 @@ const translations: Record<
     "about.title": "Game da Kundin Tsarin Mulkin Najeriya",
     "about.subtitle":
       "Koyi game da tarihi, muhimmanci, da cigaban dokoki mafi girma na Najeriya",
+
+      "community.modal.title": "Ƙirƙiri Sabon Tattaunawa",
+    "community.modal.topicLabel": "Jigo",
+    "community.modal.bodyLabel": "Abinda Ke Ciki",
+    "community.modal.cancelButton": "Soke",
+    "community.modal.submitButton": "Ƙirƙiri Tattaunawa",
+    "community.modal.submitting": "Ana ƙirƙira...",
   },
   yo: {
     // Yoruba translations
@@ -657,6 +672,14 @@ const translations: Record<
     "about.title": "Nípa Ìwé Òfin Nàìjíríà",
     "about.subtitle":
       "Kọ́ nípa ìtàn, pàtàkì, àti ìdàgbàsókè òfin tó ga jù lọ ní Nàìjíríà",
+
+      // Modal translations 
+    "community.modal.title": "Ṣẹ̀dá Ìjírọ̀rọ̀ Tuntun",
+    "community.modal.topicLabel": "Kókó Ọ̀rọ̀",
+    "community.modal.bodyLabel": "Àkóónú",
+    "community.modal.cancelButton": "Fagílé",
+    "community.modal.submitButton": "Ṣẹ̀dá Ìjírọ̀rọ̀",
+    "community.modal.submitting": "Ń ṣẹ̀dá...",
   },
   ig: {
     // Igbo translations
@@ -842,13 +865,20 @@ const translations: Record<
     "community.askExpert": "Jụọ Ọkàiwu",
     "community.recentDiscussions": "Mkparịta ụka Ọhụrụ",
     "community.newDiscussion": "Mkparịta ụka Ọhụrụ",
+
+    //about content
+
+    "about.title": "Maka Iwu Ọchịchị Naịjirịa",
+    "about.subtitle":
+      "Mụta maka akụkọ, mkpa, na ọganihu iwu kacha mkpa na Naịjirịa",
+
+      "community.modal.title": "Mepụta Mkparịta ụka Ọhụrụ",
+    "community.modal.topicLabel": "Isiokwu",
+    "community.modal.bodyLabel": "Ọdịnaya",
+    "community.modal.cancelButton": "Kagbuo",
+    "community.modal.submitButton": "Mepụta Mkparịta ụka",
+    "community.modal.submitting": "Na-emepụta...",
   },
-
-  //about content
-
-  "about.title": "Maka Iwu Ọchịchị Naịjirịa",
-  "about.subtitle":
-    "Mụta maka akụkọ, mkpa, na ọganihu iwu kacha mkpa na Naịjirịa",
 };
 
 // Get translation for a key in the specified language
