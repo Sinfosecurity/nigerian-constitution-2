@@ -1,15 +1,9 @@
 import { NextResponse } from "next/server";
 
-export interface ConstitutionSection {
-  chapter: string;
-  section: string;
-  content: string[];
-}
-
 export const constitution = [
   // Preamble
   {
-    chapter: "",
+    chapter: "Preamble",
     section: "",
     content: [
       "We the people of the Federal Republic of Nigeria",
@@ -48,8 +42,6 @@ export const constitution = [
       "The provisions of this Constitution in Part I of Chapter VIII hereof shall in relation to the Federal Capital Territory, Abuja, have effect in the manner set out thereunder.",
     ],
   },
-
-  // Part II - Powers of the Federal Republic of Nigeria
   {
     chapter: "I",
     section: "4",
@@ -162,6 +154,15 @@ export const constitution = [
       "(b) a proposal for the boundary adjustment is approved by -",
       "(i) a simple majority of members of each House of the National Assembly, and",
       "(ii) a simple majority of members of the House of Assembly in respect of the area concerned.",
+      "A new Local Government Area shall be created by an Act of the National Assembly if-",
+      "(a) a request supported by at least two-thirds majority of members (representing the area demanding the creation of the new Local Government Area) in each of the following, namely -",
+      "(i) the House of Assembly in respect of the area, and",
+      "(ii) the Local Government Councils in respect of the area,",
+      "is received by the National Assembly;",
+      "(b) a proposal for the creation of the Local Government Area is thereafter approved in a referendum by at least two-thirds majority of the people of the Local Government Area where the demand for the proposed Local Government Area originated;",
+      "(c) the result of the referendum is then approved by a simple majority of the members in each Local Government Council in a majority of all the Local Government Councils in the State;",
+      "(d) the result of the referendum is approved by a resolution passed by two-thirds majority of members of the House of Assembly; and",
+      "(e) the proposal is approved by a resolution passed by a simple majority of the members of each House of the National Assembly.",
     ],
   },
   {
@@ -188,6 +189,9 @@ export const constitution = [
       "The National Assembly may make laws for the Federation or any part therefore with respect to the maintenance and securing of public safety and public order and providing, maintaining and securing of such supplies and service as may be designed by the National Assembly as essential supplies and services.",
       "Nothing in this section shall preclude a House of Assembly from making laws with respect to the matter referred to in this section, including the provision for maintenance and securing of such supplies and services as may be designated by the National Assembly as essential supplies and services.",
       "During any period when the Federation is at war the National Assembly may make such laws for the peace, order and good government of the Federation or any part therefore with respect to matters not included in the Exclusive Legislative List as may appear to it to be necessary or expedient for the defence of the Federation.",
+      "At any time when any House of Assembly of a State is unable to perform its functions by reason of the situation prevailing in that State, the National Assembly may make such laws for the peace, order and good government of that State with respect to matters on which a House of Assembly may make laws as may appear to the National Assembly to be necessary or expedient until such time as the House of Assembly is able to resume its functions; and any such laws enacted by the National Assembly pursuant to this section shall have effect as if they were laws enacted by the House of Assembly of the State:",
+      "Provided that nothing in this section shall be construed as conferring on the National Assembly power to remove the Governor or the Deputy Governor of the State from office.",
+      "For the purposes of subsection (4) of this section, a House of Assembly shall not be deemed to be unable to perform its functions so long as the House of Assembly can hold a meeting and transact business.",
     ],
   },
   {
@@ -250,6 +254,13 @@ export const constitution = [
       "(b) that the material resources of the nation are harnessed and distributed as best as possible to serve the common good;",
       "(c) that the economic system is not operated in such a manner as to permit the concentration of wealth or the means of production and exchange in the hands of few individuals or of a group; and",
       "(d) that suitable and adequate shelter, suitable and adequate food, reasonable national minimum living wage, old age care and pensions, and unemployment, sick benefits and welfare of the disabled are provided for all citizens.",
+      "A body shall be set up by an Act of the National Assembly which shall have power;",
+      "(a) to review, from time to time, the ownership and control of business enterprises operating in Nigeria and make recommendations to the President on same; and",
+      "(b) to administer any law for the regulation of the ownership and control of such enterprises.",
+      "For the purposes of subsection (1) of this section -",
+      '(a) the reference to the "major sectors of the economy" shall be construed as a reference to such economic activities as may, from time to time, be declared by a resolution of each House of the National Assembly to be managed and operated exclusively by the Government of the Federation, and until a resolution to the contrary is made by the National Assembly, economic activities being operated exclusively by the Government of the Federation on the date immediately preceding the day when this section comes into force, whether directly or through the agencies of a statutory or other corporation or company, shall be deemed to be major sectors of the economy;',
+      '(b) "economic activities" includes activities directly concerned with the production, distribution and exchange of weather or of goods and services; and',
+      '(c) "participate" includes the rendering of services and supplying of goods.',
     ],
   },
   {
@@ -356,19 +367,95 @@ export const constitution = [
       'In this section, "the date of independence" means the 1st day of October 1960.',
     ],
   },
-
-  // Continue with all remaining sections...
-  // I'll add more sections to complete the entire constitution
-
+  {
+    chapter: "III",
+    section: "26",
+    content: [
+      "Subject to the provisions of section 28 of this Constitution, a person to whom the provisions of this section apply may be registered as a citizen of Nigeria, if the President is satisfied that -",
+      "(a) he is a person of good character;",
+      "(b) he has shown a clear intention of his desire to be domiciled in Nigeria; and",
+      "(c) he has taken the Oath of Allegiance prescribed in the Seventh Schedule to this Constitution.",
+      "The provisions of this section shall apply to-",
+      "(a) any woman who is or has been married to a citizen of Nigeria; or",
+      "(b) every person of full age and capacity born outside Nigeria any of whose grandparents is a citizen of Nigeria.",
+    ],
+  },
+  {
+    chapter: "III",
+    section: "27",
+    content: [
+      "Subject to the provisions of section 28 of this Constitution, any person who is qualified in accordance with the provisions of this section may apply to the President for the grant of a certificate of naturalisation.",
+      "No person shall be qualified to apply for the grant of a certificate of naturalisation, unless he satisfies the President that -",
+      "(a) he is a person of full age and capacity;",
+      "(b) he is a person of good character;",
+      "(c) he has shown a clear intention of his desire to be domiciled in Nigeria;",
+      "(d) he is, in the opinion of the Governor of the State where he is or he proposes to be resident, acceptable to the local community in which he is to live permanently, and has been assimilated into the way of life of Nigerians in that part of the Federation;",
+      "(e) he is a person who has made or is capable of making useful contribution to the advancement; progress and well-being of Nigeria;",
+      "(f) he has taken the Oath of Allegiance prescribed in the Seventh Schedule to this Constitution; and",
+      "(g) he has, immediately preceding the date of his application, either-",
+      "(i) resided in Nigeria for a continuous period of fifteen years; or",
+      "(ii) resided in Nigeria continuously for a period of twelve months, and during the period of twenty years immediately preceding that period of twelve months (inclusive) he has resided in Nigeria for periods amounting in the aggregate to not less than fifteen years.",
+    ],
+  },
+  {
+    chapter: "III",
+    section: "28",
+    content: [
+      "Subject to the other provisions of this section, a person shall forfeit forthwith his Nigerian citizenship if, not being a citizen of Nigeria by birth, he acquires or retains the citizenship or nationality of a country, other than Nigeria, of which he is not a citizen by birth.",
+      "Any registration of a person as a citizen of Nigeria or the grant of a certificate of naturalisation to a person who is a citizen of a country other than Nigeria at the time of such registration or grant shall, if he is not a citizen by birth of that other country, be conditional upon effective renunciation of the citizenship or nationality of that other country within a period of not more than five months from the date of such registration or grant.",
+    ],
+  },
+  {
+    chapter: "III",
+    section: "29",
+    content: [
+      "Any citizen of Nigeria of full age who wishes to renounce his Nigerian citizenship shall make a declaration in the prescribed manner for the renunciation.",
+      "The President shall cause the declaration made under subsection (1) of this section to be registered and upon such registration, the person who made the declaration shall cease to be a citizen of Nigeria.",
+      "The President may withhold the registration of any declaration made under subsection (1) of this section if-",
+      "(a) the declaration is made during any war in which Nigeria is physically involved; or",
+      "(b) in his opinion, it is otherwise contrary to public policy.",
+      "For the purposes of subsection (1) of this section.",
+      '(a) "full age" means the age of eighteen years and above;',
+      "(b) any woman who is married shall be deemed to be of full age.",
+    ],
+  },
+  {
+    chapter: "III",
+    section: "30",
+    content: [
+      "The President may deprive a person, other than a person who is a citizen of Nigeria by birth or by registration, of his citizenship, if he is satisfied that such a person has, within a period of seven years after becoming naturalised, been sentenced to imprisonment for a term of not less than three years.",
+      "The President shall deprive a person, other than a person who is a citizen of Nigeria by birth, of his citizenship, if he is satisfied from the records of proceedings of a court of law or other tribunal or after due inquiry in accordance with regulations made by him, that -",
+      "(a) the person has shown himself by act or speech to be disloyal towards the Federal Republic of Nigeria; or",
+      "(b) the person has, during any war in which Nigeria was engaged, unlawfully traded with the enemy or been engaged in or associated with any business that was in the opinion of the president carried on in such a manner as to assist the enemy of Nigeria in that war, or unlawfully communicated with such enemy to the detriment of or with intent to cause damage to the interest of Nigeria.",
+    ],
+  },
+  {
+    chapter: "III",
+    section: "31",
+    content: [
+      "For the purposes of this Chapter, a parent or grandparent of a person shall be deemed to be a citizen of Nigeria if at the time of the birth of that person such parent or grandparent would have possessed Nigerian citizenship but for the fact that he died before the 1st day of October 1960.",
+    ],
+  },
+  {
+    chapter: "III",
+    section: "32",
+    content: [
+      "The President may make regulations for the purpose of giving effect to the provisions of this chapter.",
+      "Subject to the provisions of any regulations made under this section, the President may delegate to any officer of the Government of the Federation or of a State any of the powers conferred upon him by this Chapter other than the powers conferred by this section.",
+    ],
+  },
   // Chapter IV - Fundamental Rights
   {
     chapter: "IV",
     section: "33",
     content: [
       "Every person has a right to life, and no one shall be deprived intentionally of his life, save in execution of the sentence of a court in respect of a criminal offence of which he has been found guilty in Nigeria.",
+      "A person shall not be regarded as having been deprived of his life in contravention of this section, if he dies as a result of the use, to such extent and in such circumstances as are permitted by law, of such force as is reasonably necessary -",
+      "(a) for the defence of any person from unlawful violence or for the defence of property:",
+      "(b) in order to effect a lawful arrest or to prevent the escape of a person lawfully detained; or",
+      "(c) for the purpose of suppressing a riot, insurrection or mutiny.",
     ],
   },
-
   {
     chapter: "IV",
     section: "34",
@@ -377,9 +464,17 @@ export const constitution = [
       "(a) no person shall be subject to torture or to inhuman or degrading treatment;",
       "(b) no person shall be held in slavery or servitude; and",
       "(c) no person shall be required to perform forced of compulsory labour.",
+      'For the purposes of subsection (1) (c) of this section, "forced or compulsory labour" does not include -',
+      "(a) any labour required in consequence of the sentence or order of a court;",
+      "(b) any labour required of members of the armed forces of the Federation or the Nigeria Police Force in pursuance of their duties as such;",
+      "(c) in the case of persons who have conscientious objections to service in the armed forces of the Federation, any labour required instead of such service;",
+      "(d) any labour required which is reasonably necessary in the event of any emergency or calamity threatening the life or well-being of the community; or",
+      "(e) any labour or service that forms part of -",
+      "(i) normal communal or other civic obligations of the well-being of the community.",
+      "(ii) such compulsory national service in the armed forces of the Federation as may be prescribed by an Act of the National Assembly, or",
+      "(iii) such compulsory national service which forms part of the education and training of citizens of Nigeria as may be prescribed by an Act of the National Assembly.",
     ],
   },
-
   {
     chapter: "IV",
     section: "35",
@@ -390,11 +485,170 @@ export const constitution = [
       "(c) for the purpose of bringing him before a court in execution of the order of a court or upon reasonable suspicion of his having committed a criminal offence, or to such extent as may be reasonably necessary to prevent his committing a criminal offence;",
       "(d) in the case of a person who has not attained the age of eighteen years for the purpose of his education or welfare;",
       "(e) in the case of persons suffering from infectious or contagious disease, persons of unsound mind, persons addicted to drugs or alcohol or vagrants, for the purpose of their care or treatment or the protection of the community; or",
-      "(f) for the purpose of preventing the unlawful entry of any person into Nigeria or of effecting the expulsion, extradition or other lawful removal from Nigeria of any person or the taking of proceedings relating thereto.",
+      "(f) for the purpose of preventing the unlawful entry of any person into Nigeria or of effecting the expulsion, extradition or other lawful removal from Nigeria of any person or the taking of proceedings relating thereto:",
+      "Provided that a person who is charged with an offence and who has been detained in lawful custody awaiting trial shall not continue to be kept in such detention for a period longer than the maximum period of imprisonment prescribed for the offence.",
+      "Any person who is arrested or detained shall have the right to remain silent or avoid answering any question until after consultation with a legal practitioner or any other person of his own choice.",
+      "Any person who is arrested or detained shall be informed in writing within twenty-four hours (and in a language that he understands) of the facts and grounds for his arrest or detention.",
+      "Any person who is arrested or detained in accordance with subsection (1) (c) of this section shall be brought before a court of law within a reasonable time, and if he is not tried within a period of -",
+      "(a) two months from the date of his arrest or detention in the case of a person who is in custody or is not entitled to bail; or",
+      "(b) three months from the date of his arrest or detention in the case of a person who has been released on bail, he shall (without prejudice to any further proceedings that may be brought against him) be released either unconditionally or upon such conditions as are reasonably necessary to ensure that he appears for trial at a later date.",
+      'In subsection (4) of this section, the expression "a reasonable time" means -',
+      "(a) in the case of an arrest or detention in any place where there is a court of competent jurisdiction within a radius of forty kilometres, a period of one day; and",
+      "(b) in any other case, a period of two days or such longer period as in the circumstances may be considered by the court to be reasonable.",
+      'Any person who is unlawfully arrested or detained shall be entitled to compensation and public apology from the appropriate authority or person; and in this subsection, "the appropriate authority or person" means an authority or person specified by law.',
+      "Nothing in this section shall be construed -",
+      "(a) in relation to subsection (4) of this section, as applying in the case of a person arrested or detained upon reasonable suspicion of having committed a capital offence; and",
+      "(b) as invalidating any law by reason only that it authorises the detention for a period not exceeding three months of a member of the armed forces of the federation or a member of the Nigeria Police Force in execution of a sentence imposed by an officer of the armed forces of the Federation or of the Nigeria police force, in respect of an offence punishable by such detention of which he has been found guilty.",
     ],
   },
-
-  // The Legislature
+  {
+    chapter: "IV",
+    section: "36",
+    content: [
+      "In the determination of his civil rights and obligations, including any question or determination by or against any government or authority, a person shall be entitled to a fair hearing within a reasonable time by a court or other tribunal established by law and constituted in such manner as to secure its independence and impartiality.",
+      "Without prejudice to the foregoing provisions of this section, a law shall not be invalidated by reason only that it confers on any government or authority power to determine questions arising in the administration of a law that affects or may affect the civil rights and obligations of any person if such law -",
+      "(a) provides for an opportunity for the persons whose rights and obligations may be affected to make representations to the administering authority before that authority makes the decision affecting that person; and",
+      "(b) contains no provision making the determination of the administering authority final and conclusive.",
+      "The proceedings of a court or the proceedings of any tribunal relating to the matters mentioned in subsection (1) of this section (including the announcement of the decisions of the court or tribunal) shall be held in public.",
+      "Whenever any person is charged with a criminal offence, he shall, unless the charge is withdrawn, be entitled to a fair hearing in public within a reasonable time by a court or tribunal:",
+      "Provided that -",
+      "(a) a court or such a tribunal may exclude from its proceedings persons other than the parties thereto or their legal practitioners in the interest of defence, public safety, public order, public morality, the welfare of persons who have not attained the age of eighteen years, the protection of the private lives of the parties or to such extent as it may consider necessary by reason of special circumstances in which publicity would be contrary to the interests of justice;",
+      "(b) if in any proceedings before a court or such a tribunal, a Minister of the Government of the Federation or a commissioner of the government of a State satisfies the court or tribunal that it would not be in the public interest for any matter to be publicly disclosed, the court or tribunal shall make arrangements for evidence relating to that matter to be heard in private and shall take such other action as may be necessary or expedient to prevent the disclosure of the matter.",
+      "Every person who is charged with a criminal offence shall be presumed to be innocent until he is proved guilty;",
+      "Provided that nothing in this section shall invalidate any law by reason only that the law imposes upon any such person the burden of proving particular facts.",
+      "Every person who is charged with a criminal offence shall be entitled to -",
+      "(a) be informed promptly in the language that he understands and in detail of the nature of the offence;",
+      "(b) be given adequate time and facilities for the preparation of his defence;",
+      "(c) defend himself in person or by legal practitioners of his own choice;",
+      "(d) examine, in person or by his legal practitioners, the witnesses called by the prosecution before any court or tribunal and obtain the attendance and carry out the examination of witnesses to testify on his behalf before the court or tribunal on the same conditions as those applying to the witnesses called by the prosecution; and",
+      "(e) have, without payment, the assistance of an interpreter if he cannot understand the language used at the trial of the offence.",
+      "When any person is tried for any criminal offence, the court or tribunal shall keep a record of the proceedings and the accused person or any persons authorised by him in that behalf shall be entitled to obtain copies of the judgement in the case within seven days of the conclusion of the case.",
+      "No person shall be held to be guilty of a criminal offence on account of any act or omission that did not, at the time it took place, constitute such an offence, and no penalty shall be imposed for any criminal offence heavier than the penalty in force at the time the offence was committed.",
+      "No person who shows that he has been tried by any court of competent jurisdiction or tribunal for a criminal offence and either convicted or acquitted shall again be tried for that offence or for a criminal offence having the same ingredients as that offence save upon the order of a superior court.",
+      "No person who shows that he has been pardoned for a criminal offence shall again be tried for that offence.",
+      "No person who is tried for a criminal offence shall be compelled to give evidence at the trial.",
+      "Subject as otherwise provided by this Constitution, a person shall not be convicted of a criminal offence unless that offence is defined and the penalty therefor is prescribed in a written law, and in this subsection, a written law refers to an Act of the National Assembly or a Law of a State, any subsidiary legislation or instrument under the provisions of a law.",
+    ],
+  },
+  {
+    chapter: "IV",
+    section: "37",
+    content: [
+      "The privacy of citizens, their homes, correspondence, telephone conversations and telegraphic communications is hereby guaranteed and protected.",
+    ],
+  },
+  {
+    chapter: "IV",
+    section: "38",
+    content: [
+      "Every person shall be entitled to freedom of thought, conscience and religion, including freedom to change his religion or belief, and freedom (either alone or in community with others, and in public or in private) to manifest and propagate his religion or belief in worship, teaching, practice and observance.",
+      "No person attending any place of education shall be required to receive religious instruction or to take part in or attend any religious ceremony or observance if such instruction ceremony or observance relates to a religion other than his own, or religion not approved by his parent or guardian.",
+      "No religious community or denomination shall be prevented from providing religious instruction for pupils of that community or denomination in any place of education maintained wholly by that community or denomination.",
+      "Nothing in this section shall entitle any person to form, take part in the activity or be a member of a secret society.",
+    ],
+  },
+  {
+    chapter: "IV",
+    section: "39",
+    content: [
+      "Every person shall be entitled to freedom of expression, including freedom to hold opinions and to receive and impart ideas and information without interference.",
+      "Without prejudice to the generality of subsection (1) of this section, every person shall be entitled to own, establish and operate any medium for the dissemination of information, ideas and opinions:",
+      "Provided that no person, other than the Government of the Federation or of a State or any other person or body authorised by the President on the fulfilment of conditions laid down by an Act of the National Assembly, shall own, establish or operate a television or wireless broadcasting station for, any purpose whatsoever.",
+      "Nothing in this section shall invalidate any law that is reasonably justifiable in a democratic society -",
+      "(a) for the purpose of preventing the disclosure of information received in confidence, maintaining the authority and independence of courts or regulating telephony, wireless broadcasting, television or the exhibition of cinematograph films; or",
+      "(b) imposing restrictions upon persons holding office under the Government of the Federation or of a State, members of the armed forces of the Federation or members of the Nigeria Police Force or other Government security services or agencies established by law.",
+    ],
+  },
+  {
+    chapter: "IV",
+    section: "40",
+    content: [
+      "Every person shall be entitled to assemble freely and associate with other persons, and in particular he may form or belong to any political party, trade union or any other association for the protection of his interests:",
+      "Provided that the provisions of this section shall not derogate from the powers conferred by this Constitution on the Independent National Electoral Commission with respect to political parties to which that Commission does not accord recognition.",
+    ],
+  },
+  {
+    chapter: "IV",
+    section: "41",
+    content: [
+      "Every citizen of Nigeria is entitled to move freely throughout Nigeria and to reside in any part thereof, and no citizen of Nigeria shall be expelled from Nigeria or refused entry thereby or exit therefrom.",
+      "Nothing in subsection (1) of this section shall invalidate any law that is reasonably justifiable in a democratic society-",
+      "(a) imposing restrictions on the residence or movement of any person who has committed or is reasonably suspected to have committed a criminal offence in order to prevent him from leaving Nigeria; or",
+      "(b) providing for the removal of any person from Nigeria to any other country to:-",
+      "(i) be tried outside Nigeria for any criminal offence, or",
+      "(ii) undergo imprisonment outside Nigeria in execution of the sentence of a court of law in respect of a criminal offence of which he has been found guilty:",
+      "Provided that there is reciprocal agreement between Nigeria and such other country in relation to such matter.",
+    ],
+  },
+  {
+    chapter: "IV",
+    section: "42",
+    content: [
+      "A citizen of Nigeria of a particular community, ethnic group, place of origin, sex, religion or political opinion shall not, by reason only that he is such a person:-",
+      "(a) be subjected either expressly by, or in the practical application of, any law in force in Nigeria or any executive or administrative action of the government, to disabilities or restrictions to which citizens of Nigeria of other communities, ethnic groups, places of origin, sex, religions or political opinions are not made subject; or",
+      "(b) be accorded either expressly by, or in the practical application of, any law in force in Nigeria or any such executive or administrative action, any privilege or advantage that is not accorded to citizens of Nigeria of other communities, ethnic groups, places of origin, sex, religions or political opinions.",
+      "No citizen of Nigeria shall be subjected to any disability or deprivation merely by reason of the circumstances of his birth.",
+      "Nothing in subsection (1) of this section shall invalidate any law by reason only that the law imposes restrictions with respect to the appointment of any person to any office under the State or as a member of the armed forces of the Federation or member of the Nigeria Police Forces or to an office in the service of a body, corporate established directly by any law in force in Nigeria.",
+    ],
+  },
+  {
+    chapter: "IV",
+    section: "43",
+    content: [
+      "Subject to the provisions of this Constitution, every citizen of Nigeria shall have the right to acquire and own immovable property anywhere in Nigeria.",
+    ],
+  },
+  {
+    chapter: "IV",
+    section: "44",
+    content: [
+      "No moveable property or any interest in an immovable property shall be taken possession of compulsorily and no right over or interest in any such property shall be acquired compulsorily in any part of Nigeria except in the manner and for the purposes prescribed by a law that, among other things -",
+      "(a) requires the prompt payment of compensation therefore and",
+      "(b) gives to any person claiming such compensation a right of access for the determination of his interest in the property and the amount of compensation to a court of law or tribunal or body having jurisdiction in that part of Nigeria.",
+      "Nothing in subsection (1) of this section shall be construed as affecting any general law.",
+      "(a) for the imposition or enforcement of any tax, rate or duty;",
+      "(b) for the imposition of penalties or forfeiture for breach of any law, whether under civil process or after conviction for an offence;",
+      "(c) relating to leases, tenancies, mortgages, charges, bills of sale or any other rights or obligations arising out of contracts.",
+      "(d) relating to the vesting and administration of property of persons adjudged or otherwise declared bankrupt or insolvent, of persons of unsound mind or deceased persons, and of corporate bodies in the course of being wound-up;",
+      "(e) relating to the execution of judgements or orders of court;",
+      "(f) providing for the taking of possession of property that is in a dangerous state or is injurious to the health of human beings, plants or animals;",
+      "(g) relating to enemy property;",
+      "(h) relating to trusts and trustees;",
+      "(i) relating to limitation of actions;",
+      "(j) relating to property vested in bodies corporate directly established by any law in force in Nigeria;",
+      "(k) relating to the temporary taking of possession of property for the purpose of any examination, investigation or enquiry;",
+      "(l) providing for the carrying out of work on land for the purpose of soil-conservation; or",
+      "(m) subject to prompt payment of compensation for damage to buildings, economic trees or crops, providing for any authority or person to enter, survey or dig any land, or to lay, install or erect poles, cables, wires, pipes, or other conductors or structures on any land, in order to provide or maintain the supply or distribution of energy, fuel, water, sewage, telecommunication services or other public facilities or public utilities.",
+      "Notwithstanding the foregoing provisions of this section, the entire property in and control of all minerals, mineral oils and natural gas in under or upon any land in Nigeria or in, under or upon the territorial waters and the Exclusive Economic Zone of Nigeria shall vest in the Government of the Federation and shall be managed in such manner as may be prescribed by the National Assembly.",
+    ],
+  },
+  {
+    chapter: "IV",
+    section: "45",
+    content: [
+      "Nothing in sections 37, 38, 39, 40 and 41 of this Constitution shall invalidate any law that is reasonably justifiable in a democratic society",
+      "(a) in the interest of defence, public safety, public order, public morality or public health; or",
+      "(b) for the purpose of protecting the rights and freedom or other persons",
+      "An act of the National Assembly shall not be invalidated by reason only that it provides for the taking, during periods of emergency, of measures that derogate from the provisions of section 33 or 35 of this Constitution; but no such measures shall be taken in pursuance of any such act during any period of emergency save to the extent that those measures are reasonably justifiable for the purpose of dealing with the situation that exists during that period of emergency:",
+      "Provided that nothing in this section shall authorise any derogation from the provisions of section 33 of this Constitution, except in respect of death resulting from acts of war or authorise any derogation from the provisions of section 36(8) of this Constitution.",
+      'In this section, a "period of emergency" means any period during which there is in force a Proclamation of a state of emergency declared by the President in exercise of the powers conferred on him under section 305 of this Constitution.',
+    ],
+  },
+  {
+    chapter: "IV",
+    section: "46",
+    content: [
+      "Any person who alleges that any of the provisions of this Chapter has been, is being or likely to be contravened in any State in relation to him may apply to a High Court in that State for redress.",
+      "Subject to the provisions of this Constitution, a High Court shall have original jurisdiction to hear and determine any application made to it in pursuance of this section and may make such orders, issue such writs and give such directions as it may consider appropriate for the purpose of enforcement or securing the enforcing within that State of any right to which the person who makes the application may be entitled under this Chapter.",
+      "The Chief Justice of Nigeria may make rules with respect to the practice and procedure of a High Court for the purposes of this section.",
+      "The National Assembly -",
+      "(a) may confer upon a High Court such powers in addition to those conferred by this section as may appear to the National Assembly to be necessary or desirable for the purpose of enabling the court more effectively to exercise the jurisdiction conferred upon it by this section; and",
+      "(b) shall make provisions-",
+      "(i) for the rendering of financial assistance to any indigent citizen of Nigeria where his right under this Chapter has been infringed or with a view to enabling him to engage the services of a legal practitioner to prosecute his claim, and",
+      "(ii) for ensuring that allegations of infringement of such rights are substantial and the requirement or need for financial or legal aid is real.",
+    ],
+  },
+  // Chapter V - The Legislature
   {
     chapter: "V",
     section: "47",
@@ -402,7 +656,6 @@ export const constitution = [
       "There shall be a National Assembly for the Federation which shall consist of a Senate and a House of Representatives.",
     ],
   },
-
   {
     chapter: "V",
     section: "48",
@@ -410,7 +663,6 @@ export const constitution = [
       "The Senate shall consist of three Senators from each State and one from the Federal Capital Territory, Abuja.",
     ],
   },
-
   {
     chapter: "V",
     section: "49",
@@ -418,8 +670,784 @@ export const constitution = [
       "Subject to the provisions of this Constitution, the House of Representatives shall consist of three hundred and sixty members representing constituencies of nearly equal population as far as possible, provided that no constituency shall fall within more than one State.",
     ],
   },
-
-  // The Executive
+  {
+    chapter: "V",
+    section: "50",
+    content: [
+      "There shall be:-",
+      "(a) a President and a Deputy President of the Senate, who shall be elected by the members of that House from among themselves; and",
+      "(b) a Speaker and a Deputy Speaker of the House of Representatives, who shall be elected by the members of that House from among themselves.",
+      "The President or Deputy President of the Senate or the Speaker or Deputy Speaker of the House of Representatives shall vacate his office -",
+      "(a) if he ceases to be a member of the Senate or of the House of Representatives, as the case may be, otherwise than by reason of a dissolution of the Senate or the House of Representatives; or",
+      "(b) when the House of which he was a member first sits after any dissolution of that House; or",
+      "(c) if he is removed from office by a resolution of the Senate or of the House of Representatives, as the case may be, by the votes of not less than two-thirds majority of the members of that House.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "51",
+    content: [
+      "There shall be a Clerk to the National Assembly and such other staff as may be prescribed by an Act of the National Assembly, and the method of appointment of the Clerk and other staff of the National Assembly shall be as prescribed by that Act.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "52",
+    content: [
+      "Every member of the Senate or the House of Representatives shall, before taking his seat, declare his assets and liabilities as prescribed in this Constitution and subsequently take and subscribe the Oath of Allegiance and the oath of membership as prescribed in the Seventh Schedule to this Constitution before the President of the Senate or, as the case may be, the Speaker of the House of Representatives, but a member may before taking the oaths take part in the election of a President and a Deputy President of the Senate, as the case may be, or a Speaker and a Deputy Speaker of the House of Representatives.",
+      "The President and Deputy President of the Senate and the Speaker and the Deputy Speaker of the House of Representatives shall declare their assets and liabilities as prescribed in this Constitution and subsequently take and subscribe the Oath of Allegiance and the oath of membership prescribed as aforesaid before the Clerk of the National Assembly.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "53",
+    content: [
+      "At any sitting of the National Assembly -",
+      "(a) in the case of the Senate, the President of the Senate shall preside, and in his absence the Deputy President of the Senate shall preside; and",
+      "(b) in the case of the House of Representatives, the Speaker of that House shall preside, and in his absence the Deputy Speaker shall preside.",
+      "At any joint sitting of the Senate and House of Representatives -",
+      "(a) the President of Senate shall preside, and in his absence the Speaker of the House of Representatives shall preside; and",
+      "(b) in the absence of the persons mentioned in paragraph (a) of this subsection, the Deputy President of the Senate shall preside, and in his absence the Deputy Speaker of the House of Representatives shall preside.",
+      "In the absence of the persons mentioned in the foregoing provisions of this section, such member of the Senate or the House of Representatives or of the joint sitting, as the case may be, as the Senate or the House of Representatives or the joint sitting may elect for that purpose shall preside.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "54",
+    content: [
+      "The quorum of the Senate or of the House of Representatives shall be one-third of all the members of the Legislative House concerned.",
+      "The quorum of a joint sitting of both the Senate or of the House of Representatives shall be one-third of all the members of both Houses.",
+      "If objection is taken by any member of the Senate or the House of Representatives present that there are present in the House of which he is a member (besides the person presiding fewer than one-third of all the members of that House and that it is not competent for the House to transact business, and after such interval as may be prescribed in the rules of procedure of the House, the person presiding ascertains that the number of members present is still less than one-third of all the members of the House he shall adjourn the House.",
+      "The foregoing provisions of this section shall apply in relation to a joint sitting of both Houses of the National Assembly as they apply in relation to a House of the National Assembly as if references to the Senate or the House of Representatives and a member of either Houses are references to both Houses and to any member of the National Assembly, respectively.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "55",
+    content: [
+      "The business of the National Assembly shall be conducted in English, and in Hausa, Ibo and Yoruba when adequate arrangements have been made therefor.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "56",
+    content: [
+      "Except as otherwise provided by this Constitution any question proposed for decision in the Senate or the House of Representatives shall be determined by the required majority or the members present and voting; and the person presiding shall cast a vote whenever necessary to avoid an equality of votes but shall not vote in any other case.",
+      "Except as otherwise provided by this Constitution, the required majority for the purpose of determining any question shall be a simple majority.",
+      "The Senate or the House of Representatives shall by its rules provide -",
+      "(a) that a member of the House shall declare any direct pecuniary interest he may have in any matter coming before the House for deliberation;",
+      "(b) that the House may by resolution decide whether or not such member may vote, or participate in its deliberations, on such matter;",
+      "(c) the penalty, if any, which the House may impose for failure to declare any direct pecuniary interest such member may have; and",
+      "(d) for such other matters pertaining to the foregoing as the House may think necessary,",
+      "but nothing in the foregoing provisions shall enable any rules to be made to require any member, who signifies his intention not to vote on or participate in such matter, and who does not so vote or participate, to declare any such interest.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "57",
+    content: [
+      "Each House of the National Assembly shall have power to regulate its own procedure, including the procedure for summoning and recess of the House.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "58",
+    content: [
+      "The power of the National Assembly to make laws shall be exercised by bills passed by both the Senate and the House of Representatives and, except as otherwise provided by subsection (5) of this section, assented to by the President.",
+      "A bill may originate in either the Senate or the House of Representatives and shall not become law unless it has been passed and, except as otherwise provided by this section and section 59 of this Constitution, assented to in accordance with the provisions of this section.",
+      "Where a bill has been passed by the House in which it originated, it shall be sent to the other House, and it shall be presented to the President for assent when it has been passed by that other House and agreement has been reached between the two Houses on any amendment made on it.",
+      "Where a bill is presented to the President for assent, he shall within thirty days thereof signify that he assents or that he withholds assent.",
+      "Where the President withholds his assent and the bill is again passed by each House by two-thirds majority, the bill shall become law and the assent of the President shall not be required.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "59",
+    content: [
+      "The provisions of this section shall apply to:",
+      "(a) an appropriation bill or a supplementary appropriation bill, including any other bill for the payment, issue or withdrawal from the Consolidated Revenue Fund or any other public fund of the Federation of any money charged thereon or any alteration in the amount of such a payment, issue or withdrawal; and",
+      "(b) a bill for the imposition of or increase in any tax, duty or fee or any reduction, withdrawal or cancellation thereof.",
+      "Where a bill to which this section applies is passed by one of the Houses of the National Assembly but is not passed by the other House within a period of two months from the commencement of a financial year, the President of the Senate shall within fourteen days thereafter arrange for and convene a meeting of the joint finance committee to examine the bill with a view to resolving the differences between the two Houses.",
+      "Where the joint finance committee fails to resolve such differences, then the bill shall be presented to the National Assembly sitting at a joint meeting, and if the bill is passed at such joint meeting, it shall be presented to the President for assent.",
+      "Where the President, within thirty days after the presentation of the bill to him, fails to signify his assent or where he withholds assent, then the bill shall again be presented to the National Assembly sitting at a joint meeting, and if passed by two-thirds majority of members of both houses at such joint meeting, the bill shall become law and the assent of the President shall not be required.",
+      'In this section, "joint finance committee" refers to the joint committee of the National Assembly on finance established pursuant to section 62(3) of this Constitution.',
+    ],
+  },
+  {
+    chapter: "V",
+    section: "60",
+    content: [
+      "Subject to the provisions of this Constitution, the Senate or the House of Representatives shall have power to regulate its own procedure, including the procedure for summoning and recess of the House.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "61",
+    content: [
+      "The Senate or the House of Representatives may act notwithstanding any vacancy in its membership, and the presence or participation of any person not entitled to be present at or to participate in the proceedings of the House shall not invalidate those proceedings.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "62",
+    content: [
+      "The National Assembly shall establish a joint committee on finance consisting of an equal number of persons appointed by each House and shall appoint other joint committees to which it may assign, from time to time, functions in respect of concurrent legislative powers.",
+      "Nothing in this section shall be construed as preventing the appointment of joint committees for purposes not relating to the exercise of legislative powers.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "63",
+    content: [
+      "The Senate and the House of Representatives shall each sit for a period of not less than one hundred and eighty-one days in a year.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "64",
+    content: [
+      "The Senate and the House of Representatives shall each stand dissolved at the expiration of a period of four years commencing from the date of the first sitting of the House.",
+      "If the Federation is at war in which the territory of Nigeria is physically involved and the President considers that it is not practicable to hold elections, the National Assembly may by resolution extend the period of four years mentioned in subsection (1) of this section from time to time but not beyond a period of six months at any one time.",
+      "Subject to the provisions of this Constitution, the President may by proclamation dissolve the legislative houses at any time.",
+      "No proclamation for the dissolution of the legislative houses shall be issued by the President, acting in accordance with the advice of the Prime Minister, at any time when any matter connected with or relating to the appointment, removal or tenure of office of the Auditor-General of the Federation is pending or being proceeded with in the Senate.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "65",
+    content: [
+      "Subject to the provisions of section 66 of this Constitution, a person shall be qualified for election as a member of:",
+      "(a) the Senate, if he is a citizen of Nigeria and has attained the age of 35 years; and",
+      "(b) the House of Representatives, if he is a citizen of Nigeria and has attained the age of 30 years;",
+      "A person shall be qualified for election under subsection (1) of this section if:",
+      "(a) he has been educated up to at least School Certificate level or its equivalent; and",
+      "(b) he is a member of a political party and is sponsored by that party.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "66",
+    content: [
+      "No person shall be qualified for election to the Senate or the House of Representatives if:",
+      "(a) subject to the provisions of section 28 of this Constitution, he has voluntarily acquired the citizenship of a country other than Nigeria or, except in such cases as may be prescribed by the National Assembly, has made a declaration of allegiance to such a country;",
+      "(b) under any law in force in any part of Nigeria, he is adjudged to be a lunatic or otherwise declared to be of unsound mind;",
+      "(c) he is under a sentence of death imposed on him by any competent court of law or tribunal in Nigeria or a sentence of imprisonment or fine for an offence involving dishonesty or fraud (by whatever name called) or any other offence imposed on him by such a court or tribunal or substituted by a competent authority for any other sentence imposed on him by such a court;",
+      "(d) within a period of less than 10 years before the date of an election to a legislative house, he has been convicted and sentenced for an offence involving dishonesty or he has been found guilty of a contravention of the Code of Conduct;",
+      "(e) he is an undischarged bankrupt, having been adjudged or otherwise declared bankrupt under any law in force in any part of Nigeria;",
+      "(f) he is a person employed in the public service of the Federation or of any State and has not resigned, withdrawn or retired from such employment 30 days before the date of election;",
+      "(g) he is a member of a secret society;",
+      "(h) he has been indicted for embezzlement or fraud by a Judicial Commission of Inquiry or an Administrative Panel of Inquiry or a Tribunal set up under the Tribunals of Inquiry Act, a Tribunals of Inquiry Law or any other law by the Federal or State Government which indictment has been accepted by the Federal or State Government, respectively; or",
+      "(i) he has presented a forged certificate to the Independent National Electoral Commission.",
+      "Where in respect of any person who has been adjudged to be a lunatic, declared to be of unsound mind, sentenced to death or imprisonment or adjudged or declared bankrupt, any appeal against the decision is pending in any court of law in accordance with any law in force in Nigeria, subsection (1) of this section shall not apply during a period beginning from the date when such appeal is lodged and ending on the date when the appeal is finally determined or, as the case may be, the appeal lapses or is abandoned, whichever is earlier.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "67",
+    content: [
+      "The President may attend any joint meeting of the National Assembly or any meeting of either House of the National Assembly, either to deliver an address on national affairs including fiscal measures, or to make such statement on the policy of government as he considers to be of national importance.",
+      "A Minister of the Government of the Federation shall attend either House of the National Assembly if invited to explain to the House the conduct of his Ministry, and in particular when the affairs of that Ministry are under discussion.",
+      "Nothing in this section shall enable any person who is not a member of the Senate or of the House of Representatives to vote in that House or in any of its committees.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "68",
+    content: [
+      "A member of the Senate or of the House of Representatives shall vacate his seat in the House of which he is a member if -",
+      "(a) he becomes a member of another legislative house;",
+      "(b) any other circumstances arise that, if he were not a member of the Senate or the House of Representatives, would cause him to be disqualified for election as a member;",
+      "(c) he ceases to be a citizen of Nigeria;",
+      "(d) he becomes President, Vice-President, Governor, Deputy Governor or a Minister of the Government of the Federation or a Commissioner of the Government of a State or a Special Adviser;",
+      "(e) save as otherwise prescribed by this Constitution, he becomes a member of a commission or other body established by this Constitution or by any other law;",
+      "(f) without just cause he is absent from meetings of the House of which he is a member for a period amounting in the aggregate to more than one-third of the total number of days during which the House meets in any one year;",
+      "(g) being a person whose election to the House was sponsored by a political party, he becomes a member of another political party before the expiration of the period for which that House was elected:",
+      "Provided that his membership of the latter political party is not as a result of a division in the political party of which he was previously a member or of a merger of two or more political parties or factions by one of which he was previously sponsored; or",
+      "(h) the President of the Senate or, as the case may be, the Speaker of the House of Representatives receives a certificate under the hand of the Chairman of the Independent National Electoral Commission stating that the provisions of section 69 of this Constitution have been complied with in respect of the recall of that member.",
+      "The President of the Senate or the Speaker of the House of Representatives, as the case may be, shall give effect to the provisions of subsection (1) of this section, so however that the President of the Senate or the Speaker of the House of Representatives or a member shall first present evidence satisfactory to the House concerned that any of the provisions of that subsection has become applicable in respect of that member.",
+      "A member of the Senate or of the House of Representatives shall be deemed to be absent without just cause from a meeting of the House of which he is a member, unless the person presiding certifies in writing that he is satisfied that the absence of the member from the meeting was for a just cause.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "69",
+    content: [
+      "A member of the Senate or of the House Representatives may be recalled as such a member if -",
+      "(a) there is presented to the Chairman of the Independent National Electoral Commission a petition in that behalf signed by more than one-half of the persons registered to vote in that member's constituency alleging their loss of confidence in that member; and",
+      "(b) the petition is thereafter, in a referendum conducted by the Independent National Electoral Commission within ninety days of the date of receipt of the petition, approved by a simple majority of the votes of the persons registered to vote in that member's constituency.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "70",
+    content: [
+      "A member of the Senate or of the House of Representatives shall receive such salary and other allowances as the Revenue Mobilisation Allocation and Fiscal Commission may determine.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "71",
+    content: [
+      "For the purposes of this Chapter, the following provisions shall apply -",
+      '(a) a reference to the "President of the Senate" or the "Speaker of the House of Representatives" shall be read as including a reference to the Deputy President of the Senate or the Deputy Speaker of the House of Representatives, as the case may be;',
+      '(b) a reference to "member of the Senate" or a "member of the House of Representatives" shall be read as including the President of the Senate or the Speaker of the House of Representatives, as the case may be; and',
+      '(c) in relation to a House of Assembly, a reference to "President of the Senate" or "Speaker of the House of Representatives" shall be read as a reference to the Speaker of the House of Assembly.',
+    ],
+  },
+  {
+    chapter: "V",
+    section: "72",
+    content: [
+      "The National Assembly shall have power to make laws for the peace, order and good government of the Federation or any part thereof with respect to any matter included in the Exclusive Legislative List set out in Part I of the Second Schedule to this Constitution.",
+      "The power of the National Assembly to make laws for the peace, order and good government of the Federation with respect to any matter included in the Exclusive Legislative List shall, save as otherwise provided in this Constitution, be to the exclusion of the Houses of Assembly of States.",
+      "In addition and without prejudice to the powers conferred by subsection (1) of this section, the National Assembly shall have power to make laws with respect to the following matters, that is to say:-",
+      "(a) any matter in the Concurrent Legislative List set out in the first column of Part II of the Second Schedule to this Constitution to the extent prescribed in the second column opposite thereto; and",
+      "(b) any other matter with respect to which it is empowered to make laws in accordance with the provisions of this Constitution.",
+      "If any Law enacted by the House of Assembly of a State is inconsistent with any law validly made by the National Assembly, the law made by the National Assembly shall prevail, and that other Law shall, to the extent of the inconsistency, be void.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "73",
+    content: [
+      "The National Assembly may, subject to the provision of this Constitution, by an Act establish such bodies as may be necessary to promote such causes as may be necessary in a democratic society.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "74",
+    content: [
+      "Subject to the provisions of this Constitution, a House of Assembly shall have power to make laws for the peace, order and good government of the State or any part thereof with respect to the following matters, that is to say:-",
+      "(a) any matter not included in the Exclusive Legislative List set out in Part I of the Second Schedule to this Constitution.",
+      "(b) any matter included in the Concurrent Legislative List set out in the first column of Part II of the Second Schedule to this Constitution to the extent prescribed in the second column opposite thereto; and",
+      "(c) any other matter with respect to which it is empowered to make laws in accordance with the provisions of this Constitution.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "75",
+    content: [
+      "If any Law enacted by the House of Assembly of a State is inconsistent with any law validly made by the National Assembly, the law made by the National Assembly shall prevail, and that other Law shall, to the extent of the inconsistency, be void.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "76",
+    content: [
+      "Elections to the National Assembly shall be held on a date to be appointed by the Independent National Electoral Commission in accordance with the Electoral Act.",
+      "The date mentioned in subsection (1) of this section shall not be earlier than sixty days before and not later than the date on which the House stands dissolved, or where the election is to fill a vacancy occurring more than three months before such date, not later than one month after the vacancy occurred.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "77",
+    content: [
+      "Subject to the provisions of this Constitution, every Senatorial district or Federal constituency established in accordance with the provisions of this Part of this Chapter shall return a member who shall be directly elected to the Senate or the House of Representatives in such manner as may be prescribed by an act of the National Assembly.",
+      "Every citizen of Nigeria, who has attained the age of eighteen years residing in Nigeria at the time of the registration of voters for purposes of election to a legislative house, shall be entitled to be registered as a voter for that election.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "78",
+    content: [
+      "The registration of voters and the conduct of the elections shall be subject to the direction and supervision of the Independent National Electoral Commission.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "79",
+    content: [
+      "The National Assembly shall make provisions in respect of -",
+      "(a) persons who may apply to an election tribunal for determination of any question as to whether -",
+      "(i) any person has been validly elected as a member of the Senate or of the House of Representatives,",
+      "(ii) the term of office of any person has ceased, or",
+      "(iii) the seat in the Senate or in the House of Representatives of a member of that House has become vacant;",
+      "(b) circumstances and manner in which, and the conditions upon which, such application may be made; and",
+      "(c) powers, practice and procedure of the election tribunal in relation to any such application.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "80",
+    content: [
+      "All revenues or other moneys raised or received by the Federation (not being revenues or other moneys payable under this Constitution or any Act of the National Assembly into any other public fund of the Federation established for a specific purpose) shall be paid into and form one Consolidated Revenue Fund of the Federation.",
+      "No moneys shall be withdrawn from the Consolidated Revenue Fund of the Federation except to meet expenditure that is charged upon the fund by this Constitution or where the issue of those moneys has been authorised by an Appropriation Act, Supplementary Appropriation Act or an Act passed in pursuance of section 81 of this Constitution.",
+      "No moneys shall be withdrawn from any public fund of the Federation, other than the Consolidated Revenue Fund of the Federation, unless the issue of those moneys has been authorised by an Act of the National Assembly.",
+      "No moneys shall be withdrawn from the Consolidated Revenue Fund or any other public fund of the Federation, except in the manner prescribed by the National Assembly.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "81",
+    content: [
+      "The President shall cause to be prepared and laid before each House of the National Assembly at any time in each financial year estimates of the revenues and expenditure of the Federation for the next following financial year.",
+      "The heads of expenditure contained in the estimates (other than expenditure charged upon the Consolidated Revenue Fund of the Federation by this Constitution) shall be included in a bill, to be known as an Appropriation Bill, providing for the issue from the Consolidated Revenue Fund of the sums necessary to meet that expenditure and the appropriation of those sums for the purposes specified therein.",
+      "Any amount standing to the credit of the judiciary in the Consolidated Revenue Fund of the Federation shall be paid directly to the National Judicial Council for disbursement to the heads of the courts established for the Federation and the State under section 6 of this Constitution.",
+      "If in respect of any financial year it is found that -",
+      "(a) the amount appropriated by the Appropriation Act for any purpose is insufficient; or",
+      "(b) a need has arisen for expenditure for a purpose for which no amount has been appropriated by the Act,",
+      "a supplementary estimate showing the sums required shall be laid before each House of the National Assembly and the heads of any such expenditure shall be included in a Supplementary Appropriation Bill.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "82",
+    content: [
+      "If the Appropriation Bill in respect of any financial year has not been passed into law by the beginning of the financial year, the President may authorise the withdrawal of moneys in the Consolidated Revenue Fund of the Federation for the purpose of meeting expenditure necessary to carry on the services of the Government of the Federation for a period not exceeding six months or until the coming into operation of the Appropriation Act, whichever is the earlier:",
+      "Provided that the withdrawal in respect of any such period shall not exceed the amount authorised to be withdrawn from the Consolidated Revenue Fund of the Federation under the provisions of the Appropriation Act passed by the National Assembly for the corresponding period in the immediately preceding financial year, being an amount proportionate to the total amount so authorised for the immediately preceding financial year.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "83",
+    content: [
+      "The National Assembly may by law make provisions for the establishment of a Contingencies Fund for the Federation and for authorising the President, if satisfied that there has arisen an urgent and unforeseen need for expenditure for which no other provision exists, to make advances from the Fund to meet the need.",
+      "Where any advance is made in accordance with the provisions of this section, a Supplementary Estimate shall be presented and a Supplementary Appropriation Bill shall be introduced as soon as possible for the purpose of replacing the amount so advanced.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "84",
+    content: [
+      "There shall be paid to the holders of the offices mentioned in this section such remuneration, salaries and allowances as may be prescribed by the National Assembly, but not exceeding the amount as shall have been determined by the Revenue Mobilisation Allocation and Fiscal Commission.",
+      "The remuneration, salaries and allowances payable to the holders of the offices so mentioned shall be a charge upon the Consolidated Revenue Fund of the Federation.",
+      "The remuneration and salaries payable to the holders of the said offices and their conditions of service, other than allowances, shall not be altered to their disadvantage after their appointment.",
+      "The offices to which this section applies are the offices of President, Vice-President, Chief Justice of Nigeria, Justice of the Supreme Court, President of the Court of Appeal, Justice of the Court of Appeal, Chief Judge of the Federal High Court, Judge of the Federal High Court, Chief Judge and Judge of the High Court of the Federal Capital Territory, Abuja, Chief Judge of a State, Judge of the High Court of a State, Grand Kadi of the Sharia Court of Appeal of the Federal Capital Territory, Abuja, President of the Customary Court of Appeal of the Federal Capital Territory, Abuja, Grand Kadi and Kadi of the Sharia Court of Appeal of a State, President and Judge of the Customary Court of Appeal of a State, the Auditor-General for the Federation and the Chairmen and members of the following executive bodies, namely, the Code of Conduct Bureau, the Federal Civil Service Commission, the Independent National Electoral Commission, the National Judicial Council, the Federal Judicial Service Commission, the Judicial Service Committee of the Federal Capital Territory, Abuja, the Federal Character Commission, the Code of Conduct Tribunal, the National Population Commission, the Revenue Mobilisation Allocation and Fiscal Commission, the Nigeria Police Council and the Police Service Commission.",
+      "Any person who has held office as President or Vice-President shall be entitled to pension for life at a rate equivalent to the annual salary of the incumbent President or Vice-President:",
+      "Provided that such a person was not removed from office by the process of impeachment or for breach of any provisions of this Constitution.",
+      "Any pension granted by virtue of subsection (5) of this section shall be a charge upon the Consolidated Revenue Fund of the Federation.",
+      "The recurrent expenditure of judicial offices in the Federation (in addition to salaries and allowances of the judicial officers mentioned in subsection (4) of this section) shall be a charge upon the Consolidated Revenue Fund of the Federation.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "85",
+    content: [
+      "There shall be an Auditor-General for the Federation who shall be appointed in accordance with the provisions of section 86 of this Constitution.",
+      "The public accounts of the Federation and of all offices and courts of the Federation shall be audited and reported on by the Auditor-General who shall submit his reports to the National Assembly; and for that purpose, the Auditor-General or any person authorised by him in that behalf shall have access to all the books, records, returns and other documents relating to those accounts.",
+      "Nothing in subsection (2) of this section shall be construed as authorising the Auditor-General to audit the accounts of or appoint auditors for government statutory corporations, commissions, authorities, agencies, including all persons and bodies established by an Act of the National Assembly, but the Auditor-General shall -",
+      "(a) provide such bodies with -",
+      "(i) a list of auditors qualified to be appointed by them as external auditors and from which the bodies shall appoint their external auditors, and",
+      "(ii) guidelines on the level of fees to be paid to external auditors; and",
+      "(b) comment on their annual accounts and auditor's reports thereon.",
+      "The Auditor-General shall have power to conduct periodic checks of all government statutory corporations, commissions, authorities, agencies, including all persons and bodies established by an Act of the National Assembly.",
+      "The Auditor-General shall, within ninety days of receipt of the Accountant-General's financial statement, submit his reports under this section to each House of the National Assembly and each House shall cause the reports to be considered by a committee of the House of the National Assembly responsible for public accounts.",
+      "In the exercise of his functions under this Constitution, the Auditor-General shall not be subject to the direction or control of any other authority or person.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "86",
+    content: [
+      "The Auditor-General for the Federation shall be appointed by the President on the recommendation of the Federal Civil Service Commission subject to confirmation by the Senate.",
+      "The power to appoint persons to act in the office of the Auditor-General shall vest in the President.",
+      "Except with the sanction of a resolution of the Senate, no person shall act in the office of the Auditor-General for a period exceeding six months.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "87",
+    content: [
+      "The Auditor-General for the Federation shall hold office for a period of five years from the date of his appointment and shall not be eligible for re-appointment.",
+      "The Auditor-General shall not be removed from office except by the President acting on an address supported by two-thirds majority of the Senate praying that he be so removed for inability to discharge the functions of his-office (whether arising from infirmity of mind or body or any other cause) or for misconduct.",
+      "The Auditor-General shall not be removed from office before such retiring age as may be prescribed by law, save in accordance with the provisions of this section.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "88",
+    content: [
+      "Subject to the provisions of this Constitution, each House of the National Assembly shall have power by resolution published in its journal or in the Official Gazette of the Government of the Federation to direct or cause to be directed investigation into -",
+      "(a) any matter or thing with respect to which it has power to make laws, and",
+      "(b) the conduct of affairs of any person, authority, ministry or government department charged, or intended to be charged, with the duty of or responsibility for -",
+      "(i) executing or administering laws enacted by National Assembly, and",
+      "(ii) disbursing or administering moneys appropriated or to be appropriated by the National Assembly.",
+      "The powers conferred on the National Assembly under the provisions of this section are exercisable only for the purpose of enabling it to -",
+      "(a) make laws with respect to any matter within its legislative competence and correct any defects in existing laws; and",
+      "(b) expose corruption, inefficiency or waste in the execution or administration of laws within its legislative competence and in the disbursement or administration of funds appropriated by it.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "89",
+    content: [
+      "For the purposes of any investigation under section 88 of this Constitution and subject to the provisions thereof, the Senate or the House of Representatives or a committee appointed in accordance with section 62 of this Constitution shall have power to -",
+      "(a) procure all such evidence, written or oral, direct or circumstantial, as it may think necessary or desirable, and examine all persons as witnesses whose evidence may be material or relevant to the subject matter;",
+      "(b) require such evidence to be given on oath;",
+      "(c) summon any person in Nigeria to give evidence at any place or produce any document or other thing in his possession or under his control, and examine him as a witness and require him to produce any document or other thing in his possession or under his control, subject to all just exceptions; and",
+      "(d) issue a warrant to compel the attendance of any person who, after having been summoned to attend, fails, refuses or neglects to do so and does not excuse such failure, refusal or neglect to the satisfaction of the House or the committee in question, and order him to pay all costs which may have been occasioned in compelling his attendance or by reason of his failure, refusal or neglect to obey the summons, and also to impose such fine as may be prescribed for any such failure, refusal or neglect; and any fine so imposed shall be recoverable in the same manner as a fine imposed by a court of law.",
+      "A summons or warrant issued under this section may be served or executed by any member of the Nigeria Police Force or by any person authorised in that behalf by the President of the Senate or the Speaker of the House of Representatives, as the case may require.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "90",
+    content: [
+      "There shall be a House of Assembly for each of the States of the Federation.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "91",
+    content: [
+      "Subject to the provisions of this Constitution, a House of Assembly of a State shall consist of three or four times the number of seats which that State has in the House of Representatives divided in a way to reflect, as far as possible, nearly equal population:",
+      "Provided that a House of Assembly of a State shall consist of not less than twenty-four and not more than forty members.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "92",
+    content: [
+      "There shall be a Speaker and a Deputy Speaker of a House of Assembly who shall be elected by the members of the House from among themselves.",
+      "The Speaker or Deputy Speaker of the House of Assembly shall vacate his office -",
+      "(a) if he ceases to be a member of the House of Assembly otherwise than by reason of a dissolution of the House;",
+      "(b) when the House first sits after any dissolution of House; or",
+      "(c) if he is removed from office by a resolution of the House of Assembly by the votes of not less than two-thirds majority of the members of the House.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "93",
+    content: [
+      "There shall be a Clerk to a House of Assembly and such other staff as may be prescribed by a Law enacted by the House of Assembly, and the method of appointment of the Clerk and other staff of the House shall be as prescribed by that Law.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "94",
+    content: [
+      "The quorum of a House of Assembly shall be one-third of all the members of the House.",
+      "If objection is taken by any member of a House of Assembly present that there are present in that House (besides the person presiding) fewer than one-third of all the members of that House and that it is not competent for the House to transact business, and after such interval as may be prescribed in the rules of procedure of the House, the person presiding ascertains that the number of members present is still less than one-third of all the members of the House, he shall adjourn the House.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "95",
+    content: [
+      "At any sitting of a House of Assembly, the Speaker of that House shall preside, and in his absence the Deputy Speaker shall preside.",
+      "In the absence of the Speaker and Deputy Speaker of the House, such member of the House as the House may elect for a purpose shall preside.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "96",
+    content: [
+      "The standing orders of a House of Assembly shall make provisions as respects -",
+      "(a) the member who is to preside at a sitting of the House in the absence of the Speaker and Deputy Speaker of the House;",
+      "(b) the quorum of the House;",
+      "(c) the question which are to be decided by simple majority and the question which are to be decided by other majorities;",
+      "(d) the procedure for deciding whether a bill has been passed by the House or whether a question of consent under this Constitution has been passed;",
+      "(e) the order of proceeding in the House;",
+      "(f) the procedure for addressing the House; and",
+      "(g) the rules of debate and how the rules are to be enforced.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "97",
+    content: [
+      "The House of Assembly of a State shall have power to regulate its own procedure, including the procedure for summoning and recess of the House.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "98",
+    content: [
+      "Every member of a House of Assembly shall, before taking his seat in that House, declare his assets and liabilities in the manner prescribed in this Constitution and subsequently take and subscribe before the Speaker of the House, the Oath of Allegiance and oath of membership prescribed in the Seventh Schedule to this Constitution, but a member may, before taking the oaths, take part in the election of the Speaker and Deputy Speaker of the House of Assembly.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "99",
+    content: [
+      "There shall be a general election to a House of Assembly which shall be held on a date to be appointed by the Independent National Electoral Commission.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "100",
+    content: [
+      "Subject to the provisions of this Constitution, the Independent National Electoral Commission shall divide each State of the Federation into such number of State constituencies as is equal to three or four times the number of Federal constituencies within that State.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "101",
+    content: [
+      "A House of Assembly of a State shall stand dissolved at the expiration of a period of four years commencing from the date of the first sitting of the House.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "102",
+    content: [
+      "A candidate for an election to a House of Assembly shall be qualified for election if -",
+      "(a) he is a citizen of Nigeria;",
+      "(b) he has attained the age of thirty years;",
+      "(c) he has been educated up to at least the School Certificate level or its equivalent; and",
+      "(d) he is a member of a political party and is sponsored by that party.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "103",
+    content: [
+      "A person shall be qualified for election as a member of a House of Assembly if -",
+      "(a) he is a citizen of Nigeria;",
+      "(b) he has attained the age of thirty years;",
+      "(c) he has been educated up to at least the School Certificate level or its equivalent; and",
+      "(d) he is a member of a political party and is sponsored by that party.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "104",
+    content: [
+      "The Governor shall -",
+      "(a) attend and address a meeting of the House of Assembly of the State either to deliver his address on State affairs or to make such statement on the policy of government as he may consider to be of importance to the State;",
+      "(b) attend a joint meeting of the House of Assembly and the Council of Chiefs of the State, to be presided over by the Speaker of the House of Assembly, either to deliver his address on State affairs or to make such statement on the policy of government as he may consider to be of importance to the State.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "105",
+    content: [
+      "A Commissioner of the Government of a State shall attend the House of Assembly of the State if invited to explain to the House of Assembly the conduct of his Ministry, and in particular when the affairs of that Ministry are under discussion.",
+      "Nothing in this section shall enable any person who is not a member of a House of Assembly to vote in that House or in any of its committees.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "106",
+    content: [
+      "A member of a House of Assembly shall vacate his seat in the House if -",
+      "(a) he becomes a member of another legislative house;",
+      "(b) any other circumstances arise that, if he were not a member of the House of Assembly, would cause him to be disqualified for election as a member;",
+      "(c) he ceases to be a citizen of Nigeria;",
+      "(d) he becomes President, Vice-President, Governor, Deputy Governor or a Minister of the Government of the Federation or a Commissioner of the Government of a State or a Special Adviser;",
+      "(e) save as otherwise prescribed by this Constitution, he becomes a member of a commission or other body established by this Constitution or by any other law;",
+      "(f) without just cause he is absent from meetings of the House of Assembly for a period amounting in the aggregate to more than one-third of the total number of days during which the House meets in any one year;",
+      "(g) being a person whose election to the House of Assembly was sponsored by a political party, he becomes a member of another political party before the expiration of the period for which that House was elected:",
+      "Provided that his membership of the latter political party is not as a result of a division in the political party of which he was previously a member or of a merger of two or more political parties or factions by one of which he was previously sponsored; or",
+      "(h) the Speaker of the House of Assembly receives a certificate under the hand of the Chairman of the Independent National Electoral Commission stating that the provisions of section 109 of this Constitution have been complied with in respect of the recall of that member.",
+      "The Speaker of the House of Assembly shall give effect to the provisions of subsection (1) of this section, so however that the Speaker or a member shall first present evidence satisfactory to the House that any of the provisions of that subsection has become applicable in respect of that member.",
+      "A member of a House of Assembly shall be deemed to be absent without just cause from a meeting of the House of Assembly unless the person presiding certifies in writing that he is satisfied that the absence of the member from the meeting was for a just cause.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "107",
+    content: [
+      "A member of a House of Assembly may be recalled as such a member if -",
+      "(a) there is presented to the Chairman of the Independent National Electoral Commission a petition in that behalf signed by more than one-half of the persons registered to vote in that member's constituency alleging their loss of confidence in that member; and",
+      "(b) the petition is thereafter, in a referendum conducted by the Independent National Electoral Commission within ninety days of the date of receipt of the petition, approved by a simple majority of the votes of the persons registered to vote in that member's constituency.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "108",
+    content: [
+      "A member of a House of Assembly shall receive such salary and other allowances as the Revenue Mobilisation Allocation and Fiscal Commission may determine.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "109",
+    content: [
+      "The power of a House of Assembly to make laws shall be exercised by bills passed by the House of Assembly and, except as otherwise provided by this section, assented to by the Governor.",
+      "A bill shall not become Law unless it has been duly passed and, subject to subsection (1) of this section, assented to in accordance with the provisions of this section.",
+      "Where a bill has been passed by the House of Assembly it shall be presented to the Governor for assent.",
+      "Where a bill is presented to the Governor for assent he shall within thirty days thereof signify that he assents or that he withholds assent.",
+      "Where the Governor withholds assent and the bill is again passed by the House of Assembly by two-thirds majority, the bill shall become law and the assent of the Governor shall not be required.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "110",
+    content: [
+      "Subject to the provisions of this Constitution, a House of Assembly shall have power to regulate its own procedure, including the procedure for summoning and recess of the House.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "111",
+    content: [
+      "A House of Assembly may act notwithstanding any vacancy in its membership, and the presence or participation of any person not entitled to be present at or to participate in the proceedings of the House shall not invalidate such proceedings.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "112",
+    content: [
+      "A House of Assembly may appoint a committee of its members for any special or general purpose as in its opinion would be better regulated and managed by means of such a committee, and may by resolution, regulation or otherwise as it thinks fit delegate any functions exercisable by it to any such committee.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "113",
+    content: [
+      "A House of Assembly shall sit for a period of not less than one hundred and eighty-one days in a year.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "114",
+    content: [
+      "A House of Assembly may confer upon any committee of the House such powers and authority as the House may deem fit for the effective discharge of the functions of the committee.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "115",
+    content: [
+      "A House of Assembly shall have power by resolution published in its journal or in the Office Gazette of the Government of the State to direct or cause to be directed an inquiry or investigation into -",
+      "(a) any matter or thing with respect to which it has power to make laws; and",
+      "(b) the conduct of affairs of any person, authority, ministry or government department charged, or intended to be charged, with the duty of or responsibility for -",
+      "(i) executing or administering laws enacted by that House of Assembly, and",
+      "(ii) disbursing or administering moneys appropriated or to be appropriated by such House.",
+      "The powers conferred on a House of Assembly under the provisions of this section are exercisable only for the purpose of enabling the House to -",
+      "(a) make laws with respect to any matter within its legislative competence and correct any defects in existing laws; and",
+      "(b) expose corruption, inefficiency of waste in the execution or administration of laws within its legislative competence and in the disbursement or administration of funds appropriated by it.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "116",
+    content: [
+      "For the purposes of any investigation under section 115 of this Constitution and subject to the provisions thereof, a House of Assembly or a committee appointed in accordance with section 112 of this Constitution shall have power to -",
+      "(a) procure all such evidence, written or oral, direct or circumstantial, as it may think necessary or desirable, and examine all persons as witnesses whose evidence may be material or relevant to the subject matter;",
+      "(b) require such evidence to be given on oath;",
+      "(c) summon any person in Nigeria to give evidence at any place or produce any document or other thing in his possession or under his control, and examine him as a witness and require him to produce any document or other thing in his possession or under his control, subject to all just exceptions; and",
+      "(d) issue a warrant to compel the attendance of any person who, after having been summoned to attend, fails, refuses or neglects to do so and does not excuse such failure, refusal or neglect to the satisfaction of the House of Assembly or the committee, and order him to pay all costs which may have been occasioned in compelling his attendance or by reason of his failure, refusal or neglect to obey the summons and also to impose such fine as may be prescribed for any such failure, refusal or neglect; and any fine so imposed shall be recoverable in the same manner as a fine imposed by a court of law.",
+      "A summons or warrant issued under this section may be served or executed by any member of the Nigeria Police Force or by any person authorised in that behalf by the Speaker of the House of Assembly of the State.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "117",
+    content: [
+      "All revenues or other moneys raised or received by a State (not being revenues or other moneys payable under this Constitution or any Law of a House of Assembly into any other public fund of the State established for a specific purpose) shall be paid into and form one Consolidated Revenue Fund of the State.",
+      "No moneys shall be withdrawn from the Consolidated Revenue Fund of the State except to meet expenditure that is charged upon the Fund by this Constitution or where the issue of those moneys has been authorised by an Appropriation Law, Supplementary Appropriation Law or a Law passed in pursuance of section 121 of this Constitution.",
+      "No moneys shall be withdrawn from any public fund of the State, other than the Consolidated Revenue Fund of the State, unless the issue of those moneys has been authorised by a Law of the House of Assembly of the State.",
+      "No moneys shall be withdrawn from the Consolidated Revenue Fund of the State or any other public fund of the State except in the manner prescribed by the House of Assembly.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "118",
+    content: [
+      "The Governor shall cause to be prepared and laid before the House of Assembly at any time before the commencement of each financial year estimates of the revenues and expenditure of the State for the next following financial year.",
+      "The heads of expenditure contained in the estimates, other than expenditure charged upon the Consolidated Revenue Fund of the State by this Constitution, shall be included in a bill, to be known as an Appropriation Bill, providing for the issue from the Consolidated Revenue Fund of the State of the sums necessary to meet that expenditure and the appropriation of those sums for the purposes specified therein.",
+      "Any amount standing to the credit of the judiciary in the Consolidated Revenue Fund of the State shall be paid directly to the heads of the courts concerned.",
+      "If in respect of any financial year, it is found that -",
+      "(a) the amount appropriated by the Appropriation Law for any purpose is insufficient; or",
+      "(b) a need has arisen for expenditure for a purpose for which no amount has been appropriated by the Law,",
+      "a supplementary estimate showing the sums required shall be laid before the House of Assembly and the heads of any such expenditure shall be included in a Supplementary Appropriation Bill.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "119",
+    content: [
+      "If the Appropriation Bill in respect of any financial year has not been passed into Law by the beginning of the financial year, the Governor may authorise the withdrawal of moneys from the Consolidated Revenue Fund of the State for the purpose of meeting expenditure necessary to carry on the services of the government for a period not exceeding six months or until the coming into operation of the Law, whichever is the earlier:",
+      "Provided that the withdrawal in respect of any such period shall not exceed the amount authorised to be withdrawn from the Consolidated Revenue Fund of the State under the provisions of the Appropriation Law passed by the House of Assembly for the corresponding period in the immediately preceding financial year, being an amount proportionate to the total amount so authorised for the immediately preceding financial year.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "120",
+    content: [
+      "A House of Assembly may by Law make provisions for the establishment of a Contingencies Fund for the State and for authorising the Governor, if satisfied that there has arisen an urgent and unforeseen need for expenditure for which no other provision exists, to make advances from the Fund to meet that need.",
+      "Where any advance is made in accordance with the provisions of this section, a Supplementary Estimate shall be presented and a Supplementary Appropriation Bill shall be introduced as soon as possible for the purpose of replacing the amount so advanced.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "121",
+    content: [
+      "There shall be paid to the holders of the offices mentioned in this section such remuneration and salaries as may be prescribed by a House of Assembly, but not exceeding the amount as shall have been determined by the Revenue Mobilisation Allocation and Fiscal Commission.",
+      "The remuneration, salaries and allowances payable to the holders of the offices so mentioned shall be charged upon the Consolidated Revenue Fund of the State.",
+      "The remuneration and salaries payable to the holders of the said offices and their conditions of service, other than allowances, shall not be altered to their disadvantage after their appointment.",
+      "The offices to which this section applies are the offices of Governor, Deputy Governor, Auditor-General for a State and the Chairman and members of the following bodies, that is to say, the State Civil Service Commission, the State Independent Electoral Commission and the State Judicial Service Commission.",
+      "Provisions may be made by a Law of a House of Assembly for the grant of a pension or gratuity to or in respect of a person who had held office as Governor or Deputy Governor and was not removed from office as a result of impeachment; and any pension granted by virtue of any provisions made in pursuance of this subsection shall be a charge upon the Consolidated Revenue Fund of the State.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "122",
+    content: [
+      "There shall be an Auditor-General for each State who shall be appointed in accordance with the provisions of section 126 of this Constitution.",
+      "The public accounts of a State and of all offices and courts of the State shall be audited by the Auditor-General for the State who shall submit his reports to the House of Assembly of the State concerned, and for that purpose the Auditor-General or any person authorised by him in that behalf shall have access to all the books, records, returns and other documents relating to those accounts.",
+      "Nothing in subsection (2) of this section shall be construed as authorising the Auditor-General to audit the accounts of or appoint auditors for government statutory corporations, commissions, authorities, agencies, including all persons and bodies established by Law by the House of Assembly of the State, but the Auditor-General shall -",
+      "(a) provide such bodies with -",
+      "(i) a list of auditors qualified to be appointed by them as external auditors and from which the bodies shall appoint their external auditors, and",
+      "(ii) a guideline on the level of fees to be paid to external auditors; and",
+      "(b) comment on their annual accounts and auditor's report thereon.",
+      "The Auditor-General for the State shall have power to conduct periodic checks of all government statutory corporations, commissions, authorities, agencies, including all persons and bodies established by a Law of the House of Assembly of the State.",
+      "The Auditor-General for a State shall, within ninety days of receipt of the Accountant-General's financial statement and annual accounts of the State, submit his report to the House of Assembly of the State and the House shall cause the report to be considered by a committee of the House responsible for public accounts.",
+      "In the exercise of his functions under this Constitution, the Auditor-General for a State shall not be subject to the direction or control of any other authority or person.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "123",
+    content: [
+      "There shall be for each State of the Federation a House of Assembly.",
+      "The House of Assembly of a State shall consist of three or four times the number of seats which that State has in the House of Representatives divided in a way to reflect, as far as possible, nearly equal population:",
+      "Provided that a House of Assembly of a State shall consist of not less than twenty-four and not more than forty members.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "124",
+    content: [
+      "The Auditor-General for a State shall be appointed by the Governor of the State on the recommendation of the State Civil Service Commission subject to confirmation by the House of Assembly of the State.",
+      "The power to appoint persons to act in the office of the Auditor-General for a State shall vest in the Governor.",
+      "Except with the sanction of a resolution of the House of Assembly of a State, no person shall act in the office of the Auditor-General for a State for a period exceeding six months.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "125",
+    content: [
+      "A person holding the office of Auditor-General under section 126 (1) of this Constitution shall be removed from office by the Governor of the State acting on an address supported by two-thirds majority of the House of Assembly praying that he be so removed for inability to discharge the functions of his office (whether arising from infirmity of mind or body or any other cause) or for misconduct.",
+      "An Auditor-General shall not been removed from office before such retiring age as may be prescribed by Law, save in accordance with the provisions of this section.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "126",
+    content: [
+      "A bill for a Law of a House of Assembly shall be deemed to have been passed by the House of Assembly if -",
+      "(a) it has been passed by the House of Assembly with or without amendments; and",
+      "(b) it is assented to by the Governor.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "127",
+    content: [
+      "A bill may originate in a House of Assembly and shall be passed in accordance with the provisions of this section.",
+      "Where a bill has been passed by the House of Assembly it shall be presented to the Governor for assent.",
+      "Where a bill is presented to the Governor for assent, he shall within thirty days thereof signify that he assents or that he withholds assent.",
+      "Where the Governor withholds assent and the bill is again passed by the House of Assembly by two-thirds majority, the bill shall become law and the assent of the Governor shall not be required.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "128",
+    content: [
+      "A Law made by a House of Assembly shall come into force on the date of its publication in the State Gazette or such other date as may be prescribed therein or in any other Law.",
+    ],
+  },
+  {
+    chapter: "V",
+    section: "129",
+    content: [
+      "Nothing in this Constitution shall invalidate a Law made by a House of Assembly by reason only that it is inconsistent with a Law validly made by the National Assembly.",
+    ],
+  },
+  // Chapter VI - The Executive
   {
     chapter: "VI",
     section: "130",
@@ -428,7 +1456,6 @@ export const constitution = [
       "The President shall be the Head of State, the Chief Executive of the Federation and Commander-in-Chief of the Armed Forces of the Federation.",
     ],
   },
-
   {
     chapter: "VI",
     section: "131",
@@ -440,8 +1467,117 @@ export const constitution = [
       "(d) he has been educated up to at least School Certificate level or its equivalent.",
     ],
   },
-
-  // The Judicature
+  {
+    chapter: "VI",
+    section: "132",
+    content: [
+      "An election to the office of President shall be held on a date to be appointed by the Independent National Electoral Commission in accordance with the Electoral Act.",
+      "An election to the said office shall be held on a date not earlier than sixty days and not later than thirty days before the expiration of the term of office of the last holder of that office.",
+      "Where in an election to the office of President one of the two or more candidates nominated for the election is the only candidate after the close of nomination, by reason of the disqualification, withdrawal, incapacitation, disappearance or death of the other candidates, the Independent National Electoral Commission shall extend the time for nomination.",
+      "For the purpose of an election to the office of President, the whole of the Federation shall be regarded as one constituency.",
+      "Every person who is registered to vote at an election of a member of a legislative house shall be entitled to vote at an election to the office of President.",
+    ],
+  },
+  {
+    chapter: "VI",
+    section: "133",
+    content: [
+      "A candidate for an election to the office of President shall be deemed to have been duly elected to such office where, being the only candidate nominated for the election -",
+      "(a) he has a majority of YES votes over NO votes cast at the election; and",
+      "(b) he has not less than one-quarter of the votes cast at the election in each of at least two-thirds of all the States in the Federation and the Federal Capital Territory, Abuja.",
+    ],
+  },
+  {
+    chapter: "VI",
+    section: "134",
+    content: [
+      "A candidate for an election to the office of President shall be deemed to have been duly elected, where, there being only two candidates for the election -",
+      "(a) he has the majority of votes cast at the election; and",
+      "(b) he has not less than one-quarter of the votes cast at the election in each of at least two-thirds of all the States in the Federation and the Federal Capital Territory, Abuja.",
+      "A candidate for an election to the office of President shall be deemed to have been duly elected where, there being more than two candidates for the election-",
+      "(a) he has the highest number of votes cast at the election; and",
+      "(b) he has not less than one-quarter of the votes cast at the election each of at least two-thirds of all the States in the Federation and the Federal Capital Territory, Abuja.",
+      "In a default of a candidate duly elected in accordance with subsection (2) of this section there shall be a second election in accordance with subsection (4) of this section at which the only candidate shall be -",
+      "(a) the candidate who scored the highest number of votes at any election held in accordance with the said subsection (2) of this section; and",
+      "(b) one among the remaining candidates who has a majority of votes in the highest number of States, so however that where there are more than one candidate with majority of votes in the highest number of States, the candidate among them with the highest total of votes cast at the election shall be the second candidate for the election.",
+      "In default of a candidate duly elected under the foregoing subsections, the Independent National Electoral Commission shall within seven days of the result of the election held under the said subsections, arrange for an election between the two candidates and a candidate at such election shall be deemed elected to the office of President if -",
+      "(a) he has a majority of votes cast at the election; and",
+      "(b) he has not less than one-quarter of the votes cast at the election in each of at least two-thirds of all the States in the Federation and the Federal Capital Territory, Abuja.",
+      "In default of a candidate duly elected under subsection (4) of this section, the Independent National Electoral Commission shall, within seven days of the result of the election held under the aforesaid subsection (4), arrange for another election between the two candidates to which that sub-paragraph relates and a candidate at such election shall be deemed to have been duly elected to the office of President if he has a majority of the votes cast at the election.",
+    ],
+  },
+  {
+    chapter: "VI",
+    section: "135",
+    content: [
+      "Subject to the provisions of this Constitution, a person shall hold the office of President until -",
+      "(a) when his successor in office takes the oath of that office;",
+      "(b) he dies whilst holding such office; or",
+      "(c) the date when his resignation from office takes effect; or",
+      "(d) he otherwise ceases to hold office in accordance with the provisions of this Constitution.",
+      "Subject to the provisions of subsection (1) of this section, the President shall vacate his office at the expiration of a period of four years commencing from the date, when -",
+      "(a) in the case of a person first elected as President under this Constitution, he took the Oath of Allegiance and the oath of office; and",
+      "(b) in any other case, the person last elected to that office under this Constitution took the Oath of Allegiance and oath of office or would, but for his death, have taken such Oaths.",
+      "If the Federation is at war in which the territory of Nigeria is physically involved and the President considers that it is not practicable to hold elections, the National Assembly may by resolution extend the period of four years mentioned in subsection (2) of this section from time to time; but no such extension shall exceed a period of six months at any one time.",
+    ],
+  },
+  {
+    chapter: "VI",
+    section: "136",
+    content: [
+      "If a person duly elected as President dies before taking and subscribing the Oath of Allegiance and oath of office, or is for any reason whatsoever unable to be sworn in, the person elected with him as Vice-President shall be sworn in as President and he shall nominate a new Vice-President who shall be appointed by the President with the approval by a simple majority of the National Assembly at a joint sitting.",
+      "Where the persons duly elected as President and Vice President die or are unable for any reason whatsoever to assume office before the inauguration of the National Assembly, the Independent National Electoral Commission shall immediately conduct an election for a President and the Vice-President.",
+    ],
+  },
+  {
+    chapter: "VI",
+    section: "137",
+    content: [
+      "A person shall not be qualified for election to the office of President if -",
+      "(a) subject to the provisions of section 28 of this Constitution, he has voluntarily acquired the citizenship of a country other than Nigeria or, except in such cases as may be prescribed by the National Assembly, he has made a declaration of allegiance to such other country; or",
+      "(b) he has been elected to such office at any two previous elections; or",
+      "(c) under the law in any part of Nigeria, he is adjudged to be a lunatic or otherwise declared to be of unsound mind; or",
+      "(d) he is under a sentence of death imposed by any competent court of law or tribunal in Nigeria or a sentence of imprisonment or fine for any offence involving dishonesty or fraud (by whatever name called) or for any other offence, imposed on him by any court or tribunal or substituted by a competent authority for any other sentence imposed on him by such a court or tribunal; or",
+      "(e) within a period of less than ten years before the date of the election to the office of President he has been convicted and sentenced for an offence involving dishonesty or he has been found guilty of the contravention of the Code of Conduct; or",
+      "(f) he is an undischarged bankrupt, having been adjudged or otherwise declared bankrupt under any law in force in Nigeria or any other country; or",
+      "(g) being a person employed in the civil or public service of the Federation or of any State, he has not resigned, withdrawn or retired from the employment at least thirty days before the date of the election; or",
+      "(h) he is a member of any secret society; or",
+      "(i) he has been indicted for embezzlement or fraud by a Judicial Commission of Inquiry or an Administrative Panel of Inquiry or a Tribunal set up under the Tribunals of Inquiry Act, a Tribunals of Inquiry Law or any other law by the Federal or State Government which indictment has been accepted by the Federal or State Government, respectively; or",
+      "(j) he has presented a forged certificate to the Independent National Electoral Commission.",
+      "Where in respect of any person who has been -",
+      "(a) adjudged to be a lunatic; or",
+      "(b) declared to be of unsound mind; or",
+      "(c) sentenced to death or imprisonment; or",
+      "(d) adjudged or declared bankrupt,",
+      "an appeal against the decision is pending in any court of law in accordance with any law in force in Nigeria, subsection (1) of this section shall not apply during a period beginning from the date when such appeal is lodged and ending on the date when the appeal is finally determined or, as the case may be, the appeal lapses or is abandoned, whichever is earlier.",
+    ],
+  },
+  {
+    chapter: "VI",
+    section: "138",
+    content: [
+      "The President shall not, during his tenure of office, hold any other executive office or paid employment in any capacity whatsoever.",
+    ],
+  },
+  {
+    chapter: "VI",
+    section: "139",
+    content: [
+      "The National Assembly shall by an Act make provisions as respects -",
+      "(a) persons who may apply to the Court of Appeal for the determination of any question as to whether any person has been validly elected to the office of President or Vice-President",
+      "(b) circumstances and manner in which, and the conditions upon which such application may be made; and",
+      "(c) powers, practice and procedure of the Court of Appeal in relation to any such application.",
+    ],
+  },
+  {
+    chapter: "VI",
+    section: "140",
+    content: [
+      "A person elected to the office of President shall not begin to perform the functions of that office until he has declared his assets and liabilities as prescribed in this Constitution and has subsequently taken and subscribed the Oath of Allegiance and the oath of office prescribed in the Seventh Schedule to this Constitution.",
+      "The oaths aforesaid shall be administered by the Chief Justice of Nigeria or the person for the time being appointed to exercise the functions of that office.",
+    ],
+  },
+  // Chapter VII - The Judicature
   {
     chapter: "VII",
     section: "230",
@@ -452,20 +1588,631 @@ export const constitution = [
       "(b) such number of Justices of the Supreme Court, not exceeding twenty-one, as may be prescribed by an Act of the National Assembly.",
     ],
   },
-
   {
     chapter: "VII",
     section: "231",
     content: [
       "The appointment of a person to the office of Chief Justice of Nigeria shall be made by the President on the recommendation of the National Judicial Council subject to confirmation of such appointment by the Senate.",
       "The appointment of a person to the office of a Justice of the Supreme Court shall be made by the President on the National Judicial Council subject to confirmation of such appointment by the senate.",
-      "A person shall not be qualified to hold the office of Chief Justice of Nigeria or a Justice of the Supreme Court, unless he is qualified to practice as a legal practitioner in Nigeria and has been so qualified for  unless he is qualified to practice as a legal practitioner in Nigeria and has been so qualified for a period of not less than fifteen years.",
+      "A person shall not be qualified to hold the office of Chief Justice of Nigeria or a Justice of the Supreme Court, unless he is qualified to practice as a legal practitioner in Nigeria and has been so qualified for a period of not less than fifteen years.",
       "If the office of Chief Justice of Nigeria is vacant or if the person holding the office is for any reason unable to perform the functions of the office, then until a person has been appointed to and has assumed the functions of that office, or until the person holding has resumed those functions, the President shall appoint the most senior Justice of the Supreme Court to perform those functions.",
       "Except on the recommendation of the National Judicial Council, an appointment pursuant to the provisions of subsection (4) of this section shall cease to have effect after the expiration of three months from the date of such appointment, and the President shall not re-appointment a person whose appointment has lapsed.",
     ],
   },
-
-  // Federal Capital Territory, Abuja and General Supplementary Provisions
+  {
+    chapter: "VII",
+    section: "232",
+    content: [
+      "The Supreme Court shall, to the exclusion of any other court, have original jurisdiction in any dispute between the Federation and a State or between States if and in so far as that dispute involves any question (whether of law or fact) on which the existence or extent of a legal right depends.",
+      "In addition to the jurisdiction conferred upon it by subsection (1) of this section, the Supreme Court shall have such original jurisdiction as may be conferred upon it by any Act of the National Assembly.",
+      "Provided that no original jurisdiction shall be conferred upon the Supreme Court with respect to any criminal matter.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "233",
+    content: [
+      "The Supreme Court shall have jurisdiction, to the exclusion of any other court of law in Nigeria, to hear and determine appeals from the Court of Appeal.",
+      "An appeal shall lie from decisions of the Court of Appeal to the Supreme Court as of right in the following cases -",
+      "(a) where the ground of appeal involves questions of law alone, decisions in any civil or criminal proceedings before the Court of Appeal;",
+      "(b) decisions in any civil or criminal proceedings on questions as to the interpretation or application of this Constitution;",
+      "(c) decisions in any civil or criminal proceedings on questions as to whether any of the provisions of Chapter IV of this Constitution has been, is being or is likely to be, contravened in relation to any person;",
+      "(d) decisions in any criminal proceedings in which any person has been sentenced to death by the Court of Appeal or in which the Court of Appeal has affirmed a sentence of death imposed by any other court;",
+      "(e) decisions on any question -",
+      "(i) whether any person has been validly elected to the office of President or Vice-President under this Constitution,",
+      "(ii) whether the term of office of office of President or Vice-President has ceased,",
+      "(iii) whether the office of President or Vice-President has become vacant; and",
+      "(f) such other cases as may be prescribed by an Act of the National Assembly.",
+      "Subject to the provisions of subsection (2) of this section, an appeal shall lie from the decisions of the Court of Appeal to the Supreme Court with the leave of the Court of Appeal or the Supreme Court.",
+      "The Supreme Court may dispose of any application for leave to appeal from any decision of the Court of Appeal in respect of any civil or criminal proceedings in the record of the proceedings if the Supreme Court is of opinion that the interests of justice do not require an oral hearing of the application.",
+      "Any right of appeal to the Supreme Court from the decisions of the Court of Appeal conferred by this section shall be exercisable in the case of civil proceedings at the instance of a party thereto, or with the leave of the Court of Appeal or the Supreme Court at the instance of an person having an interest in the matter, and in the case of criminal proceedings at the instance of an accused person, or subject to the provisions of this Constitution and any powers conferred upon the Attorney-General of the Federation or the Attorney-General of a state to take over and continue or to discontinue such proceedings, at the instance of such other authorities or persons as may be prescribed.",
+      "Any right of appeal to the Supreme Court from the decisions of the Court of Appeal conferred by this section shall, subject to section 236 of this Constitution, be exercised in accordance with any Act of the National Assembly and rules of court for the time being in force regulating the powers, practice and procedure of the Supreme Court.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "234",
+    content: [
+      "For the purpose of exercising any jurisdiction conferred upon it by this Constitution or any Act of the National Assembly, the Supreme Court shall be duly constituted if it consists of not less than five Justices of the Supreme Court:",
+      "Provided that where the Supreme Court is sitting to consider an appeal brought under section 233(2)(b) or (c) of this Constitution, or to exercise its original jurisdiction in accordance with section 232 of this Constitution, the Court shall be constituted by seven Justices.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "235",
+    content: [
+      "Without prejudice to the powers of the President or of the Governor of a state with respect to prerogative of mercy, no appeal shall lie to any other body or person from any determination of the Supreme Court.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "236",
+    content: [
+      "Subject to the provisions of any Act of the National Assembly, the Chief Justice of Nigeria may make rules for regulating the practice and procedure of the Supreme Court.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "237",
+    content: [
+      "There shall be a Court of Appeal.",
+      "The Court of Appeal shall consist of -",
+      "(a) a President of the Court of Appeal; and",
+      "(b) such number of Justices of the Court of Appeal, not less than forty-nine of which not less than three shall be learned in Islamic personal law, and not less than three shall be learned in Customary law, as may be prescribed by an Act of the National Assembly.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "238",
+    content: [
+      "The appointment of a person to the office of President of the Court of Appeal shall be made by the President on the recommendation of the National Judicial Council subject to confirmation of such appointment by the Senate.",
+      "The appointment of a person to the office of a Justice of the Court of Appeal shall be made by the President on the recommendation of the National Judicial Council.",
+      "A person shall not be qualified to hold the office of a Justice of the Court of Appeal unless he is qualified to practise as a legal practitioner in Nigeria and has been so qualified for a period of not less than twelve years.",
+      "If the office of the President of the Court of Appeal is vacant, or if the person holding the office is for any reason unable to perform the functions of the office, then until a person has been appointed to and has assumed the functions of that office, or until the person holding the office has resumed those functions, the President shall appoint the most senior Justice of the Court of Appeal to perform those functions.",
+      "Except on the recommendation of the National Judicial Council, an appointment pursuant to the provisions of subsection (4) of this section shall cease to have effect after the expiration of three months from the date of such appointment, and the President shall not re-appoint a person whose appointment has lapsed.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "239",
+    content: [
+      "Subject to the provisions of this Constitution, the Court of Appeal shall, to the exclusion of any other court of Law in Nigeria, have original jurisdiction to hear and determine any question as to whether -",
+      "(a) any person has been validly elected to the office of President or Vice-President under this Constitution; or",
+      "(b) the term of office of the President or Vice-President has ceased; or",
+      "(c) the office of President or Vice-President has become vacant.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "240",
+    content: [
+      "Subject to the provisions of this Constitution, the Court of Appeal shall have jurisdiction to the exclusion of any other court of law in Nigeria, to hear and determine appeals from the Federal High Court, the High Court of the Federal Capital Territory, Abuja, High Court of a state, Sharia Court of Appeal of the Federal Capital Territory, Abuja, Sharia Court of Appeal of a state, Customary Court of Appeal of the Federal Capital Territory, Abuja, Customary Court of Appeal of a state and from decisions of a court martial or other tribunals as may be prescribed by an Act of the National Assembly.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "241",
+    content: [
+      "An appeal shall lie from decisions of the Federal High Court or a High Court to the Court of Appeal as of right in the following cases -",
+      "(a) final decisions in any civil or criminal proceedings before the Federal High Court or a High Court sitting at first instance;",
+      "(b) where the ground of appeal involves questions of law alone, decisions in any civil or criminal proceedings;",
+      "(c) decisions in any civil or criminal proceedings on questions as to the interpretation or application of this Constitution;",
+      "(d) decisions in any civil or criminal proceedings on questions as to whether any of the provisions of Chapter IV of this Constitution has been, is being or is likely to be, contravened in relation to any person;",
+      "(e) decisions in any criminal proceedings in which the Federal High Court or a High Court has imposed a sentence of death;",
+      "(f) decisions made or given by the Federal High Court or a High Court -",
+      "(i) where the liberty of a person or the custody of an infant is concerned,",
+      "(ii) where an injunction or the appointment of a receiver is granted or refused,",
+      "(iii) in the case of a decision determining the case of a creditor or the liability of a contributory or other officer under any enactment relating to companies in respect of misfeasance or otherwise,",
+      "(iv) in the case of a decree nisi in a matrimonial cause or a decision in an admiralty action determining liability, and",
+      "(v) in such other cases as may be prescribed by any law in force in Nigeria.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "242",
+    content: [
+      "Subject to the provisions of section 241 of this Constitution, an appeal shall lie from decisions of the Federal High Court or a High Court to the Court of Appeal with the leave of the Federal High Court or that High Court or the Court of Appeal.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "243",
+    content: [
+      "Any right of appeal to the Court of Appeal from the decisions of the Federal High Court or a High Court conferred by this Constitution shall be -",
+      "(a) exercisable in the case of civil proceedings at the instance of a party thereto, or with the leave of the Federal High Court or High Court or the Court of Appeal at the instance of any other person having an interest in the matter, and in the case of criminal proceedings at the instance of an accused person or, subject to the provisions of this Constitution and any powers conferred upon the Attorney-General of the Federation or the Attorney-General of a state to take over and continue or to discontinue such proceedings, at the instance of such other authorities or persons as may be prescribed;",
+      "(b) exercised in accordance with any Act of the National Assembly and rules of court for the time being in force regulating the powers, practice and procedure of the Court of Appeal.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "244",
+    content: [
+      "An appeal shall lie from decisions of a Sharia Court of Appeal to the Court of Appeal as of right in any civil proceedings before the Sharia Court of Appeal with respect to any question of Islamic personal law which the Sharia Court of Appeal is competent to decide.",
+      "Any right of appeal to the Court of Appeal from the decisions of a Sharia Court of Appeal conferred by this section shall be -",
+      "(a) exercisable at the instance of a party thereto or, with the leave of the Sharia Court of Appeal or of the Court of Appeal, at the instance of any other person having an interest in the matter; and",
+      "(b) exercised in accordance with an Act of the National Assembly and rules of court for the time being in force regulating the powers, practice and procedure of the Court of Appeal.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "245",
+    content: [
+      "An appeal shall lie from decisions of a customary Court of Appeal to the Court of Appeal as of right in any civil proceedings before the customary Court of Appeal with respect to any question of Customary law and such other matters as may be prescribed by an Act of the National Assembly.",
+      "Any right of appeal to the Court of Appeal from the decisions of a Customary Court of Appeal conferred by this section shall be -",
+      "(a) exercisable at the instance of a party thereto or, with the leave of the Customary Court of Appeal or of the Court of Appeal, at the instance of any other person having an interest in the matter;",
+      "(b) exercised in accordance with any Act of the National Assembly and rules of court for the time being in force regulating the powers, practice and procedure of the Court of Appeal.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "246",
+    content: [
+      "An appeal to the Court of Appeal shall lie as of right from -",
+      "(a) decisions of the Code of Conduct Tribunal established in the Fifth Schedule to this Constitution;",
+      "(b) decisions of the National Assembly Election Tribunals and Governorship and Legislative Houses Election Tribunals on any question as to whether",
+      "(i) any person has been validly elected as a member of the National Assembly or of a House of Assembly of a State under this Constitution,",
+      "(ii) any person has been validly elected to the office of a Governor or Deputy Governor, or",
+      "(iii) the term of office of any person has ceased or the seat of any such person has become vacant.",
+      "The National Assembly may confer jurisdiction upon the Court of Appeal to hear and determine appeals from any decision of any other court of law or tribunal established by the National Assembly.",
+      "The decisions of the Court of Appeal in respect of appeals arising from election petitions shall be final.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "247",
+    content: [
+      "For the purpose of exercising any jurisdiction conferred upon it by this Constitution or any other law, the Court of Appeal shall be duly constituted if it consists of not less than three Justices of the Court of Appeal and in the case of appeals from -",
+      "(a) a Sharia Court of Appeal if it consists of not less than three Justices of the Court of Appeal learned in Islamic personal law; and",
+      "(b) a Customary Court of Appeal, if it consists of not less than three Justices of Court of Appeal learned in Customary law.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "248",
+    content: [
+      "Subject to the provisions of any Act of the National Assembly, the President of the Court of Appeal may make rules for regulating the practice and procedure of the Court of Appeal.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "249",
+    content: [
+      "There shall be a Federal High Court.",
+      "The Federal High Court shall consist of -",
+      "(a) a Chief Judge of the Federal High Court; and",
+      "(b) such number of Judges of the Federal High Court as may be prescribed by an Act of the National Assembly.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "250",
+    content: [
+      "The appointment of a person to the office of Chief Judge of the Federal High Court shall be made by the President on the recommendation of the National Judicial Council, subject to confirmation of such appointment by the Senate.",
+      "The appointment of a person to the office of a Judge of the Federal High Court shall be made by the President on the recommendation of the National Judicial Council.",
+      "A person shall not be qualified to hold the office of Chief Judge of the Federal High Court unless he is qualified to practise as a legal practitioner in Nigeria and has been so qualified for a period of not less than ten years.",
+      "If the office of Chief Judge of the Federal High Court is vacant or if the person holding the office is for any reason unable to perform the functions of the office, then, until a person has been appointed to and has assumed those functions, or until the person holding the office has resumed those functions, the President shall appoint the most senior Judge of the Federal High Court to perform those functions.",
+      "Except on the recommendation of the National Judicial Council, an appointment pursuant to the provisions of subsection (3) of this section shall cease to have effect after the expiration of three months from the date of such appointment and the President shall not re-appoint a person whose appointment has lapsed.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "251",
+    content: [
+      "Notwithstanding anything to the contrary contained in this Constitution and in addition to such other jurisdiction as may be conferred upon it by an Act of the National Assembly, the Federal High Court shall have and exercise jurisdiction to the exclusion of any other court in civil causes and matters -",
+      "(a) relating to the revenue of the Government of the Federation in which the said Government or any organ thereof or a person suing or being sued on behalf of the said Government is a party;",
+      "(b) connected with or pertaining to the taxation of companies and other bodies established or carrying on business in Nigeria and all other persons subject to Federal taxation;",
+      "(c) connected with or pertaining to customs and excise duties and export duties, including any claim by or against the Nigeria Customs Service or any member or officer thereof, arising from the performance of any duty imposed under any regulation relating to customs and excise duties and export duties;",
+      "(d) connected with or pertaining to banking, banks, other financial institutions, including any action between one bank and another, any action by or against the Central Bank of Nigeria arising from banking, foreign exchange, coinage, legal tender, bills of exchange, letters of credit, promissory notes and other fiscal measures:",
+      "Provided that this paragraph shall not apply to any dispute between an individual customer and his bank in respect of transactions between the individual customer and the bank;",
+      "(e) arising from the operation of the Companies and Allied Matters Act or any other enactment replacing the Act or regulating the operation of companies incorporated under the Companies and Allied Matters Act;",
+      "(f) any Federal enactment relating to copyright, patent, designs, trade marks and passing-off, industrial designs and merchandise marks, business names, commercial and industrial monopolies, combines and trusts, standards of goods and commodities and industrial standards;",
+      "(g) any admiralty jurisdiction, including shipping and navigation on the River Niger or River Benue and their affluents and on such other inland waterway as may be designated by any enactment to be an international waterway, all Federal ports, (including the constitution and powers of the ports authorities for Federal ports) and carriage by sea;",
+      "(h) diplomatic, consular and trade representation;",
+      "(i) citizenship, naturalisation and aliens, deportation of persons who are not citizens of Nigeria, extradition, immigration into and emigration from Nigeria, passports and visas;",
+      "(j) bankruptcy and insolvency;",
+      "(k) aviation and safety of aircraft.",
+      "(l) arms, ammunition and explosives;",
+      "(m) drugs and poisons;",
+      "(n) mines and minerals (including oil fields, oil mining, geological surveys and natural gas);",
+      "(o) weights and measures;",
+      "(p) the administration or the management and control of the Federal Government or any of its agencies;",
+      "(q) subject to the provisions of this Constitution, the operation and interpretation of this Constitution in so far as it affects the Federal Government or any of its agencies;",
+      "(r) any action or proceeding for a declaration or injunction affecting the validity of any executive or administrative action or decision by the Federal Government or any of its agencies; and",
+      "(s) such other jurisdiction civil or criminal and whether to the exclusion of any other court or not as may be conferred upon it by an Act of the National Assembly:",
+      "Provided that nothing in the provisions of paragraphs (p), (q) and (r) of this subsection shall prevent a person from seeking redress against the Federal Government or any of its agencies in an action for damages, injunction or specific performance where the action is based on any enactment, law or equity.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "252",
+    content: [
+      "For the purpose of exercising any jurisdiction conferred upon it by this Constitution or as may be conferred by an Act of the National Assembly, the Federal High Court shall have all the powers of the High Court of a state.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "253",
+    content: [
+      "The Federal High Court shall be duly constituted if it consists of at least one Judge of that Court.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "254",
+    content: [
+      "Subject to the provisions of any Act of the National Assembly, the Chief Judge of the Federal High Court may make rules for regulating the practice and procedure of the Federal High Court.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "255",
+    content: [
+      "There shall be a High Court of the Federal Capital Territory, Abuja.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "256",
+    content: [
+      "The High Court of the Federal Capital Territory, Abuja shall consist of -",
+      "(a) a Chief Judge of the High Court of the Federal Capital Territory, Abuja; and",
+      "(b) such number of Judges of the High Court as may be prescribed by an Act of the National Assembly.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "257",
+    content: [
+      "The appointment of a person to the office of Chief Judge of the High Court of the Federal Capital Territory, Abuja shall be made by the President on the recommendation of the National Judicial Council, subject to confirmation of such appointment by the Senate.",
+      "The appointment of a person to the office of a Judge of the High Court of the Federal Capital Territory, Abuja shall be made by the President on the recommendation of the National Judicial Council.",
+      "A person shall not be qualified to hold the office of a Chief Judge or a Judge of the High Court of the Federation Capital Territory, Abuja unless he is qualified to practice as a legal practitioner in Nigeria and has been so qualified for a period of not less than ten years.",
+      "If the office of the Chief Judge of the High Court of the Federal Capital Territory, Abuja is vacant, or if the person holding the office is for any reason unable to perform the functions of the office, then until a person has been appointed to and has assumed those functions, or until the person holding the office has resumed those functions, the President shall appoint the most senior Judge of the High Court of the Federal Capital Territory, Abuja, to perform those functions.",
+      "Except on the recommendation of the National Judicial Council, an appointment pursuant to the provisions of subsection (4) of this section shall cease to have effect after the expiration of three months from the date of such appointment, and the President shall not re-appoint a person whose appointment has lapsed.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "258",
+    content: [
+      "The High Court of the Federal Capital Territory, Abuja shall have jurisdiction to hear and determine any civil proceedings in which the existence or extent of a legal right, power, duty, liability privilege, interest, obligation or claim is in issue or to hear and determine any criminal proceedings involving or relating to any penalty, forfeiture, punishment or other liability in respect of an offence committed by any person.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "259",
+    content: [
+      "The High Court of the Federal Capital Territory, Abuja shall be duly constituted if it consists of at least one Judge of that court.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "260",
+    content: [
+      "Subject to the provisions of any Act of the National Assembly, the Chief Judge of the High Court of the Federal Capital Territory, Abuja may make rules for regulating the practice and procedure of the High Court of the Federal Capital Territory, Abuja.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "261",
+    content: [
+      "There shall be a Sharia Court of Appeal of the Federal Capital Territory, Abuja.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "262",
+    content: [
+      "The Sharia Court of Appeal of the Federal Capital Territory, Abuja shall consist of -",
+      "(a) a Grand Kadi of the Sharia Court of Appeal of the Federal Capital Territory, Abuja; and",
+      "(b) such number of Kadis of the Sharia Court of Appeal as may be prescribed by an Act of the National Assembly.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "263",
+    content: [
+      "The appointment of a person to the office of the Grand Kadi of the Sharia Court of Appeal of the Federal Capital Territory, Abuja shall be made by the President on the recommendation of the National Judicial Council, subject to confirmation of such appointment by the Senate.",
+      "The appointment of a person to the office of a Kadi of the Sharia Court of Appeal shall be made by the President on the recommendation of the National Judicial Council.",
+      "A person shall not be qualified to hold office as Grand Kadi or Kadi of the Sharia Court of Appeal of the Federal Capital Territory, Abuja unless -",
+      "(a) he is a legal practitioner in Nigeria and has so qualified for a period of not less than ten years and has obtained a recognised qualification in Islamic law from an institution acceptable to the National Judicial Council; or",
+      "(b) he has attended and has obtained a recognised qualification in Islamic law from an institution approved by the National Judicial Council and has held the qualification for a period of not less than twelve years; and",
+      "(i) he either has considerable experience in the Practice of Islamic law, or",
+      "(ii) he is a distinguished scholar of Islamic law.",
+      "If the office of the Grand Kadi of the Sharia Court of Appeal is vacant or if the person holding the office is for any reason unable to perform the functions of the office, then, until a person has been appointed to and has assumed the functions of that office, or until the person holding the office has resumed those functions, the President shall appoint the most senior Kadi of the Sharia Court of Appeal to perform those functions.",
+      "Except on the recommendation of the National Judicial Council, an appointment pursuant to the provisions of subsection (4) of this section shall cease to have effect after the expiration of three months from the date of such appointment, and the President shall not re-appoint a person whose appointment has lapsed.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "264",
+    content: [
+      "The Sharia Court of Appeal shall, in addition to such other jurisdiction as may be conferred upon it by an Act of the National Assembly, exercise such appellate and supervisory jurisdiction in civil proceedings involving questions of Islamic personal law.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "265",
+    content: [
+      "For the purpose of exercising any jurisdiction conferred upon it by this Constitution or any Act of the National Assembly, the Sharia Court of Appeal shall be duly constituted if it consists of at least three Kadis of that Court.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "266",
+    content: [
+      "Subject to the provisions of any Act of the National Assembly, the Grand Kadi of the Sharia Court of Appeal of the Federal Capital Territory, Abuja may make rules for regulating the practice and procedure of the Sharia Court of Appeal of the Federal Capital Territory, Abuja.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "267",
+    content: [
+      "There shall be a Customary Court of Appeal of the Federal Capital Territory, Abuja.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "268",
+    content: [
+      "The Customary Court of Appeal of the Federal Capital Territory, Abuja shall consist of -",
+      "(a) a President of the Customary Court of Appeal of the Federal Capital Territory, Abuja; and",
+      "(b) such number of Judges of the Customary Court of Appeal as may be prescribed by an Act of the National Assembly.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "269",
+    content: [
+      "The appointment of a person to the office of the President of the Customary Court of Appeal of the Federal Capital Territory, Abuja shall be made by the President on the recommendation of the National Judicial Council, subject to the confirmation of such appointment by the Senate.",
+      "The appointment of a person to the office of a Judge of the Customary Court of Appeal shall be made by the President on the recommendation of the National Judicial Council.",
+      "A person shall not be qualified to hold the office of President or of a Judge of the Customary Court of Appeal of the Federal Capital Territory, Abuja unless -",
+      "(a) he is a legal practitioner in Nigeria and has been so qualified for a period of not less than ten years and, in the opinion of the National Judicial Council he has considerable knowledge and experience in the practice of Customary law; or",
+      "(b) in the opinion of the National Judicial Council he has considerable knowledge of and experience in the practice of Customary law.",
+      "If the office of the President of the Customary Court of Appeal is vacant or if the person holding the office is for any reason unable to perform the functions of the office, then, until a person has been appointed to and assumed the functions of that office, or until the person holding the office has resumed those functions, the President shall appoint the next most senior Judge of the Customary Court of Appeal to perform those functions.",
+      "Except on the recommendation of the National Judicial Council, an appointment pursuant to the provisions of subsection (4) of this section shall cease to have effect after the expiration of three months from the date of such appointment, and the President shall not re-appoint a person whose appointment has lapsed.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "270",
+    content: [
+      "The Customary Court of Appeal of the Federal Capital Territory, Abuja shall, in addition to such other jurisdiction as may be conferred upon by an Act of The National Assembly Exercise such appellate and supervisory jurisdiction in civil proceedings involving questions of Customary law.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "271",
+    content: [
+      "For the purpose of exercising any jurisdiction conferred upon it by this Constitution or any Act of the National Assembly, the Customary Court of Appeal shall be duly constituted if it consists of at least three Judges of that Court.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "272",
+    content: [
+      "Subject to the provisions of any Act of the National Assembly, the President of the Customary Court of Appeal of the Federal Capital Territory, Abuja, may make rules for regulating the practice and procedure of the Customary Court of Appeal of the Federal Capital Territory, Abuja.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "273",
+    content: ["There shall be a High Court for each State of the Federation."],
+  },
+  {
+    chapter: "VII",
+    section: "274",
+    content: [
+      "The High Court of a State shall consist of -",
+      "(a) a Chief Judge of the State; and",
+      "(b) such number of Judges of the High Court as may be prescribed by a Law of the House of Assembly of the State.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "275",
+    content: [
+      "The appointment of a person to the office of Chief Judge of a State shall be made by the Governor of the State on the recommendation of the National Judicial Council subject to confirmation of the appointment by the House of Assembly of the State.",
+      "The appointment of a person to the office of a Judge of a High Court of a State shall be made by the Governor of the State acting on the recommendation of the National Judicial Council.",
+      "A person shall not be qualified to hold the office of a Judge of a High Court of a State unless he is qualified to practice as a legal practitioner in Nigeria and has been so qualified for a period of not less than ten years.",
+      "If the office of Chief Judge of a State is vacant or if the person holding the office is for any reason unable to perform the functions of the office, then until a person has been appointed to and has assumed the functions of that office, or until the person holding the office has resumed those functions, the Governor of the State shall appoint the most senior Judge of the High Court to perform those functions.",
+      "Except on the recommendation of the National Judicial Council an appointment pursuant to subsection (4) of this section shall cease to have effect after expiration of three months from the date of such appointment, and the Governor shall not re-appoint a person whose appointment has lapsed.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "276",
+    content: [
+      "Subject to the provisions of section 251 and other provisions of this Constitution, the High Court of a State shall have jurisdiction to hear and determine any civil proceedings in which the existence or extent of a legal right, power, duty, liability, privilege, interest, obligation or claim is in issue or to hear and determine any criminal proceedings involving or relating to any penalty, forfeiture, punishment or other liability in respect of an offence committed by any person.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "277",
+    content: [
+      "The High Court of a State shall be duly constituted if it consists of at least one Judge of that Court.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "278",
+    content: [
+      "Subject to the provisions of any Law made by the House of Assembly of a State, the Chief Judge of a State may make rules for regulating the practice and procedure of the High Court of the State.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "279",
+    content: [
+      "There shall be for any State that requires it a Sharia Court of Appeal for that State.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "280",
+    content: [
+      "The Sharia Court of Appeal of a State shall consist of -",
+      "(a) A Grand Kadi of the Sharia Court of Appeal; and",
+      "(b) such number of Kadis of the Sharia Court of Appeal as may be prescribed by the House of Assembly of the State.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "281",
+    content: [
+      "The appointment of a person to the office of the Grand Kadi of the Sharia Court of Appeal of a State shall be made by the Governor of the State on the recommendation of the National Judicial Council, subject to confirmation of such appointment by the House of Assembly of the State.",
+      "The appointment of a person to the office of a Kadi of the Sharia Court of Appeal of a State shall be made by the Governor of the State on the recommendation of the National Judicial Council.",
+      "A person shall not be qualified to hold office as a Kadi of the Sharia Court of Appeal of a State unless -",
+      "(a) he is a legal practitioner in Nigeria and has been so qualified for a period of not less than ten years and has obtained a recognized qualification in Islamic law from an institution acceptable to the National Judicial Council; or",
+      "(b) he has attended and has obtained a recognized qualification in Islamic law from an institution approved by the National Judicial Council and has held the qualification for a period of not less than ten years; and",
+      "(i) he either has considerable experience in the practice of Islamic law, or",
+      "(ii) he is a distinguished scholar of Islamic law.",
+      "If the office of the Grand Kadi of the Sharia Court of Appeal of a State is vacant or if the person holding the office is for any reason unable to perform the functions of the office, then until a person has been appointed to and has assumed the functions of that office, or until the person holding the office has resumed those functions, the Governor of the State shall appoint the most senior Kadi of the Sharia Court of Appeal of the State to perform those functions.",
+      "Except on the recommendation of the National Judicial Council, an appointment pursuant to subsection (4) of this section shall cease to have effect after the expiration of three months from the date of such appointment, and the Governor shall not re-appoint a person whose appointment has lapsed.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "282",
+    content: [
+      "The Sharia Court of Appeal of a State shall, in addition to such other jurisdiction as may be conferred upon it by the law of the State, exercise such appellate and supervisory jurisdiction in civil proceedings involving questions of Islamic personal Law which the court is competent to decide in accordance with the provisions of subsection (2) of this section.",
+      "For the purposes of subsection (1) of this section, the Sharia Court of Appeal shall be competent to decide -",
+      "(a) any question of Islamic personal Law regarding a marriage concluded in accordance with that Law, including a question relating to the validity or dissolution of such a marriage or a question that depends on such a marriage and relating to family relationship or the guardianship of an infant;",
+      "(b) where all the parties to the proceedings are Muslims, any question of Islamic personal Law regarding a marriage, including the validity or dissolution of that marriage, or regarding family relationship, a founding or the guarding of an infant;",
+      "(c) any question of Islamic personal Law regarding a wakf, gift, will or succession where the endower, donor, testator or deceased person is a Muslim;",
+      "(d) any question of Islamic personal Law regarding an infant, prodigal or person of unsound mind who is a Muslim or the maintenance or the guardianship of a Muslim who is physically or mentally infirm; or",
+      "(e) where all the parties to the proceedings, being Muslims, have requested the court that hears the case in the first instance to determine that case in accordance with Islamic personal law, any other question.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "283",
+    content: [
+      "For the purpose of exercising any jurisdiction conferred upon it this Constitution or any law, a Sharia Court of Appeal of a State shall be duly constituted if it consists of at least three Kadis of that Court.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "284",
+    content: [
+      "Subject to provisions of any law made by the House of Assembly of the State, the Grand Kadi of the Sharia Court of Appeal of the state may make rules regulating the practice and procedure of the Sharia Court of Appeal.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "285",
+    content: [
+      "There shall be for any State that requires it a Customary Court of Appeal for that State.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "286",
+    content: [
+      "The Customary Court of Appeal of a State shall consist of -",
+      "(a) a President of the Customary Court of Appeal of the State; and",
+      "(b) such number of Judges of the Customary Court of Appeal as may be prescribed by the House of Assembly of the State.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "287",
+    content: [
+      "The appointment of a person to the office of President of a Customary Court of Appeal shall be made by the Governor of the State on the recommendation of the National Judicial Council, subject to confirmation of such appointment by the House of Assembly of the State.",
+      "The appointment of a person to the office of a Judge of a Customary Court of Appeal shall be made by the Governor of the State on the recommendation of the National Judicial Council.",
+      "A person shall not be qualified to hold office of President or of a Judge of a Customary Court of Appeal of a State unless -",
+      "(a) he is a legal practitioner in Nigeria and he has been so qualified for a period of not less than ten years and In the opinion of the National Judicial Council he has considerable knowledge and experience in the practice of Customary law; or",
+      "(b) in the opinion of the National Judicial Council he has considerable knowledge of and experience in the practice of Customary law.",
+      "If the office of President of the Customary Court of Appeal of a State is vacant or if the person holding the office is for any reason unable to perform the functions of the office, then until a person has been appointed to and has assumed the functions of that office, or until the person holding the office has resumed the functions of that office, or until the person holding the office has resumed those functions, the Governor of the State shall appoint the most senior Judge of the Customary Court of Appeal of the State to perform those functions.",
+      "Except on the recommendation of the National Judicial Council, an appointment pursuant to subsection (4) of this section shall cease to have effect after the expiration of three months from the date of such appointment, and the Governor shall not re-appoint a person whose appointment has lapsed.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "288",
+    content: [
+      "The Customary Court of Appeal of a State shall, in addition to such other jurisdiction as may be conferred upon it by the law of the State exercise such appellate and supervisory jurisdiction in civil proceedings involving questions of Customary law.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "289",
+    content: [
+      "For the purpose of exercising any jurisdiction conferred upon it by this Constitution or any law, a Customary Court of Appeal of a State shall be duly constituted if it consists of at least three Judges of that Court.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "290",
+    content: [
+      "Subject to the provisions of any law made by the House of Assembly of the State, the President of the Customary Court of Appeal of the State may make rules for regulating the practice and procedure of the customary Court of Appeal of the State.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "291",
+    content: [
+      "A judicial officer appointed to the Supreme Court or the Court of Appeal may retire when he attains the age of sixty-five years and he shall cease to hold office when he attains the age of seventy years.",
+      "A judicial officer appointed to any other court, other than those specified in subsection (1) of this section may retire when he attains the age of sixty years and he shall cease to hold office when he attains the age of sixty-five years.",
+      "Any person who has held office as a judicial officer -",
+      "(a) for a period of not less than fifteen years shall, if he retires at or after the age of sixty-five years in the case of the Chief Justice of Nigeria, a Justice of the Supreme Court, the President of the Court of Appeal or a Justice of the Court of Appeal or at or after the age of sixty years in any other case, be entitled to pension for life at a rate equivalent to his last annual salary and all his allowances in addition to any other retirement benefits to which he may be entitled;",
+      "(b) for a period of less than fifteen years shall, if he retires at or after the age of sixty-five years or sixty years, as the case may be, be entitled to pension for life at a rate as in paragraph (a) of this subsection pro rata the number of years he served as a judicial officer in relation to the period of fifteen years, and all his allowances in addition to other retirement benefits to which he may be entitled under his terms and conditions of service; and",
+      "(c) in any case, shall be entitled to such pension and other retirement benefits as may be regulated by an Act of the National Assembly or by a Law of a House of Assembly of a State.",
+      "Nothing in this section or elsewhere in this Constitution shall preclude the application of the provisions of any other law that provides for pensions, gratuities and other retirement benefits for persons in the public service of the Federation or a State.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "292",
+    content: [
+      "A judicial officer shall not be removed from his office or appointment before his age of retirement except in the following circumstances -",
+      "(a) in the case of -",
+      "(i) Chief Justice of Nigeria, President of the Court of Appeal, Chief Judge of the Federal High Court, Chief Judge of the High Court of the Federal Capital Territory, Abuja, Grand Kadi of the Sharia Court of Appeal of the Federal Capital Territory, Abuja and President, Customary Court of Appeal of the Federal Capital Territory, Abuja, by the President acting on an address supported by two-thirds majority of the Senate.",
+      "(ii) Chief Judge of a State, Grand Kadi of a Sharia Court of Appeal or President of a Customary Court of Appeal of a State, by the Governor acting on an address supported by two-thirds majority of the House of Assembly of the State,",
+      "Praying that he be so removed for his inability to discharge the functions of his office or appointment (whether arising from infirmity of mind or of body) or for misconduct or contravention of the Code of Conduct;",
+      "(b) in any case, other than those to which paragraph (a) of this subsection applies, by the President or, as the case may be, the Governor acting on the recommendation of the National Judicial Council that the judicial officer be so removed for his inability to discharge the functions of his office or appointment (whether arising from infirmity of mind or of body) or for misconduct or contravention of the Code of Conduct.",
+      "Any person who has held office as a judicial officer shall not on ceasing to be a judicial officer for any reason whatsoever thereafter appear or act as a legal practitioner before any court of law or tribunal in Nigeria.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "293",
+    content: [
+      "Except for the purposes of exercising any jurisdiction conferred by this Constitution or by any other law, every court established under this Constitution shall be deemed to be duly constituted notwithstanding any vacancy in the membership of the court.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "294",
+    content: [
+      "Every court established under this Constitution shall deliver its decision in writing not later than ninety days after the conclusion of evidence and final addresses and furnish all parties to the cause or matter determined with duly authenticated copies of the decision within seven days of the delivery thereof.",
+      "Each Justice of the Supreme Court or of the Court of Appeal shall express and deliver his opinion in writing, or may state in writing that he adopts the opinion of any other Justice who delivers a written opinion:",
+      "Provided that it shall not be necessary for the Justices who heard a cause or matter to be present when judgment is to be delivered and the opinion of a Justice may be pronounced or read by any other Justice whether or not he was present at the hearing.",
+      "A decision of a court consisting of more than one Judge shall be determined by the opinion of the majority of its members.",
+      "For the purpose of delivering its decision under this section, the Supreme court, or the Court of Appeal shall be deemed to be duly constituted if at least one member of that court sits for that purpose.",
+      "The decision of a court shall not be set aside or treated as a nullity solely on the ground of non-compliance with the provisions of subsection (1) of this section unless the court exercising jurisdiction by way of appeal or review of that decision is satisfied that the party complaining has suffered a miscarriage of justice by reason thereof.",
+      "As soon as possible after hearing and deciding any case in which it has been determined or observed that there was non-compliance with the provisions of subsection (1) of this section, the person presiding at the sitting of the court shall send a report on the case to the Chairman of the National Judicial Council who shall keep the Council informed of such action as the Council may deem fit.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "295",
+    content: [
+      "Where any question as to the interpretation or application of this Constitution arises in any proceedings in any court of law in any part of Nigeria (other than in the Supreme Court, the Court of Appeal, the Federal High Court or a High Court) and the court is of the opinion that the question involves a substantial question of law, the court may, and shall if any of the parties to the proceedings so requests, refer the question to the Federal High Court or a High Court having jurisdiction in that part of Nigeria and the Federal High Court or the High Court shall -",
+      "(a) if it is of opinion that the question involves a substantial question of law, refer the question to the Court of Appeal;",
+      "or",
+      "(b) if it is of opinion that the question does not involve a substantial question of law, remit the question to the court that made the reference to be disposed of in accordance with such directions as the Federal High Court or the High Court may think fit to give.",
+      "Where any question as to the interpretation or application of this constitution arises in any proceedings in the Federal High Court or a High Court, and the court is of opinion that the question involves a substantial question of law, the court may, and shall if any party to the proceedings so requests, refer the question to the Court of Appeal; and where any question is referred in pursuance of this subsection, the court shall give its decision upon the question and the court in which the question arose shall dispose of the case in accordance with that decision.",
+      "Where any question as to the interpretation or application of this constitution arises in any proceedings in the Court of Appeal and the court is of opinion that the question involves a substantial question of law, the court may, and shall if any party to the proceedings so requests, refer the question to the Supreme Court which shall give its decision upon the question and give such directions to the Court of Appeal as it deems appropriate.",
+    ],
+  },
+  {
+    chapter: "VII",
+    section: "296",
+    content: [
+      'In this Chapter, unless the context otherwise requires, "office" means the office of Chief Justice of Nigeria or a Justice of the Supreme Court, President or Justice of the Court of Appeal, Chief Judge or Judge of the Federal High Court, Chief Judge or Judge of the High Court of the Federal Capital Territory, Abuja, Chief Judge of a State or Judge of the High Court of a State, Grand Kadi or Kadi of the Sharia Court of Appeal of the Federal Capital Territory, Abuja, President or Judge of the Customary Court of Appeal of the Federal Capital Territory, Abuja, Grand Kadi or Kadi of the Sharia Court of Appeal of a State, or President or Judge of the Customary Court of Appeal of a State.',
+    ],
+  },
+  // Chapter VIII - Federal Capital Territory, Abuja and General Supplementary Provisions
   {
     chapter: "VIII",
     section: "297",
@@ -474,7 +2221,6 @@ export const constitution = [
       "The ownership of all lands comprised in the Federal Capital Territory, Abuja shall vest in the Government of the Federal Republic of Nigeria.",
     ],
   },
-
   {
     chapter: "VIII",
     section: "298",
@@ -482,7 +2228,6 @@ export const constitution = [
       "The Federal Capital Territory, Abuja shall be the Capital of the Federation and seat of the Government of the Federation.",
     ],
   },
-
   {
     chapter: "VIII",
     section: "299",
@@ -493,20 +2238,272 @@ export const constitution = [
       "(c) the provisions of this Constitution pertaining to the matters aforesaid shall be read with such modifications and adaptations as may be reasonably necessary to bring them into conformity with the provisions of this section.",
     ],
   },
-
-  // Interpretation, Citation and Commencement
+  {
+    chapter: "VIII",
+    section: "300",
+    content: [
+      "There shall be appointed for the Federal Capital Territory, Abuja, a Minister who shall exercise such powers and perform such functions as may be delegated to him by the President, from time to time.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "301",
+    content: [
+      "Without prejudice to the generality of the provisions of section 299 of this Constitution, in its application to the Federal Capital Territory, Abuja, this Constitution shall be construed as if-",
+      "(a) references to the Governor, Deputy Governor and the executive council of a State were references to the President, Vice-President and the executive council of the Federation, respectively;",
+      "(b) references to the Chief Judge and Judges of the High Court of a State were references to the Chief Judge and Judges of the High Court, which is established for the Federal Capital Territory, Abuja by the provisions of this Constitution; and",
+      "(c) references to persons, offices and authorities of a State were references to the persons, offices and authorities of the Federation with like status, designations and powers, respectively; and in particular, as if references to the Attorney-General, Commissioners and the Auditor-General for a State were references to the Attorney-General, Ministers and the Auditor-General of the Federation with like status, designations and powers.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "302",
+    content: [
+      "The President may, in exercise of the powers conferred upon him by section 147 of this Constitution, appoint for the Federal Capital Territory, Abuja, a Minister who shall exercise such powers and perform such functions as may be delegated to him by the President, from time to time.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "303",
+    content: [
+      "The Federal Capital Territory, Abuja shall comprise six area councils and the administrative and political structure thereof shall be as provided by an Act of the National Assembly.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "304",
+    content: [
+      "There shall be for the Federal Capital Territory, Abuja, a Judicial Service Committee of the Federal Capital Territory, Abuja, which shall comprise -",
+      "(a) the Chief Judge of the Federal Capital Territory, Abuja, as the Chairman;",
+      "(b) the Attorney-General of the Federation;",
+      "(c) the Chief Registrar of the High Court of the Federal Capital Territory, Abuja, who shall be the Secretary;",
+      "(d) one person to be appointed by the President;",
+      "(e) two legal practitioners who have been qualified to practice as legal practitioners in Nigeria for a period of not less than twelve years; and",
+      "(f) two persons, not being legal practitioners, to be appointed by the President.",
+      "The Judicial Service Committee of the Federal Capital Territory, Abuja shall have power to -",
+      "(a) recommend to the National Judicial Council suitable persons for nomination for appointment to the office of -",
+      "(i) the Chief Judge of the Federal Capital Territory, Abuja,",
+      "(ii) a Judge of the High Court of the Federal Capital Territory, Abuja,",
+      "(iii) the Grand Kadi of the Sharia Court of Appeal of the Federal Capital Territory, Abuja",
+      "(iv) the President of the Customary Court of Appeal of the Federal Capital Territory, Abuja,",
+      "(v) a Kadi of the Sharia Court of Appeal of the Federal Capital Territory, Abuja,",
+      "(vi) a Judge of the Customary Court of Appeal of the Federal Capital Territory, Abuja.",
+      "(b) subject to the provisions of this Constitution, to recommend to the National Judicial Council the removal from office of the judicial officers specified in sub-paragraph (a) of this paragraph; and",
+      "(c) to appoint, promote and exercise disciplinary control over the Chief Registrar and Deputy Chief Registrars of the High Court, the Sharia Court of Appeal and the Customary Court of Appeal of the Federal Capital Territory, Abuja, magistrates, the judges and members of the District and Area Courts and their registrars, and all other members of the staff of the judicial service of the Federal Capital Territory, Abuja not otherwise specified in this Constitution and of the Judicial Service Committee of the Federal Capital Territory, Abuja.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "305",
+    content: [
+      "Subject to the provisions of this Constitution, the President may by instrument published in the Official Gazette of the Government of the Federation issue a Proclamation of a state of emergency in the Federation or any part thereof.",
+      "The President shall immediately after the publication, transmit copies of the Official Gazette of the Government of the Federation containing the proclamation including the details of the emergency to the President of the Senate and the Speaker of the House of Representatives, each of whom shall forthwith convene or arrange for a meeting of the House of which he is President or Speaker, as the case may be, to consider the situation and decide whether or not to pass a resolution approving the Proclamation.",
+      "The President shall have power to issue a Proclamation of a state of emergency only when -",
+      "(a) the Federation is at war;",
+      "(b) the Federation is in imminent danger of invasion or involvement in a state of war;",
+      "(c) there is actual breakdown of public order and public safety in the Federation or any part thereof to such extent as to require extraordinary measures to restore peace and security;",
+      "(d) there is a clear and present danger of an actual breakdown of public order and public safety in the Federation or any part thereof requiring extraordinary measures to avert such danger;",
+      "(e) there is an occurrence or imminent danger, or the occurrence of any disaster or natural calamity, affecting the community or a section of the community in the Federation;",
+      "(f) there is any other public danger which clearly constitutes a threat to the existence of the Federation; or",
+      "(g) the President receives a request to do so in accordance with the provisions of subsection (4) of this section.",
+      "The Governor of a State may, with the sanction of a resolution supported by two-thirds majority of the House of Assembly, request the President to issue a Proclamation of a state of emergency in the State when there is in existence within the State any of the situations specified in subsection (3) (c), (d) and (e) of this section and such situation does not extend beyond the boundaries of the State.",
+      "The President shall not issue a Proclamation of a state of emergency in any case to which the provisions of subsection (4) of this section apply unless the Governor of the State fails within a reasonable time to make a request to the President to issue such Proclamation.",
+      "A Proclamation issued by the President under this section shall cease to have effect -",
+      "(a) if it is revoked by the President by instrument published in the Official Gazette of the Government of the Federation;",
+      "(b) if it affects the Federation or any part thereof and within two days when the National Assembly is in session, or within ten days when the National Assembly is not in session, after its publication, there is no resolution supported by two-thirds majority of all the members of each House of the National Assembly approving the Proclamation;",
+      "(c) after a period of six months has elapsed since it has been in force:",
+      "Provided that the National Assembly may, before the expiration of the period of six months aforesaid, extend the period for the Proclamation of the state of emergency to remain in force from time to time for a further period of six months by resolution passed in like manner; or",
+      "(d) at any time after the approval referred to in paragraph (b) or the extension referred to in paragraph (c) of this subsection, when each House of the National Assembly revokes the Proclamation by a simple majority of all the members of each House.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "306",
+    content: [
+      "The President may resign his office in writing under his hand addressed to the President of the Senate and on the effective date of the resignation, the Vice-President shall assume the office of President in accordance with section 146(1) of this Constitution.",
+      "The Governor of a State may resign his office in writing under his hand addressed to the Speaker of the House of Assembly of the State and on the effective date of the resignation, the Deputy Governor shall assume the office of Governor in accordance with section 191(1) of this Constitution.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "307",
+    content: [
+      "Notwithstanding the provisions of Chapter IV of this Constitution but subject to section 308 of this Constitution, any person who has held office as President or Vice-President, Governor or Deputy Governor of a State and was not removed from office as a result of impeachment shall not be -",
+      "(a) called upon to answer before any court or tribunal for any acts done or omitted to be done in his official capacity as President; or",
+      "(b) arrested or imprisoned upon suspicion of the commission of an offence involving dishonesty or fraud or for any other offence and upon proof of justifiable suspicion.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "308",
+    content: [
+      "Notwithstanding anything to the contrary in this Constitution, but subject to subsection (2) of this section -",
+      "(a) no civil or criminal proceedings shall be instituted or continued against a person to whom this section applies during his period of office;",
+      "(b) a person to whom this section applies shall not be arrested or imprisoned during that period either in pursuance of the process of any court or otherwise; and",
+      "(c) no process of any court requiring or compelling the appearance of a person to whom this section applies, shall be applied for or issued:",
+      "Provided that in ascertaining whether any period of limitation has expired for the purposes of any proceedings against a person to whom this section applies, no account shall be taken of his period of office.",
+      "The provisions of subsection (1) of this section shall not apply to civil proceedings against a person to whom this section applies in his official capacity or to civil or criminal proceedings in which such a person is only a nominal party.",
+      'This section applies to a person holding the office of President or Vice-President, Governor or Deputy Governor; and the reference in this section to "period of office" is a reference to the period during which the person holding such office is required to perform the functions of the office.',
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "309",
+    content: [
+      "Notwithstanding the provisions of this Constitution, but subject to section 28 of this Constitution, any person who was elected to any elective office mentioned in this Constitution in accordance with the provisions of any other law in force immediately before the date when this section comes into force and has taken the Oath of Allegiance and oath of office prescribed by this Constitution shall be deemed to have been duly elected to that office under this Constitution.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "310",
+    content: [
+      "Until the National Assembly or a House of Assembly has exercised its powers to initiate legislation in accordance with the provisions of section 51 or 93 of this Constitution, the Clerk or other staff of a legislative house shall be appointed, as respects each House of the National Assembly by the Federal Civil Service Commission, and as respects a House of Assembly by the State Civil Service Commission.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "311",
+    content: [
+      "The provisions of this section shall have effect until the National Assembly or a House of Assembly exercises the powers conferred upon it by section 60 or 101 of this Constitution as appropriate.",
+      "The Standing Orders of the Senate established under the former Constitution shall apply in relation to the proceedings in the Senate established under this Constitution.",
+      "The Standing Orders of the House of Representatives established under the former Constitution shall apply in relation to the proceedings in the House of Representatives established under this Constitution.",
+      "The Standing Orders of a House of Assembly established under the former Constitution shall apply in relation to a House of Assembly of a State established under this Constitution.",
+      "The Standing Orders of the former legislative houses referred to in subsections (2), (3) and (4) of this section, shall apply in relation to a legislative house with such modifications as may be necessary to bring them into conformity with the provisions of this Constitution.",
+      'In this section, the "former Constitution" refers to the Constitution of the Federal Republic of Nigeria 1979.',
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "312",
+    content: [
+      "The electoral commission established for the Federation under any law in force immediately before the date when this section comes into force shall be responsible for performing the functions conferred on the Independent National Electoral Commission established by the provisions of this Constitution.",
+      "Any person who before the coming into force of this Constitution was elected to any elective office mentioned in this Constitution in accordance with the provisions of any other law in force immediately before the coming into force of this Constitution shall be deemed to have been duly elected to that office under this Constitution.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "313",
+    content: [
+      "Pending any Act of the National Assembly for the provision of a system of revenue allocation between the Federation and the States, among the States, between the States and local government councils and among the local government councils in the States, the system of revenue allocation in existence for the financial year beginning from 1st January 1998 and ending on 31st December 1998 shall, subject to the provisions of this Constitution and as from the date when this section comes into force, continue to apply:",
+      "Provided that where functions have been transferred under this Constitution from the Government of the Federation to the States and from the States to local government councils the appropriations in respect of such functions shall be allocated to the States and the local government councils as the case may require.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "314",
+    content: [
+      "Any debt of the Federation or of a State which immediately before the date when this section comes into force was charged on the revenue and assets of the Federation or on the revenue and assets of a State shall, as from the date when this section comes into force, continue to be so charged.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "315",
+    content: [
+      "Subject to the provisions of this Constitution, an existing law shall have effect with such modifications as may be necessary to bring it into conformity with the provisions of this Constitution and shall be deemed to be -",
+      "(a) an Act of the National Assembly to the extent that it is a law with respect to any matter on which the National Assembly is empowered by this Constitution to make laws; and",
+      "(b) a Law made by a House of Assembly to the extent that it is a law with respect to any matter on which a House of Assembly is empowered by this Constitution to make laws.",
+      "The appropriate authority may at any time by order make such modifications in the text of any existing law as the appropriate authority considers necessary or expedient to bring that law into conformity with the provisions of this Constitution.",
+      "Nothing in this Constitution shall be construed as affecting the power of a court of law or any tribunal established by law to declare invalid any provision of an existing law on the ground of inconsistency with the provision of any other law, that is to say-",
+      "(a) any other existing law;",
+      "(b) a Law of a House of Assembly;",
+      "(c) an Act of the National Assembly; or",
+      "(d) any provision of this Constitution.",
+      "In this section, the following expressions have the meanings assigned to them, respectively -",
+      '(a) "appropriate authority" means -',
+      "(i) the President, in relation to the provisions of any law of the Federation,",
+      "(ii) the Governor of a State, in relation to the provisions of any existing law deemed to be a Law made by the House of Assembly of that State, or",
+      "(iii) any person appointed by any law to revise or rewrite the laws of the Federation or of a State;",
+      '(b) "existing law" means any law and includes any rule of law or any enactment or instrument whatsoever which is in force immediately before the date when this section comes into force or which having been passed or made before that date comes into force after that date; and',
+      '(c) "modification" includes addition, alteration, omission or repeal.',
+      "Nothing in this Constitution shall invalidate the following enactments, that is to say -",
+      "(a) the National Youth Service Corps Decree 1993;",
+      "(b) the Public Complaints Commission Act;",
+      "(c) the National Security Agencies Act;",
+      "(d) the Land Use Act,",
+      "and the provisions of those enactments shall continue to apply and have full effect in accordance with their tenor and to the like extent as any other provisions forming part of this Constitution and shall not be altered or repealed except in accordance with the provisions of section 9 (2) of this Constitution.",
+      "Without prejudice to subsection (5) of this section, the enactments mentioned in the said subsection shall hereafter continue to be deemed to be part of the laws of the Federation and as Acts of the National Assembly.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "316",
+    content: [
+      "Any office, court of law or authority which immediately before the date when this section comes into force was established and charged with any function by virtue of any other Constitution or law shall be deemed to have been duly established and shall continue to be charged with such function until other provisions are made, as if the office, court of law or authority was established and charged with the function by virtue of this Constitution or in accordance with the provisions of a law made thereunder.",
+      "Any person who immediately before the date when this section comes into force holds office by virtue of any other Constitution or by virtue of any enactment or law in force immediately before the date when this section comes into force shall be deemed to be duly appointed to that office by virtue of this Constitution or by any authority by whom appointments to that office fall to be made in pursuance of this Constitution.",
+      "Notwithstanding the provisions of subsection (2) of this section, any person holding such office, a member of a court of law or authority, who would have been required to vacate such office, or where his membership of such court of law or authority would have ceased but for the provisions of the said subsection (2) of this section, shall at the expiration of the period prescribed therefor after the date when this section comes into force vacate such office or, as the case may be, his membership of such court of law or authority shall cease, accordingly.",
+      "The foregoing provisions of this section are without prejudice to the exercise of such powers as may be conferred by virtue of this Constitution or a law upon any authority or person to make provisions with respect to such matters as may be prescribed or authorised by this Constitution or such law, including the establishment and abolition of offices, courts of law or authorities, and with respect to the appointment of persons to hold offices or to be members of courts of law or authorities and their removal from such offices, courts of law or authorities.",
+    ],
+  },
+  {
+    chapter: "VIII",
+    section: "317",
+    content: [
+      "Without prejudice to the generality of section 315 of this Constitution, any property, right, privilege, liability or obligation which immediately before the date when this section comes into force was vested in, exercisable or enforceable by or against -",
+      "(a) the former authority of the Federation as representative or trustee for the benefit of the Federation;",
+      "(b) any former authority of a state as representative or trustee for the benefit of the state,",
+      "shall on the date when this section comes into force and without further assurance than the provisions thereof vest in, or become exercisable of enforceable by or against the President and Government of the Federation, and the Governor and Government of the state, as the case may be.",
+      "For the purposes of this section -",
+      "(a) the President and Government of the Federation, and the Governor and Government of a state, shall be deemed, respectively, to be successors to the said former authority of the Federation and former authority of the state in question; and",
+      '(b) references in this section to "former authority of the Federation" and "former authority of a state" include references to the former Government of the Federation and the former government of a state, a local government authority or any person who exercised any authority on its behalf.',
+    ],
+  },
   {
     chapter: "VIII",
     section: "318",
     content: [
-      "In this constitution, unless it is otherwise expressly provided or the context otherwise requires-",
+      "In this constitution, unless it is otherwise expressly provided or the context otherwise requires -",
       '"Act" or "Act of the National Assembly" means any law made by the National Assembly and includes any law which takes effect under the provisions of this constitution as an Act of the National Assembly;',
       '"appointment" or its cognate expression includes appointment on promotion and transfer or confirmation of appointment;',
       '"area council" means each of the administrative areas within the Federal Capital Territory, Abuja;',
       '"authority" includes government;',
+      '"belong to" or its grammatical expression when used with reference to a person in a state refers to a person either or whose parents or any of whose grand parents was a member of a community indigenous to that state;',
+      '"civil service of the Federation" means service of the Federation in a civil capacity as staff of the office of the President, the Vice-President, a ministry or department of the government of the Federation assigned with the responsibility for any business of the Government of the Federation;',
+      '"civil service of the state" means service of the government of a state in a civil capacity as staff of the office of the governor, deputy governor or a ministry or department of the government of the state assigned with the responsibility for any business of the government of the state;',
+      '"Cod of Conduct" refers to the Code of Conduct contained in the fifth schedule to this constitution;',
+      '"Commissioner" means a Commissioner of the Government of a State;',
+      '"Concurrent Legislative List" means the list of matters set out in the first column in Part II of the second schedule to this constitution with respect to which the National Assembly and a House of Assembly may make laws to the extent prescribed, respectively, opposite thereto in the second column thereof;',
+      '"decision" means, in relation to a court, any determination of that court and includes judgement decree, order, conviction, sentence or recommendation;',
+      '"enactment" means provision of any law or a subsidiary instrument;',
+      '"Exclusive Legislative List" means the list in Part I of the second schedule to this constitution;',
+      '"existing law" has the meaning assigned to it in section 315 of this constitution;',
+      '"federal character of Nigeria" refers to the distinctive desire of the peoples of Nigeria to promote national unity, foster national loyalty and give every citizen of Nigeria a sense of belonging to the nation as expressed in section 14 (3) and (4) of this constitution;',
+      '"Federation" means the Federal Republic of Nigeria;',
+      '"financial year" means any period of twelve months beginning on the first day of January in any year or such other date as the National Assembly may prescribe;',
+      '"function" includes power and duty;',
+      '"government" includes the Government of the Federation, or of any state, or of a local government council or any person who exercises power of authority on its behalf;',
+      '"Governor" or "Deputy Governor" means the governor of a state or a deputy governor of a state;',
+      '"House of Assembly" means the House of Assembly of a state;',
+      '"Judicial office" means the office of Chief Justice of Nigeria or a Justice of the Supreme Court, the President or Justice of the Court of Appeal, the office of the Chief Judge or Judge of the Federal High Court, the office of the Chief Judge or Judge of the High Court of the Federal Capital Territory, Abuja, the office of the Chief Judge of a State and Judge of the High Court of a State, a Grand Kadi or Kadi of the Sharia Court of Appeal of the Federal Capital Territory, Abuja, a President or Judge of the Customary Court of Appeal; of the Federal Capital Territory, Abuja, a Grand Kadi or Kadi of the Sharia Court of Appeal of a State; and a reference to a "judicial officer" is a reference to the holder of any such office;',
+      '"law" means a law enacted by the House of Assembly of a State;',
+      '"Legislative house" means the Senate, House of Representatives or a House of Assembly;',
+      '"Local government area" or "local government council" means the area or council referred to in subsection (1) of section 7 of this constitution;',
+      '"public service of a state" means the service of the state in any capacity in respect of the Government of the State and includes service as:',
+      "(a) Clerk or other staff of the House of Assembly;",
+      "(b) member of staff of the High Court, the Sharia court of Appeal, the Customary Court of Appeal; or other courts established for a state by this Constitution or by a Law of a House of Assembly;",
+      "(c) member or staff of any commission or authority established for the state by this Constitution or by a Law of a House of Assembly;",
+      "(d) staff of any local government council;",
+      "(e) staff of any statutory corporation established by a Law of a House of Assembly;",
+      "(f) staff of any educational institution established or financed principally by a government of a state; and",
+      "(g) staff of any company or enterprise in which the government of a state or its agency holds controlling shares or interest;",
+      '"School Certificate or its equivalent" means',
+      "(a) a Secondary School Certificate or its equivalent, or Grade II Teacher's Certificate, the City and Guilds Certificate; or",
+      "(b) education up to Secondary School Certificate level; or",
+      "(c) Primary Six School Leaving Certificate or its equivalent and -",
+      "(i) service in the public or private sector in the Federation in any capacity acceptable to the Independent National Electoral Commission for a minimum of ten years, and",
+      "(ii) attendance at courses and training in such institutions as may be acceptable to the Independent National Electoral Commission for periods totalling up to a minimum of one year, and",
+      "(iii) the ability to read, write, understand and communicate in the English language to the satisfaction of the Independent National Electoral Commission, and",
+      "(d) any other qualification acceptable by the Independent National Electoral Commission;",
+      '"Secret society" includes any society, association, group or body of persons (whether registered or not)',
+      "(a) that uses secret signs, oaths, rites or symbols and which is formed to promote a cause, the purpose or part of the purpose of which is to foster the interest of its members and to aid one another under any circumstances without due regard to merit, fair play or justice to the detriment of the legitimate interest of those who are not members;",
+      "(b) the membership of which is incompatible with the function or dignity of any public office under this Constitution and whose members are restricted to a restricted class of persons;",
+      "(c) that uses secret signs, oaths, rites or symbols and which is formed to promote a cause, the purpose or part of the purpose of which is to foster the interest of its members and to aid one another under any circumstances without due regard to merit, fair play or justice to the detriment of the legitimate interest of those who are not members;",
+      "(d) the membership of which is incompatible with the function or dignity of any public office under this Constitution and whose members are restricted to a restricted class of persons;",
+      "(e) that uses secret signs, oaths, rites or symbols and which is formed to promote a cause, the purpose or part of the purpose of which is to foster the interest of its members and to aid one another under any circumstances without due regard to merit, fair play or justice to the detriment of the legitimate interest of those who are not members;",
+      "(f) the membership of which is incompatible with the function or dignity of any public office under this Constitution and whose members are restricted to a restricted class of persons; or",
+      "(g) the activities of which are not known to the public at large, the names of whose members are kept secret and whose meetings and other activities are held in secret;",
+      '"State" when used otherwise than in relation to one of the component parts of the Federation, includes government.',
     ],
   },
-
   {
     chapter: "VIII",
     section: "319",
@@ -514,12 +2511,11 @@ export const constitution = [
       "This Constitution may be cited as the Constitution of the Federal Republic of Nigeria 1999.",
     ],
   },
-
   {
     chapter: "VIII",
     section: "320",
     content: [
-      "The provision of this Constitution shall come into force on 29th day of May 1999.",
+      "The provisions of this Constitution shall come into force on 29th day of May 1999.",
     ],
   },
 ];
