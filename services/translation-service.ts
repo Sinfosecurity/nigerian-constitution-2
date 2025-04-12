@@ -1192,7 +1192,6 @@ const translations: Record<
       "Ọ bụrụ na ị nwere ajụjụ ọ bụla gbasara Iwu Nzuzo a, biko kpọtụrụ anyị na privacy@constitutionhub.ng",
 
     // Terms translation
-
     "terms.content.title": "Ọdịnaya Ndị Ọrụ",
     "terms.content.content":
       "Ị na-ejide ikike niile n'ọdịnaya ọ bụla ị na-etinye na sistemụ anyị. Site n'itinye ọdịnaya, ị na-enye anyị ikike iji, gosipụta, nakwa kesaa ọdịnaya ahụ n'usoro ọrụ anyị.",
