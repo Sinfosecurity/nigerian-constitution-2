@@ -331,6 +331,47 @@ const translations: Record<
     "privacy.contact.title": "Contact Us",
     "privacy.contact.content":
       "If you have any questions about this Privacy Policy, please contact us at privacy@constitutionhub.ng",
+
+    // Terms translation
+
+    "terms.title": "Terms of Service",
+    "terms.acceptance.title": "Acceptance of Terms",
+    "terms.acceptance.content":
+      "By accessing and using the Nigerian Constitution Hub, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.",
+
+    "terms.usage.title": "Acceptable Use",
+    "terms.usage.content":
+      "You agree to use our platform in accordance with the following guidelines:",
+    "terms.usage.items.1": "Use the service for lawful purposes only",
+    "terms.usage.items.2": "Respect other users and their rights",
+    "terms.usage.items.3":
+      "Do not attempt to disrupt or compromise the service",
+    "terms.usage.items.4": "Maintain the security of your account credentials",
+    "terms.usage.items.5": "Report any security vulnerabilities or violations",
+
+    "terms.content.title": "User Content",
+    "terms.content.content":
+      "You retain ownership of any content you submit to our platform. By submitting content, you grant us a non-exclusive license to use, display, and distribute that content in connection with our services.",
+
+    "terms.intellectual.title": "Intellectual Property",
+    "terms.intellectual.content":
+      "All content, features, and functionality of the Nigerian Constitution Hub, including but not limited to text, graphics, logos, and software, are owned by or licensed to us and are protected by Nigerian and international intellectual property laws.",
+
+    "terms.liability.title": "Limitation of Liability",
+    "terms.liability.content":
+      "The Nigerian Constitution Hub provides information for educational purposes only. We are not liable for any damages arising from your use of our service or reliance on the information provided.",
+
+    "terms.termination.title": "Termination",
+    "terms.termination.content":
+      "We reserve the right to terminate or suspend your access to our services at any time, without prior notice, for conduct that we believe violates these Terms of Service or is harmful to other users, us, or third parties.",
+
+    "terms.governing.title": "Governing Law",
+    "terms.governing.content":
+      "These Terms of Service are governed by the laws of Nigeria. Any disputes arising from these terms will be subject to the exclusive jurisdiction of the courts of Nigeria.",
+
+    "terms.contact.title": "Contact Information",
+    "terms.contact.content":
+      "If you have any questions about these Terms of Service, please contact us at terms@constitutionhub.ng",
   },
   ha: {
     // Hausa translations
@@ -593,6 +634,32 @@ const translations: Record<
     "privacy.contact.title": "Tuntuɓe Mu",
     "privacy.contact.content":
       "Idan kuna da wata tambaya game da wannan Ka'idojin Sirri, da fatan za a tuntuɓe mu a privacy@constitutionhub.ng",
+
+    //Terms translation
+
+    "terms.content.title": "Abinda Mai Amfani Ya Wallafa",
+    "terms.content.content":
+      "Kana da mallakan duk abinda ka wallafa a dandalinmu. Ta wurin wallafa abinda ka wallafa, ka ba mu damar amfani da shi, nuna shi, da raba shi tare da ayyukanmu.",
+
+    "terms.intellectual.title": "Mallakan Basira",
+    "terms.intellectual.content":
+      "Duk abinda ke cikin Kundin Tsarin Mulkin Najeriya, har da rubutu, zane-zane, alamomi, da manhajar kwamfuta, muke mallakar sa ko an ba mu damar amfani da shi kuma yana da kariya ta ƙarƙashin dokoki na mallakan basira na Najeriya da na duniya.",
+
+    "terms.liability.title": "Iyakancin Hakki",
+    "terms.liability.content":
+      "Kundin Tsarin Mulkin Najeriya yana ba da bayani ne kawai don ilimi. Ba mu da alhakin duk wani asara da ya samo asali daga amfani da ayyukanmu ko dogaro da bayanin da muka bayar.",
+
+    "terms.termination.title": "Dakatar da Amfani",
+    "terms.termination.content":
+      "Muna da hakkin dakatar da ko tsayar da shiga ku ga ayyukanmu a kowane lokaci, ba tare da sanarwa ba, saboda wata hali da muka yi imanin ta saba wa waɗannan Sharuɗɗan Aiki ko ta cutar da wasu masu amfani, mu, ko wasu bangare na uku.",
+
+    "terms.governing.title": "Doka mai Mulki",
+    "terms.governing.content":
+      "Waɗannan Sharuɗɗan Aiki suna ƙarƙashin dokoki na Najeriya. Duk wata gardama da ta taso daga waɗannan sharuɗɗa za ta kasance a ƙarƙashin ikon kotun Najeriya.",
+
+    "terms.contact.title": "Bayanin Tuntuɓa",
+    "terms.contact.content":
+      "Idan kuna da wata tambaya game da waɗannan Sharuɗɗan Aiki, da fatan za a tuntuɓe mu a terms@constitutionhub.ng",
   },
   yo: {
     // Yoruba translations
@@ -845,6 +912,32 @@ const translations: Record<
     "privacy.contact.title": "Kàn Sí Wa",
     "privacy.contact.content":
       "Tí o bá ní ìbéèrè nípa Ìlànà Àṣírí yìí, jọ̀wọ́ kàn sí wa ní privacy@constitutionhub.ng",
+
+    // Terms translations
+
+    "terms.content.title": "Àkóónú Olùlò",
+    "terms.content.content":
+      "O ni ẹ̀tọ́ sí ohunkóhun tí o fi sílẹ̀ sí ojú òpó wa. Nípa fífi àkóónú sílẹ̀, o fún wa ní àṣẹ láìnípọn láti lo, fihàn, àti pín àkóónú náà ní ìbámu pẹ̀lú àwọn iṣẹ́ wa.",
+
+    "terms.intellectual.title": "Ohun Ìní Ọgbọ́n",
+    "terms.intellectual.content":
+      "Gbogbo àkóónú, àwọn ẹ̀ya, àti iṣẹ́ ṣíṣe ti Ìwé Òfin Nàìjíríà, pẹ̀lú ọ̀rọ̀, àwòrán, àmì, àti sọ́ọ̀fụwẹ́ẹ̀, jẹ́ ohun ìní tàbí ní àṣẹ fún wa tí a sì dáàbò bò lábẹ́ àwọn òfin ohun ìní ọgbọ́n Nàìjíríà àti ti àgbáyé.",
+
+    "terms.liability.title": "Ìdíwọ́ Ẹ̀bi",
+    "terms.liability.content":
+      "Ìwé Òfin Nàìjíríà ń pèsè àlàyé fún ìdánilẹ́kọ̀ọ́ nìkan. A kò ní ẹ̀bi fún èyíkéyìí àdánù tó bá wá láti ìlò iṣẹ́ wa tàbí gbígbẹ́kẹ̀lé àlàyé tí a pèsè.",
+
+    "terms.termination.title": "Ìparí",
+    "terms.termination.content":
+      "A ní ẹ̀tọ́ láti parí tàbí dá ìwọlé rẹ sí àwọn iṣẹ́ wa dúró ní ìgbàkígbà, láìsí ìkìlọ̀ ṣáájú, fún ìwà tí a gbàgbọ́ pé ó ta àwọn Òfin Iṣẹ́ yìí kọjá tàbí tó léwu fún àwọn olùlò mìíràn, àwa, tàbí àwọn ẹlẹgbẹ́.",
+
+    "terms.governing.title": "Òfin Àkóso",
+    "terms.governing.content":
+      "Àwọn Òfin Iṣẹ́ yìí wà lábẹ́ àwọn òfin Nàìjíríà. Èyíkéyìí ìjà tó bá wá láti àwọn òfin yìí yóò wà lábẹ́ àṣẹ pàtàkì ti àwọn ilé ẹjọ́ Nàìjíríà.",
+
+    "terms.contact.title": "Àlàyé Fún Ìkànsí",
+    "terms.contact.content":
+      "Tí o bá ní ìbéèrè nípa àwọn Òfin Iṣẹ́ yìí, jọ̀wọ́ kàn sí wa ní terms@constitutionhub.ng",
   },
   ig: {
     // Igbo translations
@@ -1097,6 +1190,32 @@ const translations: Record<
     "privacy.contact.title": "Kpọtụrụ Anyị",
     "privacy.contact.content":
       "Ọ bụrụ na ị nwere ajụjụ ọ bụla gbasara Iwu Nzuzo a, biko kpọtụrụ anyị na privacy@constitutionhub.ng",
+
+    // Terms translation
+
+    "terms.content.title": "Ọdịnaya Ndị Ọrụ",
+    "terms.content.content":
+      "Ị na-ejide ikike niile n'ọdịnaya ọ bụla ị na-etinye na sistemụ anyị. Site n'itinye ọdịnaya, ị na-enye anyị ikike iji, gosipụta, nakwa kesaa ọdịnaya ahụ n'usoro ọrụ anyị.",
+
+    "terms.intellectual.title": "Ikike Mmepụta",
+    "terms.intellectual.content":
+      "Ọdịnaya niile, atụmatụ, na ọrụ nke Iwu Ọchịchị Naịjirịa, gụnyere ederede, eserese, akara, na ngwaọrụ, bụ nke anyị ma ọ bụ e nyere anyị ikike ya nakwa e chekwara ya n'okpuru iwu ikike mmepụta Naịjirịa na mba ụwa.",
+
+    "terms.liability.title": "Mmigbu Ikike",
+    "terms.liability.content":
+      "Iwu Ọchịchị Naịjirịa na-enye ozi maka mmụta naanị. Anyị anaghị ahụta onwe anyị ka ndị ikpe maka mmebi ọ bụla si n'ojiji ọrụ anyị ma ọ bụ ntụkwasị obi n'ozi anyị na-enye.",
+
+    "terms.termination.title": "Ịkwụsị",
+    "terms.termination.content":
+      "Anyị nwere ikike ịkwụsị ma ọ bụ gbochie ịbanye gị n'ọrụ anyị n'oge ọ bụla, na-enweghị ozi gboo, maka omume anyị kwenyere na-emebiri usoro ndị a ma ọ bụ na-emebi ndị ọrụ ndị ọzọ, anyị, ma ọ bụ ndị ọzọ.",
+
+    "terms.governing.title": "Iwu Na-achị",
+    "terms.governing.content":
+      "Usoro ndị a dị n'okpuru iwu Naịjirịa. Nsogbu ọ bụla si n'usoro ndị a ga-adị n'okpuru ikike pụrụ iche nke ụlọ ikpe Naịjirịa.",
+
+    "terms.contact.title": "Ozi Mkpọtụrụ",
+    "terms.contact.content":
+      "Ọ bụrụ na ị nwere ajụjụ ọ bụla gbasara Usoro ndị a, biko kpọtụrụ anyị na terms@constitutionhub.ng",
   },
 };
 
