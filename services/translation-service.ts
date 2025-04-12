@@ -67,6 +67,15 @@ const translations: Record<
     "error.retry": "Try Again",
 
     // Footer
+    "footer.resources": "Resources",
+    "footer.legal": "Legal",
+    "footer.followUs": "Follow Us",
+    "footer.privacyPolicy": "Privacy Policy",
+    "footer.termsOfService": "Terms of Service",
+    "footer.disclaimer": "Disclaimer",
+    "footer.twitter": "Twitter",
+    "footer.facebook": "Facebook",
+    "footer.linkedin": "LinkedIn",
     "footer.copyright": "Nigerian Constitution Hub. All rights reserved.",
 
     // Hero section
@@ -274,6 +283,54 @@ const translations: Record<
     "community.modal.cancelButton": "Cancel",
     "community.modal.submitButton": "Create Discussion",
     "community.modal.submitting": "Creating...",
+
+    // Privacy translations
+    "privacy.title": "Privacy Policy",
+    "privacy.introduction.title": "Introduction",
+    "privacy.introduction.content":
+      "This Privacy Policy explains how we collect, use, and protect your personal information when you use our Nigerian Constitution Hub platform.",
+
+    "privacy.dataCollection.title": "Information We Collect",
+    "privacy.dataCollection.content":
+      "We collect the following types of information:",
+    "privacy.dataCollection.items.1":
+      "Personal information (name, email address) when you create an account",
+    "privacy.dataCollection.items.2":
+      "Usage data and interaction with our platform",
+    "privacy.dataCollection.items.3": "Device information and browser details",
+    "privacy.dataCollection.items.4": "Comments and discussion contributions",
+    "privacy.dataCollection.items.5":
+      "Cookies and similar tracking technologies",
+
+    "privacy.dataUsage.title": "How We Use Your Information",
+    "privacy.dataUsage.content":
+      "We use your information for the following purposes:",
+    "privacy.dataUsage.items.1": "To provide and improve our services",
+    "privacy.dataUsage.items.2": "To personalize your experience",
+    "privacy.dataUsage.items.3": "To communicate with you about our services",
+    "privacy.dataUsage.items.4":
+      "To ensure platform security and prevent abuse",
+
+    "privacy.security.title": "Data Security",
+    "privacy.security.content":
+      "We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure.",
+
+    "privacy.cookies.title": "Cookies and Tracking",
+    "privacy.cookies.content":
+      "We use cookies and similar tracking technologies to enhance your experience and collect usage data. You can control cookie settings through your browser.",
+
+    "privacy.rights.title": "Your Rights",
+    "privacy.rights.content":
+      "You have the following rights regarding your personal information:",
+    "privacy.rights.items.1": "Access your personal information",
+    "privacy.rights.items.2": "Correct inaccurate information",
+    "privacy.rights.items.3": "Request deletion of your information",
+    "privacy.rights.items.4": "Object to processing of your information",
+    "privacy.rights.items.5": "Data portability",
+
+    "privacy.contact.title": "Contact Us",
+    "privacy.contact.content":
+      "If you have any questions about this Privacy Policy, please contact us at privacy@constitutionhub.ng",
   },
   ha: {
     // Hausa translations
@@ -334,6 +391,15 @@ const translations: Record<
     "error.fallback": "Ana amfani da samfuran bayanai a maimakon.",
 
     // Footer
+    "footer.resources": "Albarkatu",
+    "footer.legal": "Na Shari'a",
+    "footer.followUs": "Bi Mu",
+    "footer.privacyPolicy": "Ka'idojin Sirri",
+    "footer.termsOfService": "Sharuɗɗan Aiki",
+    "footer.disclaimer": "Bayani",
+    "footer.twitter": "Twitter",
+    "footer.facebook": "Facebook",
+    "footer.linkedin": "LinkedIn",
     "footer.copyright": "Kundin Tsarin Mulkin Najeriya. Duk hakkin mallaka.",
 
     // Hero section
@@ -473,12 +539,60 @@ const translations: Record<
     "about.subtitle":
       "Koyi game da tarihi, muhimmanci, da cigaban dokoki mafi girma na Najeriya",
 
-      "community.modal.title": "Ƙirƙiri Sabon Tattaunawa",
+    "community.modal.title": "Ƙirƙiri Sabon Tattaunawa",
     "community.modal.topicLabel": "Jigo",
     "community.modal.bodyLabel": "Abinda Ke Ciki",
     "community.modal.cancelButton": "Soke",
     "community.modal.submitButton": "Ƙirƙiri Tattaunawa",
     "community.modal.submitting": "Ana ƙirƙira...",
+
+    // privacy translation
+
+    "privacy.title": "Ka'idojin Sirri",
+    "privacy.introduction.title": "Gabatarwa",
+    "privacy.introduction.content":
+      "Wannan Ka'idojin Sirri yana bayyana yadda muke tattara, amfani, da kuma kare bayananku na sirri lokacin da kuke amfani da dandamalin Kundin Tsarin Mulkin Najeriya.",
+
+    "privacy.dataCollection.title": "Bayanan da Muke Tattara",
+    "privacy.dataCollection.content": "Muna tattara wadannan nau'ikan bayanai:",
+    "privacy.dataCollection.items.1":
+      "Bayanan sirri (suna, adireshin imel) lokacin da kuka ƙirƙiri asusu",
+    "privacy.dataCollection.items.2":
+      "Bayanai game da amfani da hulɗa da dandamalinmu",
+    "privacy.dataCollection.items.3":
+      "Bayanai game da na'ura da bayanin mai bincike",
+    "privacy.dataCollection.items.4": "Ra'ayoyi da gudanar da tattaunawa",
+    "privacy.dataCollection.items.5": "Kukis da sauran fasahar bi",
+
+    "privacy.dataUsage.title": "Yadda Muke Amfani da Bayananku",
+    "privacy.dataUsage.content":
+      "Muna amfani da bayananku don waɗannan dalilai:",
+    "privacy.dataUsage.items.1": "Don samar da inganta ayyukanmu",
+    "privacy.dataUsage.items.2": "Don keɓance ƙwarewarku",
+    "privacy.dataUsage.items.3": "Don sadarwa game da ayyukanmu",
+    "privacy.dataUsage.items.4":
+      "Don tabbatar da tsaron dandamali da hana mummunan amfani",
+
+    "privacy.security.title": "Tsaron Bayanai",
+    "privacy.security.content":
+      "Muna aiwatar da matakan tsaro masu dacewa don kare bayananku na sirri daga shiga ba izini, canza, ko bayyanawa.",
+
+    "privacy.cookies.title": "Kukis da Bi",
+    "privacy.cookies.content":
+      "Muna amfani da kukis da makamancin fasahar bi don inganta ƙwarewarku da tattara bayanai game da amfani. Za ku iya sarrafa saituna na kukis ta hanyar mai binciken ku.",
+
+    "privacy.rights.title": "Hakkokinku",
+    "privacy.rights.content":
+      "Kuna da waɗannan hakkokin game da bayananku na sirri:",
+    "privacy.rights.items.1": "Shiga bayananku na sirri",
+    "privacy.rights.items.2": "Gyara bayanai marasa daidaito",
+    "privacy.rights.items.3": "Nema a share bayananku",
+    "privacy.rights.items.4": "Ƙi aikin bayanai",
+    "privacy.rights.items.5": "Dauke bayanai",
+
+    "privacy.contact.title": "Tuntuɓe Mu",
+    "privacy.contact.content":
+      "Idan kuna da wata tambaya game da wannan Ka'idojin Sirri, da fatan za a tuntuɓe mu a privacy@constitutionhub.ng",
   },
   yo: {
     // Yoruba translations
@@ -537,6 +651,15 @@ const translations: Record<
     "error.fallback": "Ń lo àwọn àpẹẹrẹ dátà ní ààyò.",
 
     // Footer
+    "footer.resources": "Àwọn Ohun Èlò",
+    "footer.legal": "Òfin",
+    "footer.followUs": "Tẹ̀lé Wa",
+    "footer.privacyPolicy": "Ìlànà Àṣírí",
+    "footer.termsOfService": "Àwọn Òfin Iṣẹ́",
+    "footer.disclaimer": "Ìkìlọ̀",
+    "footer.twitter": "Twitter",
+    "footer.facebook": "Facebook",
+    "footer.linkedin": "LinkedIn",
     "footer.copyright": "Ìwé Òfin Nàìjíríà. Gbogbo ẹ̀tọ́ wà ní àbò.",
 
     // Hero section
@@ -673,13 +796,55 @@ const translations: Record<
     "about.subtitle":
       "Kọ́ nípa ìtàn, pàtàkì, àti ìdàgbàsókè òfin tó ga jù lọ ní Nàìjíríà",
 
-      // Modal translations 
+    // Modal translations
     "community.modal.title": "Ṣẹ̀dá Ìjírọ̀rọ̀ Tuntun",
     "community.modal.topicLabel": "Kókó Ọ̀rọ̀",
     "community.modal.bodyLabel": "Àkóónú",
     "community.modal.cancelButton": "Fagílé",
     "community.modal.submitButton": "Ṣẹ̀dá Ìjírọ̀rọ̀",
     "community.modal.submitting": "Ń ṣẹ̀dá...",
+
+    //privacy translations
+    "privacy.title": "Ìlànà Àṣírí",
+    "privacy.introduction.title": "Ìfáárà",
+    "privacy.introduction.content":
+      "Ìlànà Àṣírí yìí ṣàlàyé bí a ṣe ń gbà, lo, àti dáàbò bo àwọn àlàyé àdáni rẹ nígbà tí o bá ń lo àwọn ohun èlò Ìwé Òfin Nàìjíríà.",
+
+    "privacy.dataCollection.title": "Àwọn Àlàyé Tí A Ń Gbà",
+    "privacy.dataCollection.content": "A ń gbà àwọn oríṣi àlàyé wọ̀nyí:",
+    "privacy.dataCollection.items.1":
+      "Àlàyé àdáni (orúkọ, àdírẹ́ẹ̀sì ímeèlì) nígbà tí o bá ṣẹ̀dá àpamọ́",
+    "privacy.dataCollection.items.2": "Dátà ìlò àti ìbáṣepọ̀ pẹ̀lú ojú òpó wa",
+    "privacy.dataCollection.items.3": "Àlàyé ẹ̀rọ àti àwọn alábápàdé",
+    "privacy.dataCollection.items.4": "Àwọn àròkọ àti àwọn ìdáhùn ìjíròrò",
+    "privacy.dataCollection.items.5": "Àwọn kúkì àti àwọn ìmọ̀ ẹ̀rọ tó jọra",
+
+    "privacy.dataUsage.title": "Bí A Ṣe Ń Lo Àlàyé Rẹ",
+    "privacy.dataUsage.content": "A ń lo àlàyé rẹ fún àwọn èrèdí wọ̀nyí:",
+    "privacy.dataUsage.items.1": "Láti pèsè àti mú àwọn iṣẹ́ wa dára sí i",
+    "privacy.dataUsage.items.2": "Láti ṣe àṣàyàn ìrírí rẹ",
+    "privacy.dataUsage.items.3": "Láti bá ọ sọ̀rọ̀ nípa àwọn iṣẹ́ wa",
+    "privacy.dataUsage.items.4": "Láti ríi dájú àbò ojú òpó àti dínà ìlòkulò",
+
+    "privacy.security.title": "Àbò Dátà",
+    "privacy.security.content":
+      "A ń mú àwọn ọ̀nà àbò tó yẹ wá láti dáàbò bo àlàyé àdáni rẹ kúrò nínú wíwọlé àìmọ̀, àyípadà, tàbí àfihàn.",
+
+    "privacy.cookies.title": "Àwọn Kúkì àti Ìtẹ̀lé",
+    "privacy.cookies.content":
+      "A ń lo àwọn kúkì àti àwọn ìmọ̀ ẹ̀rọ ìtẹ̀lé láti mú ìrírí rẹ dára sí i àti láti gbà dátà ìlò. O lè ṣàkóso àwọn ìtò kúkì láti inú aláàbápàdé rẹ.",
+
+    "privacy.rights.title": "Àwọn Ẹ̀tọ́ Rẹ",
+    "privacy.rights.content": "O ní àwọn ẹ̀tọ́ wọ̀nyí nípa àlàyé àdáni rẹ:",
+    "privacy.rights.items.1": "Wọlé sí àlàyé àdáni rẹ",
+    "privacy.rights.items.2": "Tún àlàyé àìtọ́ ṣe",
+    "privacy.rights.items.3": "Bèrè fún píparẹ́ àlàyé rẹ",
+    "privacy.rights.items.4": "Takò ìṣiṣẹ́ àlàyé rẹ",
+    "privacy.rights.items.5": "Ìgbéga dátà",
+
+    "privacy.contact.title": "Kàn Sí Wa",
+    "privacy.contact.content":
+      "Tí o bá ní ìbéèrè nípa Ìlànà Àṣírí yìí, jọ̀wọ́ kàn sí wa ní privacy@constitutionhub.ng",
   },
   ig: {
     // Igbo translations
@@ -738,6 +903,15 @@ const translations: Record<
     "error.fallback": "Na-eji ọmụmaatụ data kama.",
 
     // Footer
+    "footer.resources": "Akụ",
+    "footer.legal": "Iwu",
+    "footer.followUs": "Soro Anyị",
+    "footer.privacyPolicy": "Iwu Nzuzo",
+    "footer.termsOfService": "Usoro Ọrụ",
+    "footer.disclaimer": "Nkwupụta",
+    "footer.twitter": "Twitter",
+    "footer.facebook": "Facebook",
+    "footer.linkedin": "LinkedIn",
     "footer.copyright": "Iwu Ọchịchị Naịjirịa. Ikike niile echekwabara.",
 
     // Hero section
@@ -872,12 +1046,57 @@ const translations: Record<
     "about.subtitle":
       "Mụta maka akụkọ, mkpa, na ọganihu iwu kacha mkpa na Naịjirịa",
 
-      "community.modal.title": "Mepụta Mkparịta ụka Ọhụrụ",
+    "community.modal.title": "Mepụta Mkparịta ụka Ọhụrụ",
     "community.modal.topicLabel": "Isiokwu",
     "community.modal.bodyLabel": "Ọdịnaya",
     "community.modal.cancelButton": "Kagbuo",
     "community.modal.submitButton": "Mepụta Mkparịta ụka",
     "community.modal.submitting": "Na-emepụta...",
+
+    //privacy translation
+
+    "privacy.title": "Iwu Nzuzo",
+    "privacy.introduction.title": "Mkpọlite",
+    "privacy.introduction.content":
+      "Iwu Nzuzo a na-akọwa otú anyị si anakọta, eji, nakwa echebe ozi gbasara gị mgbe ị na-eji sistemụ Iwu Ọchịchị Naịjirịa.",
+
+    "privacy.dataCollection.title": "Ozi Anyị Na-anakọta",
+    "privacy.dataCollection.content": "Anyị na-anakọta ụdị ozi ndị a:",
+    "privacy.dataCollection.items.1":
+      "Ozi onwe (aha, adreesị email) mgbe ị na-eme akaụntụ",
+    "privacy.dataCollection.items.2":
+      "Data ojiji na mmekọrịta gị na sistemụ anyị",
+    "privacy.dataCollection.items.3": "Ozi ngwaọrụ na ihe nchọgharị",
+    "privacy.dataCollection.items.4": "Nghọta na mkparịta ụka",
+    "privacy.dataCollection.items.5": "Kuki na teknụzụ nchịkọta yiri ya",
+
+    "privacy.dataUsage.title": "Otú Anyị Si Eji Ozi Gị",
+    "privacy.dataUsage.content": "Anyị na-eji ozi gị maka ihe ndị a:",
+    "privacy.dataUsage.items.1": "Inye ma mee ka ọrụ anyị ka mma",
+    "privacy.dataUsage.items.2": "Ime ka ahụmịhe gị dị mma",
+    "privacy.dataUsage.items.3": "Ikwukọrịta gbasara ọrụ anyị",
+    "privacy.dataUsage.items.4":
+      "Ịhụ na sistemụ dị nchebe ma gbochie mmebi iwu",
+
+    "privacy.security.title": "Nchekwa Data",
+    "privacy.security.content":
+      "Anyị na-etinye usoro nchekwa kwesịrị ekwesị iji chebe ozi gị site na ịbanye na-enweghị ikike, mgbanwe, ma ọ bụ mkpughe.",
+
+    "privacy.cookies.title": "Kuki na Nchịkọta",
+    "privacy.cookies.content":
+      "Anyị na-eji kuki na teknụzụ nchịkọta yiri ya iji mee ka ahụmịhe gị ka mma nakwa ịnakọta data ojiji. Ị nwere ike ịchịkwa ntọala kuki site na nchọgharị gị.",
+
+    "privacy.rights.title": "Ikike Gị",
+    "privacy.rights.content": "I nwere ikike ndị a gbasara ozi gị:",
+    "privacy.rights.items.1": "Ịbanye na ozi gị",
+    "privacy.rights.items.2": "Idozi ozi na-ezighị ezi",
+    "privacy.rights.items.3": "Ịrịọ ka ehichapụ ozi gị",
+    "privacy.rights.items.4": "Ịgọnarị usoro ozi",
+    "privacy.rights.items.5": "Mbufe data",
+
+    "privacy.contact.title": "Kpọtụrụ Anyị",
+    "privacy.contact.content":
+      "Ọ bụrụ na ị nwere ajụjụ ọ bụla gbasara Iwu Nzuzo a, biko kpọtụrụ anyị na privacy@constitutionhub.ng",
   },
 };
 
