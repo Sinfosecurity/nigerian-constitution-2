@@ -21,8 +21,6 @@
 //   };
 // }
 
-// const STORAGE_KEY = "auth_session";
-
 // export function useAuth() {
 //   const router = useRouter();
 //   const queryClient = useQueryClient();
@@ -31,35 +29,17 @@
 //   const { data: user, isLoading: userLoading } = useQuery({
 //     queryKey: ["auth-user"],
 //     queryFn: async () => {
-//       // First try to get from localStorage
-//       const storedSession = localStorage.getItem(STORAGE_KEY);
-//       if (storedSession) {
-//         const parsedSession = JSON.parse(storedSession);
-//         if (parsedSession?.user) {
-//           return parsedSession.user;
-//         }
-//       }
-
-//       // If no stored session, check with Supabase
+//       // Check with Supabase directly
 //       const {
 //         data: { user },
 //         error,
 //       } = await supabase.auth.getUser();
 
 //       if (error) {
-//         localStorage.removeItem(STORAGE_KEY);
 //         return null;
 //       }
 
-//       if (user) {
-//         // Store the session
-//         const {
-//           data: { session },
-//         } = await supabase.auth.getSession();
-//         localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
-//       }
-
-//       return user;
+//       return { user, isAuthenticated: user?.role === "authenticated" };
 //     },
 //   });
 
@@ -101,13 +81,9 @@
 
 //         if (signInError) throw signInError;
 
-//         // Store session in localStorage
-//         localStorage.setItem(STORAGE_KEY, JSON.stringify(signInData.session));
 //         return { user: signInData.user, session: signInData.session };
 //       }
 
-//       // Store session in localStorage
-//       localStorage.setItem(STORAGE_KEY, JSON.stringify(data.session));
 //       return { user: data.user, session: data.session };
 //     },
 //     onSuccess: (data) => {
@@ -134,9 +110,6 @@
 //         password,
 //       });
 //       if (error) throw error;
-
-//       // Store session in localStorage
-//       localStorage.setItem(STORAGE_KEY, JSON.stringify(data.session));
 
 //       return { user: data.user };
 //     },
@@ -193,8 +166,6 @@
 //     mutationFn: async () => {
 //       const { error } = await supabase.auth.signOut();
 //       if (error) throw error;
-//       // Clear stored session
-//       localStorage.removeItem(STORAGE_KEY);
 //     },
 //     onSuccess: () => {
 //       queryClient.setQueryData(["auth-user"], null);
@@ -212,10 +183,8 @@
 //       data: { subscription },
 //     } = supabase.auth.onAuthStateChange((event, session) => {
 //       if (session) {
-//         localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
 //         queryClient.setQueryData(["auth-user"], session.user);
 //       } else {
-//         localStorage.removeItem(STORAGE_KEY);
 //         queryClient.setQueryData(["auth-user"], null);
 //       }
 //     });
@@ -277,7 +246,7 @@
 //           .insert([
 //             {
 //               post_id: postId,
-//               user_id: user.id,
+//               user_id: user?.id,
 //               content,
 //             },
 //           ])
@@ -318,7 +287,7 @@
 //           .from("comments")
 //           .update({ content, updated_at: new Date().toISOString() })
 //           .eq("id", commentId)
-//           .eq("user_id", user.id)
+//           .eq("user_id", user?.id)
 //           .select();
 
 //         if (error) throw error;
@@ -354,7 +323,7 @@
 //           .from("comments")
 //           .delete()
 //           .eq("id", commentId)
-//           .eq("user_id", user.id);
+//           .eq("user_id", user?.id);
 
 //         if (error) throw error;
 //         return { success: true };
@@ -422,12 +391,26 @@ export interface Comment {
   };
 }
 
+// Define proper type for the auth user
+interface AuthData {
+  user: {
+    id: string;
+    role?: string;
+    email?: string;
+    raw_user_meta_data?: {
+      name?: string;
+      avatar_url?: string;
+    };
+  } | null;
+  isAuthenticated: boolean;
+}
+
 export function useAuth() {
   const router = useRouter();
   const queryClient = useQueryClient();
 
   // Get current user
-  const { data: user, isLoading: userLoading } = useQuery({
+  const { data: authData, isLoading: userLoading } = useQuery<AuthData>({
     queryKey: ["auth-user"],
     queryFn: async () => {
       // Check with Supabase directly
@@ -437,10 +420,10 @@ export function useAuth() {
       } = await supabase.auth.getUser();
 
       if (error) {
-        return null;
+        return { user: null, isAuthenticated: false };
       }
 
-      return user;
+      return { user, isAuthenticated: user?.role === "authenticated" };
     },
   });
 
@@ -488,7 +471,10 @@ export function useAuth() {
       return { user: data.user, session: data.session };
     },
     onSuccess: (data) => {
-      queryClient.setQueryData(["auth-user"], data.user);
+      queryClient.setQueryData(["auth-user"], {
+        user: data.user,
+        isAuthenticated: true,
+      });
       router.push("/"); // Always redirect to home page
       toast.success("Account created successfully!");
     },
@@ -515,7 +501,10 @@ export function useAuth() {
       return { user: data.user };
     },
     onSuccess: (data) => {
-      queryClient.setQueryData(["auth-user"], data.user);
+      queryClient.setQueryData(["auth-user"], {
+        user: data.user,
+        isAuthenticated: true,
+      });
       router.push("/");
       toast.success("Successfully signed in!");
     },
@@ -569,7 +558,10 @@ export function useAuth() {
       if (error) throw error;
     },
     onSuccess: () => {
-      queryClient.setQueryData(["auth-user"], null);
+      queryClient.setQueryData(["auth-user"], {
+        user: null,
+        isAuthenticated: false,
+      });
       router.push("/login");
       toast.success("Successfully signed out!");
     },
@@ -584,9 +576,15 @@ export function useAuth() {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {
       if (session) {
-        queryClient.setQueryData(["auth-user"], session.user);
+        queryClient.setQueryData(["auth-user"], {
+          user: session.user,
+          isAuthenticated: true,
+        });
       } else {
-        queryClient.setQueryData(["auth-user"], null);
+        queryClient.setQueryData(["auth-user"], {
+          user: null,
+          isAuthenticated: false,
+        });
       }
     });
 
@@ -640,14 +638,15 @@ export function useAuth() {
         postId: number;
         content: string;
       }) => {
-        if (!user) throw new Error("You must be logged in to comment");
+        if (!authData?.user)
+          throw new Error("You must be logged in to comment");
 
         const { data, error } = await supabase
           .from("comments")
           .insert([
             {
               post_id: postId,
-              user_id: user.id,
+              user_id: authData.user.id,
               content,
             },
           ])
@@ -682,13 +681,14 @@ export function useAuth() {
         content: string;
         postId: number;
       }) => {
-        if (!user) throw new Error("You must be logged in to edit a comment");
+        if (!authData?.user)
+          throw new Error("You must be logged in to edit a comment");
 
         const { data, error } = await supabase
           .from("comments")
           .update({ content, updated_at: new Date().toISOString() })
           .eq("id", commentId)
-          .eq("user_id", user.id)
+          .eq("user_id", authData.user.id)
           .select();
 
         if (error) throw error;
@@ -718,13 +718,14 @@ export function useAuth() {
         commentId: number;
         postId: number;
       }) => {
-        if (!user) throw new Error("You must be logged in to delete a comment");
+        if (!authData?.user)
+          throw new Error("You must be logged in to delete a comment");
 
         const { error } = await supabase
           .from("comments")
           .delete()
           .eq("id", commentId)
-          .eq("user_id", user.id);
+          .eq("user_id", authData.user.id);
 
         if (error) throw error;
         return { success: true };
@@ -742,7 +743,8 @@ export function useAuth() {
   };
 
   return {
-    user,
+    user: authData?.user,
+    isAuthenticated: authData?.isAuthenticated || false,
     loading:
       userLoading ||
       signInLoading ||
