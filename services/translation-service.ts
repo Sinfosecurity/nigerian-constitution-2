@@ -372,6 +372,33 @@ const translations: Record<
     "terms.contact.title": "Contact Information",
     "terms.contact.content":
       "If you have any questions about these Terms of Service, please contact us at terms@constitutionhub.ng",
+
+    // Disclaimer translation
+
+    "disclaimer.title": "Disclaimer",
+    "disclaimer.information.title": "Information Purpose",
+    "disclaimer.information.content":
+      "The Nigerian Constitution Hub website is provided for general information and educational purposes only. While we strive to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability of the information contained on the website.",
+
+    "disclaimer.accuracy.title": "Accuracy and Completeness",
+    "disclaimer.accuracy.content":
+      "Any reliance you place on such information is strictly at your own risk. We recommend verifying any information obtained from or through this website with official government sources or qualified legal professionals before taking any actions based on such information.",
+
+    "disclaimer.legal.title": "Legal Advice",
+    "disclaimer.legal.content":
+      "The content on this website does not constitute legal advice and should not be relied upon as such. We recommend consulting with qualified legal professionals for specific legal matters.",
+
+    "disclaimer.external.title": "External Links",
+    "disclaimer.external.content":
+      "This website may contain links to external websites. We have no control over the nature, content, and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorsement of the views expressed within them.",
+
+    "disclaimer.changes.title": "Changes and Updates",
+    "disclaimer.changes.content":
+      "We reserve the right to make additions, deletions, or modifications to the contents of this website at any time without prior notice. We encourage users to regularly check this disclaimer for any updates.",
+
+    "disclaimer.contact.title": "Contact Information",
+    "disclaimer.contact.content":
+      "If you have any questions about this disclaimer, please contact us at disclaimer@constitutionhub.ng",
   },
   ha: {
     // Hausa translations
@@ -660,6 +687,33 @@ const translations: Record<
     "terms.contact.title": "Bayanin Tuntuɓa",
     "terms.contact.content":
       "Idan kuna da wata tambaya game da waɗannan Sharuɗɗan Aiki, da fatan za a tuntuɓe mu a terms@constitutionhub.ng",
+
+    // Disclaimer translations
+
+    "disclaimer.title": "Bayani",
+    "disclaimer.information.title": "Manufar Bayani",
+    "disclaimer.information.content":
+      "An samar da yanar gizon Kundin Tsarin Mulkin Najeriya ne kawai don bayani na gama-gari da kuma ilimi. Ko da yake muna kokarin kiyaye bayanin ya kasance na yanzu kuma daidai, ba mu yi wakilci ko tabbatarwa ta kowace irin, bayyane ko ɓoye, game da cikakkiyar, daidaiton, amincewa, dacewa ko samuwar bayanin da ke cikin wannan yanar gizon.",
+
+    "disclaimer.accuracy.title": "Daidaito da Cikakke",
+    "disclaimer.accuracy.content":
+      "Duk dogaro da kuka yi akan irin wannan bayani yana kan alhakinku. Muna ba da shawarar tabbatar da duk wani bayani da aka samu daga ko ta hanyar wannan yanar gizon tare da tushen gwamnati na hukuma ko masanan doka kafin ɗaukar mataki akan irin wannan bayani.",
+
+    "disclaimer.legal.title": "Shawarar Shari'a",
+    "disclaimer.legal.content":
+      "Abinda ke cikin wannan yanar gizo ba shawarar shari'a bane kuma ba ya kamata a dogara da shi haka. Muna ba da shawarar tuntuɓar masanan doka masu cancanta don al'amuran shari'a na musamman.",
+
+    "disclaimer.external.title": "Mahanga na Waje",
+    "disclaimer.external.content":
+      "Wannan yanar gizon na iya ƙunshe da mahanga zuwa yanar gizo na waje. Ba mu da iko akan yanayin, abinda ke ciki, da samuwar waɗannan saituna. Haɗawa da wani mahanga ba tabbacin shawarwari ko goyon bayan ra'ayoyin da aka bayyana a cikinsu bane.",
+
+    "disclaimer.changes.title": "Canje-canje da Sabuntawa",
+    "disclaimer.changes.content":
+      "Muna da hakkin yin ƙari, share, ko gyara abinda ke cikin wannan yanar gizon a kowane lokaci ba tare da sanarwa ba. Muna ƙarfafa wa masu amfani da su dinga dubawa wannan bayani don sabuntawa.",
+
+    "disclaimer.contact.title": "Bayanin Tuntuɓi",
+    "disclaimer.contact.content":
+      "Idan kuna da wata tambaya game da wannan bayani, da fatan za a tuntuɓe mu a disclaimer@constitutionhub.ng",
   },
   yo: {
     // Yoruba translations
@@ -938,6 +992,33 @@ const translations: Record<
     "terms.contact.title": "Àlàyé Fún Ìkànsí",
     "terms.contact.content":
       "Tí o bá ní ìbéèrè nípa àwọn Òfin Iṣẹ́ yìí, jọ̀wọ́ kàn sí wa ní terms@constitutionhub.ng",
+
+    // Disclaimer translations
+
+    "disclaimer.title": "Ìkìlọ̀",
+    "disclaimer.information.title": "Èrèdí Ìfitónilétí",
+    "disclaimer.information.content":
+      "A pèsè ojú òpó Ìwé Òfin Nàìjíríà fún ìfitónilétí gbogbogbò àti èrèdí ẹ̀kọ́ nìkan. Bí a tilẹ̀ ń gbìyànjú láti jẹ́ kí ìfitónilétí wà ní ìgbàlódé àti tọ́, a kò ṣe àfihàn tàbí ìdánilójú kankan, gbangba tàbí fífihàn, nípa pípé, tọ́, gbígbẹ́kẹ̀lé, yíyẹ tàbí wíwà ní ìfitónilétí tó wà lórí ojú òpó yìí.",
+
+    "disclaimer.accuracy.title": "Òtítọ́ àti Pípé",
+    "disclaimer.accuracy.content":
+      "Gbogbo gbígbẹ́kẹ̀lé tí o bá fi sí irú ìfitónilétí bẹ́ẹ̀ wà lábẹ́ ewu ara rẹ. A dábàá pé kí o ṣe ìfidájú ìfitónilétí tí a rí láti ojú òpó yìí pẹ̀lú àwọn orí ìfitónilétí ìjọba tàbí àwọn òǹkọ́wé òfin tó yẹ ṣáájú kí o tó ṣe ohunkóhun lórí ìfitónilétí náà.",
+
+    "disclaimer.legal.title": "Ìmọ̀ràn Òfin",
+    "disclaimer.legal.content":
+      "Àkóónú lórí ojú òpó yìí kò jẹ́ ìmọ̀ràn òfin bẹ́ẹ̀ sì ni kò yẹ kí a gbẹ́kẹ̀lé bí bẹ́ẹ̀. A dábàá pé kí o bá àwọn òǹkọ́wé òfin tó yẹ sọ̀rọ̀ fún àwọn ọ̀rọ̀ òfin pàtó.",
+
+    "disclaimer.external.title": "Àwọn Ọ̀nà Àjẹsára",
+    "disclaimer.external.content":
+      "Ojú òpó yìí lè ní àwọn ọ̀nà àjẹsára sí àwọn ojú òpó òde. A kò ní ìdarí lórí irú, àkóónú, àti wíwà ní àwọn ojú òpó náà. Fífi àwọn ọ̀nà àjẹsára kankan sí i kò túmọ̀ sí ìdábàá tàbí ìfọwọ́sí àwọn èrò tí wọ́n fihàn nínú wọn.",
+
+    "disclaimer.changes.title": "Àwọn Àyípadà àti Ìmúdójúìwọ̀n",
+    "disclaimer.changes.content":
+      "A ní ẹ̀tọ́ láti ṣe àfikún, yọkúrò, tàbí ṣe àtúnṣe sí àwọn àkóónú ojú òpó yìí ní ìgbàkígbà láìsí ìkìlọ̀ ṣáájú. A gbà àwọn olùlò níyànjú láti máa ṣàyẹ̀wò ìkìlọ̀ yìí fún àwọn ìmúdójúìwọ̀n.",
+
+    "disclaimer.contact.title": "Àlàyé Fún Ìkànsí",
+    "disclaimer.contact.content":
+      "Tí o bá ní ìbéèrè nípa ìkìlọ̀ yìí, jọ̀wọ́ kàn sí wa ní disclaimer@constitutionhub.ng",
   },
   ig: {
     // Igbo translations
@@ -1215,6 +1296,33 @@ const translations: Record<
     "terms.contact.title": "Ozi Mkpọtụrụ",
     "terms.contact.content":
       "Ọ bụrụ na ị nwere ajụjụ ọ bụla gbasara Usoro ndị a, biko kpọtụrụ anyị na terms@constitutionhub.ng",
+
+    // Disclaimer translation
+
+    "disclaimer.title": "Nkwupụta",
+    "disclaimer.information.title": "Ebumnuche Ozi",
+    "disclaimer.information.content":
+      "Weebụsaịtị Iwu Ọchịchị Naịjirịa bụ maka ozi niile na ebumnuche ọmụmụ naanị. Ọ bụ ezie na anyị na-agbalị idebe ozi dị ọhụrụ ma ziri ezi, anyị anaghị eme nkwupụta ma ọ bụ nkwa ọ bụla, kpọmkwem ma ọ bụ na-atụle, gbasara nzuzu, ịdị mma, ntụkwasị obi, ịdị mma ma ọ bụ ịdị mma nke ozi dị na weebụsaịtị a.",
+
+    "disclaimer.accuracy.title": "Ịdị Mma na Nzuzu",
+    "disclaimer.accuracy.content":
+      "Ntụkwasị obi ọ bụla ị na-etinye n'ozi dị otú a dị naanị n'ihe ị na-eme. Anyị na-atụ aro ịtụle ozi ọ bụla nwetara site na ma ọ bụ site na weebụsaịtị a site na isi mmalite gọọmentị ma ọ bụ ndị ọkachamara iwu tupu ime ihe ọ bụla dabere na ozi dị otú ahụ.",
+
+    "disclaimer.legal.title": "Ndụmọdụ Iwu",
+    "disclaimer.legal.content":
+      "Ọdịnaya dị na weebụsaịtị a abụghị ndụmọdụ iwu ma ọ bụghị ka a ga-eji ya tụkwasị obi dị ka nke ahụ. Anyị na-atụ aro ịkpọtụrụ ndị ọkachamara iwu maka okwu iwu pụrụ iche.",
+
+    "disclaimer.external.title": "Njikọ na Mpụga",
+    "disclaimer.external.content":
+      "Weebụsaịtị a nwere ike inwe njikọ gaa na weebụsaịtị ndị ọzọ. Anyị enweghị njikwa n'elu ụdị, ọdịnaya, na ọdịdị nke saịtị ndị ahụ. Ịtinye njikọ ọ bụla anaghị epute ntụziaka ma ọ bụ nkwado nke echiche e gosipụtara n'ime ha.",
+
+    "disclaimer.changes.title": "Mgbanwe na Mmelite",
+    "disclaimer.changes.content":
+      "Anyị nwere ikike imezi, ihichapụ, ma ọ bụ gbanwee ọdịnaya nke weebụsaịtị a n'oge ọ bụla na-enweghị ọkwa mbụ. Anyị na-agba ndị ọrụ ume ka ha na-enyocha nkwupụta a mgbe niile maka mmelite ọ bụla.",
+
+    "disclaimer.contact.title": "Ozi Mkpọtụrụ",
+    "disclaimer.contact.content":
+      "Ọ bụrụ na ị nwere ajụjụ ọ bụla gbasara nkwupụta a, biko kpọtụrụ anyị na disclaimer@constitutionhub.ng",
   },
 };
 
