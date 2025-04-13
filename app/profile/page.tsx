@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import {
   Card,
   CardContent,
@@ -9,14 +9,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/auth-context";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Loader2, Mail, User, Settings, Shield } from "lucide-react";
 import { useAuth as useAuthData } from "@/hooks/useAuth";
 
 export default function ProfilePage() {
-  const router = useRouter();
+  // const router = useRouter();
   const { user, isLoading } = useAuth();
   const [mounted, setMounted] = useState(false);
   const { user: userData } = useAuthData();
@@ -24,12 +24,6 @@ export default function ProfilePage() {
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  useEffect(() => {
-    if (mounted && !isLoading && !user?.isLoggedIn) {
-      router.push("/login");
-    }
-  }, [mounted, isLoading, user, router]);
 
   // Helper function to get initials
   const getInitials = (name?: string) => {
@@ -64,9 +58,7 @@ export default function ProfilePage() {
         <h1 className="text-3xl font-bold text-green-800 dark:text-green-200">
           {userData?.user_metadata?.name || "Welcome"}
         </h1>
-        <p className="text-gray-500 dark:text-gray-400">
-          {userData?.user_metadata?.email}
-        </p>
+        <p className="text-gray-500 dark:text-gray-400">{userData?.email}</p>
       </div>
 
       <div className="space-y-6">
@@ -95,11 +87,9 @@ export default function ProfilePage() {
                   <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
                     Email Address
                   </label>
-                  <p className="mt-1 text-lg">
-                    {userData?.user_metadata?.email}
-                  </p>
+                  <p className="mt-1 text-lg">{userData?.email}</p>
                 </div>
-                <div>
+                {/* <div>
                   <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
                     Account Created
                   </label>
@@ -107,7 +97,7 @@ export default function ProfilePage() {
                     {userData?.created_at &&
                       new Date(userData.created_at).toLocaleString()}
                   </p>
-                </div>
+                </div> */}
                 <div>
                   <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
                     Language Preference
