@@ -6,7 +6,7 @@ export default function Page() {
     <>
       <div>
         <Head>
-          <title>Login | Nigerian Constitution Hub</title>
+          <title>The Nigerian Constitution Hub</title>
           <meta property="og:title" content="The Nigerian Constitution Hub" />
           <meta
             property="og:description"
