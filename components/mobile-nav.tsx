@@ -170,7 +170,7 @@ export function MobileNav() {
                 onClick={() => {
                   signOut();
                   setOpen(false);
-                  window.location.href = "/";
+                  window.location.href = "/login";
                 }}
                 className="flex items-center justify-center"
               >
