@@ -1,18 +1,6 @@
 import { NextResponse } from "next/server";
 
 export const constitution = [
-  // Preamble
-  {
-    chapter: "Preamble",
-    section: "",
-    content: [
-      "We the people of the Federal Republic of Nigeria",
-      "Having firmly and solemnly resolve, to live in unity and harmony as one indivisible and indissoluble sovereign nation under God, dedicated to the promotion of inter-African solidarity, world peace, international co-operation and understanding",
-      "And to provide for a Constitution for the purpose of promoting the good government and welfare of all persons in our country, on the principles of freedom, equality and justice, and for the purpose of consolidating the unity of our people",
-      "Do hereby make, enact and give to ourselves the following Constitution:-",
-    ],
-  },
-
   // Chapter I - General Provisions
   {
     chapter: "I",
