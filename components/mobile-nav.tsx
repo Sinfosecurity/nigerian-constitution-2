@@ -81,7 +81,7 @@ export function MobileNav() {
                 <div className="flex flex-col space-y-2 pl-4">
                   <SheetClose asChild>
                     <Link
-                      href="/constitution/table-of-contents"
+                      href="/constitution/table-of-content"
                       className="flex items-center py-2 text-sm hover:text-primary transition-colors"
                       onClick={() => setOpen(false)}
                     >
