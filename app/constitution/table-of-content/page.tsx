@@ -56,7 +56,10 @@ export default function TableOfContentPage() {
           href="/constitution"
           className="flex items-center gap-2 text-green-800 dark:text-green-200 hover:text-green-600 dark:hover:text-green-400 transition-colors"
         >
-          <p className="text-sm sm:text-base">Go to Constitution</p>
+          <p className="hidden sm:inline text-sm sm:text-base">
+            Go to Constitution
+          </p>
+          <p className="inline sm:hidden text-sm sm:text-base">Constitution</p>
           <ChevronRight className="h-5 w-5" />
         </Link>
       </div>
