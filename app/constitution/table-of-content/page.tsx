@@ -52,7 +52,12 @@ export default function TableOfContentPage() {
         <h1 className="text-3xl font-bold text-green-800 dark:text-green-200 mb-8">
           Constitution of Nigeria
         </h1>
-        <Link href="/constitution">Go to Constitution</Link>
+        <Link href="/constitution">
+          <p>Go to Constitution</p>
+          <span>
+            <ChevronRight className="text-green-800" />
+          </span>
+        </Link>
       </div>
 
       <div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-green-100 dark:border-green-900">
