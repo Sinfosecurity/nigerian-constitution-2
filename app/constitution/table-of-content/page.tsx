@@ -49,14 +49,14 @@ export default function TableOfContentPage() {
   return (
     <div className="container max-w-3xl py-8 px-4">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-green-800 dark:text-green-200">
+        <h1 className="text-xl sm:text-3xl font-bold text-green-800 dark:text-green-200">
           Constitution of Nigeria
         </h1>
         <Link
           href="/constitution"
           className="flex items-center gap-2 text-green-800 dark:text-green-200 hover:text-green-600 dark:hover:text-green-400 transition-colors"
         >
-          <p>Go to Constitution</p>
+          <p className="text-sm sm:text-base">Go to Constitution</p>
           <ChevronRight className="h-5 w-5" />
         </Link>
       </div>
@@ -73,7 +73,7 @@ export default function TableOfContentPage() {
                   <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200 text-sm font-medium">
                     {index + 1}
                   </div>
-                  <h2 className="text-lg font-semibold text-green-800 dark:text-green-200">
+                  <h2 className="text-xl sm:text-lg font-semibold text-green-800 dark:text-green-200">
                     {chapter.title}
                   </h2>
                 </div>
