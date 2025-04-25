@@ -48,18 +48,18 @@ export default function TableOfContentPage() {
 
   return (
     <div className="container max-w-3xl py-8 px-4">
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-green-800 dark:text-green-200 mb-8">
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold text-green-800 dark:text-green-200">
           Constitution of Nigeria
         </h1>
-        <Link href="/constitution" className="flex gap-2">
+        <Link
+          href="/constitution"
+          className="flex items-center gap-2 text-green-800 dark:text-green-200 hover:text-green-600 dark:hover:text-green-400 transition-colors"
+        >
           <p>Go to Constitution</p>
-          <span>
-            <ChevronRight className="text-green-800" />
-          </span>
+          <ChevronRight className="h-5 w-5" />
         </Link>
       </div>
-
       <div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-green-100 dark:border-green-900">
         <Accordion type="single" collapsible className="w-full">
           {toc.map((chapter, index) => (
