@@ -4,10 +4,13 @@ import Link from "next/link";
 import { PageLayout } from "@/components/page-layout";
 import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/use-translation";
+import { useAuth } from "@/hooks/useAuth";
+import { redirect } from "next/navigation";
 
 export default function LearnPage() {
   const { currentLanguage } = useLanguage();
   const { t } = useTranslation(currentLanguage.code);
+  const { user } = useAuth();
 
   const learningItems = [
     {
@@ -30,6 +33,9 @@ export default function LearnPage() {
     },
   ];
 
+  if (user?.role === undefined) {
+    redirect("/login");
+  }
   return (
     <PageLayout>
       <section className="w-full py-12 md:py-24 lg:py-32 bg-green-50 dark:bg-gray-950">
