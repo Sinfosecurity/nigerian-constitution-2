@@ -5,7 +5,7 @@ import { useState } from "react";
 import { MessageSquare } from "lucide-react";
 import { PageLayout } from "@/components/page-layout";
 import { createPost } from "@/app/actions/post";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { FormData } from "@/app/types/post";
 import { useAuth } from "@/hooks/useAuth";
 import { useLanguage } from "@/contexts/language-context";
@@ -29,6 +29,9 @@ export default function DiscussionPage({ posts }: Posts) {
   const discussionList = posts;
   const { user } = useAuth();
   const fullname = user?.user_metadata?.name;
+  if (user?.role === undefined) {
+    redirect("/login");
+  }
 
   const handleSubmit = async (formData: FormData) => {
     try {
