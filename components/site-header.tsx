@@ -50,7 +50,7 @@ export function SiteHeader() {
   if (!mounted) return null;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-green-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-gray-950/95 dark:border-green-900">
+    <header className="bg-white sticky top-0 z-50 w-full border-b border-green-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-gray-950/95 dark:border-green-900">
       <div className="container flex h-16 items-center justify-between py-4">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
