@@ -156,7 +156,7 @@ export default function ChatUI() {
   const getUserInitials = () => {
     if (!user) return "U";
 
-    const email = user.email || user.user_metadata?.email;
+    const email = user.email || user?.email;
     if (email) {
       return email.charAt(0).toUpperCase();
     }
@@ -206,7 +206,7 @@ export default function ChatUI() {
       </header>
 
       {/* Chat Container */}
-      <div className="container mx-auto flex-1 p-4 md:p-6 flex flex-col max-w-4xl overflow-y-auto">
+      <div className="bg-white container mx-auto flex-1 p-4 md:p-6 flex flex-col max-w-4xl overflow-y-auto">
         {/* Messages Area */}
         <Card className="flex-1 mb-4 overflow-hidden flex flex-col relative">
           <CardHeader className="bg-gray-50 border-b py-3">
