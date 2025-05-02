@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+
 import { HeroSection } from "@/components/hero-section";
 import { Statistics } from "@/components/statistics";
 import { Testimonials } from "@/components/testimonials";
@@ -10,15 +12,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/use-translation";
-import { redirect } from "next/navigation";
+import { useUser } from "@/hooks/useUser";
 
 export function HomePageContent() {
   const { currentLanguage } = useLanguage();
   const { t } = useTranslation(currentLanguage.code);
-  const { user } = useAuth();
-  if (user?.role === undefined) {
-    redirect("/login");
-  }
 
   return (
     <>
