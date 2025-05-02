@@ -3,10 +3,16 @@
 import { PageLayout } from "@/components/page-layout";
 import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/use-translation";
+import { useAuth } from "@/hooks/useAuth";
+import { redirect } from "next/navigation";
 
 export default function PrivacyPolicyPage() {
   const { currentLanguage } = useLanguage();
   const { t } = useTranslation(currentLanguage.code);
+  const { user } = useAuth();
+  if (user?.role === undefined) {
+    redirect("/login");
+  }
 
   return (
     <PageLayout>
