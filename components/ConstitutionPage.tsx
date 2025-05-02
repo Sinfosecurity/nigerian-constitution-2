@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
+import { redirect } from "next/navigation";
 // import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 interface ConstitutionSection {
@@ -14,6 +16,11 @@ interface ConstitutionSection {
 export default function ConstitutionPage() {
   const [constitution, setConstitution] = useState<ConstitutionSection[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const { user } = useAuth();
+  if (user?.role === undefined) {
+    redirect("/login");
+  }
 
   useEffect(() => {
     async function fetchConstitution() {
