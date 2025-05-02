@@ -1,9 +1,18 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { Video, FileImage, Download, Construction } from "lucide-react";
 import { PageLayout } from "@/components/page-layout";
+import { useAuth } from "@/hooks/useAuth";
+import { redirect } from "next/navigation";
 
 export default function ResourcesPage() {
+  const { user } = useAuth();
+  if (user?.role === undefined) {
+    redirect("/login");
+  }
+
   // Sample data for demonstration
   const videos = [
     {
