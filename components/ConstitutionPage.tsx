@@ -18,9 +18,6 @@ export default function ConstitutionPage() {
   const [loading, setLoading] = useState(true);
 
   const { user } = useAuth();
-  if (user?.role === undefined) {
-    redirect("/login");
-  }
 
   useEffect(() => {
     async function fetchConstitution() {
@@ -47,38 +44,39 @@ export default function ConstitutionPage() {
       </div>
     );
 
-  return (
-    <div className="bg-white min-h-screen p-4">
-      <h1 className="text-2xl font-bold mb-4 text-green-700">
-        Nigerian Constitution
-      </h1>
+  if (user?.role === "authenticated")
+    return (
+      <div className="bg-white min-h-screen p-4">
+        <h1 className="text-2xl font-bold mb-4 text-green-700">
+          Nigerian Constitution
+        </h1>
 
-      <Accordion.Root type="multiple" className="w-full space-y-4">
-        {constitution.map((item, index) => (
-          <Accordion.Item
-            key={index}
-            value={`item-${index}`}
-            className="border border-green-700 rounded"
-          >
-            <Accordion.Header>
-              <Accordion.Trigger className="w-full flex justify-between items-center p-4 text-left text-green-700 font-semibold text-lg hover:bg-green-100 transition">
-                Chapter {item.chapter}, Section {item.section}
-                <ChevronDownIcon className="h-5 w-5" />
-              </Accordion.Trigger>
-            </Accordion.Header>
+        <Accordion.Root type="multiple" className="w-full space-y-4">
+          {constitution.map((item, index) => (
+            <Accordion.Item
+              key={index}
+              value={`item-${index}`}
+              className="border border-green-700 rounded"
+            >
+              <Accordion.Header>
+                <Accordion.Trigger className="w-full flex justify-between items-center p-4 text-left text-green-700 font-semibold text-lg hover:bg-green-100 transition">
+                  Chapter {item.chapter}, Section {item.section}
+                  <ChevronDownIcon className="h-5 w-5" />
+                </Accordion.Trigger>
+              </Accordion.Header>
 
-            <Accordion.Content className="p-4 text-green-700">
-              <ul className="list-disc pl-6">
-                {item.content.map((point, i) => (
-                  <li key={i} className="mb-1">
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </Accordion.Content>
-          </Accordion.Item>
-        ))}
-      </Accordion.Root>
-    </div>
-  );
+              <Accordion.Content className="p-4 text-green-700">
+                <ul className="list-disc pl-6">
+                  {item.content.map((point, i) => (
+                    <li key={i} className="mb-1">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </Accordion.Content>
+            </Accordion.Item>
+          ))}
+        </Accordion.Root>
+      </div>
+    );
 }
