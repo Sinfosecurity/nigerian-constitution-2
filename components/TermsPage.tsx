@@ -103,4 +103,7 @@ export default function TermsOfServicePage() {
         </div>
       </PageLayout>
     );
+  else {
+    redirect("/login");
+  }
 }

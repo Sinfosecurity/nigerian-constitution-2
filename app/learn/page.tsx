@@ -109,4 +109,7 @@ export default function LearnPage() {
         </section>
       </PageLayout>
     );
+  else {
+    redirect("/login");
+  }
 }

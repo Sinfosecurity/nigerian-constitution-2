@@ -79,4 +79,7 @@ export default function ConstitutionPage() {
         </Accordion.Root>
       </div>
     );
+  else {
+    redirect("/login");
+  }
 }
