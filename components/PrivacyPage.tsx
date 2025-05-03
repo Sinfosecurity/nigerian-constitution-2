@@ -102,7 +102,4 @@ export default function PrivacyPolicyPage() {
         </div>
       </PageLayout>
     );
-  else {
-    redirect("/login");
-  }
 }

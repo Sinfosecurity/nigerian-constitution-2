@@ -43,53 +43,54 @@ export default function ProfilePage() {
     );
   }
 
-  return (
-    <div className="container max-w-4xl py-8">
-      <div className="flex flex-col items-center mb-8">
-        <Avatar className="h-24 w-24 mb-4">
-          <AvatarImage
-            src={userData?.user_metadata?.avatar_url}
-            alt={userData?.user_metadata?.name || "User avatar"}
-          />
-          <AvatarFallback className="text-lg bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300">
-            {userData?.user_metadata?.name}
-          </AvatarFallback>
-        </Avatar>
-        <h1 className="text-3xl font-bold text-green-800 dark:text-green-200">
-          {userData?.user_metadata?.name || "Welcome"}
-        </h1>
-        <p className="text-gray-500 dark:text-gray-400">{userData?.email}</p>
-      </div>
+  if (userData?.role === "authenticated")
+    return (
+      <div className="container max-w-4xl py-8">
+        <div className="flex flex-col items-center mb-8">
+          <Avatar className="h-24 w-24 mb-4">
+            <AvatarImage
+              src={userData?.user_metadata?.avatar_url}
+              alt={userData?.user_metadata?.name || "User avatar"}
+            />
+            <AvatarFallback className="text-lg bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300">
+              {userData?.user_metadata?.name}
+            </AvatarFallback>
+          </Avatar>
+          <h1 className="text-3xl font-bold text-green-800 dark:text-green-200">
+            {userData?.user_metadata?.name || "Welcome"}
+          </h1>
+          <p className="text-gray-500 dark:text-gray-400">{userData?.email}</p>
+        </div>
 
-      <div className="space-y-6">
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <User className="h-5 w-5 text-green-700" />
-              Personal Information
-            </CardTitle>
-            <CardDescription>
-              Manage your personal details and preferences
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-6">
-              <div className="grid gap-6 md:grid-cols-2">
-                <div>
-                  <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                    Full Name
-                  </label>
-                  <p className="mt-1 text-lg">
-                    {userData?.user_metadata?.name || "Not set"}
-                  </p>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                    Email Address
-                  </label>
-                  <p className="mt-1 text-lg">{userData?.email}</p>
-                </div>
-                {/* <div>
+        <div className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <User className="h-5 w-5 text-green-700" />
+                Personal Information
+              </CardTitle>
+              <CardDescription>
+                Manage your personal details and preferences
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                      Full Name
+                    </label>
+                    <p className="mt-1 text-lg">
+                      {userData?.user_metadata?.name || "Not set"}
+                    </p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                      Email Address
+                    </label>
+                    <p className="mt-1 text-lg">{userData?.email}</p>
+                  </div>
+                  {/* <div>
                   <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
                     Account Created
                   </label>
@@ -98,14 +99,14 @@ export default function ProfilePage() {
                       new Date(userData.created_at).toLocaleString()}
                   </p>
                 </div> */}
-                <div>
-                  <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                    Language Preference
-                  </label>
-                  <p className="mt-1 text-lg">English</p>
+                  <div>
+                    <label className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                      Language Preference
+                    </label>
+                    <p className="mt-1 text-lg">English</p>
+                  </div>
                 </div>
-              </div>
-              {/* <div className="flex gap-4 pt-4">
+                {/* <div className="flex gap-4 pt-4">
                 <Button className="bg-green-600 hover:bg-green-700 text-white">
                   <User className="mr-2 h-4 w-4" />
                   Edit Profile
@@ -118,11 +119,11 @@ export default function ProfilePage() {
                   Account Settings
                 </Button>
               </div> */}
-            </div>
-          </CardContent>
-        </Card>
+              </div>
+            </CardContent>
+          </Card>
 
-        {/* <Card>
+          {/* <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Shield className="h-5 w-5 text-green-600" />
@@ -151,7 +152,7 @@ export default function ProfilePage() {
             </div>
           </CardContent>
         </Card> */}
+        </div>
       </div>
-    </div>
-  );
+    );
 }

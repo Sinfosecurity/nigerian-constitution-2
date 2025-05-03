@@ -171,7 +171,4 @@ export default function Chatbot() {
         </CardFooter>
       </Card>
     );
-  else {
-    redirect("/login");
-  }
 }

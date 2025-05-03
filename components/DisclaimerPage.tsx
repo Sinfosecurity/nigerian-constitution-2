@@ -79,7 +79,4 @@ export default function DisclaimerPage() {
         </div>
       </PageLayout>
     );
-  else {
-    redirect("/login");
-  }
 }
