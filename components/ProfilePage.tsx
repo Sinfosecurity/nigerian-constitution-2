@@ -17,13 +17,7 @@ import { useAuth as useAuthData } from "@/hooks/useAuth";
 
 export default function ProfilePage() {
   // const router = useRouter();
-  const { user, isLoading } = useAuth();
-  const [mounted, setMounted] = useState(false);
   const { user: userData } = useAuthData();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Helper function to get initials
   const getInitials = (name?: string) => {
@@ -34,14 +28,6 @@ export default function ProfilePage() {
       .slice(0, 2)
       .join("");
   };
-
-  if (!mounted || isLoading || !user?.isLoggedIn) {
-    return (
-      <div className="container flex items-center justify-center min-h-[calc(100vh-4rem)] py-8">
-        <Loader2 className="h-8 w-8 animate-spin text-green-600" />
-      </div>
-    );
-  }
 
   if (userData?.role === "authenticated")
     return (
